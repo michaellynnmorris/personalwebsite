@@ -1,0 +1,219 @@
+---
+title: Seahawks should pass more
+author: Mike Morris
+date: '2020-01-10'
+slug: seahawks-should-pass-more
+categories:
+  - Seahawks
+tags:
+  - Seahawks
+keywords:
+  - tech
+---
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#load libraries
+library(nflscrapR)
+library(tidyverse)
+library(dplyr)
+library(na.tools)
+library(rlang)
+library(kableExtra)
+
+
+# # Collect data for 2019 NFL season
+# pbp_2019 <- nflscrapR::season_play_by_play(2019)
+# 
+# #save each data file locally so I don't have to load them every time
+# save(pbp_2019,file="/home/michael/Documents/pbp_2019.Rda")
+
+
+#load the data that I previously stored so I can work with it easily
+load("/home/michael/Documents/pbp_2019.Rda")
+
+#get neutral situation plays only
+pbp_2019_neutral_situations <- pbp_2019 %>%
+  dplyr::filter(Win_Prob< .80 & Win_Prob >.20) %>% #filter for win probabilties between 20 and 80%
+  dplyr::filter(TimeSecs > 300) %>% #exclude last five minutes of second half
+  dplyr::filter(TimeSecs < 1800 | TimeSecs >= 2100 ) %>% #exclude last five minutes of first half
+  dplyr::filter(qtr<5) #exclude overtime
+
+#count of neutral situation plas for non SEA
+count_neutral_plays_nonSEA <- nrow(
+  pbp_2019_neutral_situations %>%
+    dplyr::filter(posteam != "SEA")
+)
+
+#count of neutral situation plas for SEA
+count_neutral_plays_SEA <- nrow(
+  pbp_2019_neutral_situations %>%
+    dplyr::filter(posteam == "SEA")
+)
+
+#functions
+
+#compare non-SEA teams on run vs pass effectiveness
+compare_nonsea_runpass <- function(comparisonvariable, df){
+  nonsea_compare_pass_run <- df  %>%
+    dplyr::filter(posteam != "SEA") %>%
+    dplyr::filter(PlayType == "Pass" | PlayType == "Run") %>%
+    dplyr::filter(!!comparisonvariable != "NA") %>%
+    dplyr::group_by(PlayType) %>%
+    dplyr::summarise(mean(!!comparisonvariable), sd(!!comparisonvariable))
+  # print(nonsea_compare_pass_run)
+}
+
+#compare SEA on run vs pass effectiveness
+compare_sea_runpass <- function(comparisonvariable, df){
+  nonsea_compare_pass_run <- df  %>%
+    dplyr::filter(posteam == "SEA") %>%
+    dplyr::filter(PlayType == "Pass" | PlayType == "Run") %>%
+    dplyr::filter(!!comparisonvariable != "NA") %>%
+    dplyr::group_by(PlayType) %>%
+    dplyr::summarise(mean(!!comparisonvariable), sd(!!comparisonvariable))
+  # print(nonsea_compare_pass_run)
+}
+
+#compare SEA on run vs pass effectiveness BY GAME
+compare_sea_runpass_bygame <- function(comparisonvariable, df){
+  nonsea_compare_pass_run <- df  %>%
+    dplyr::filter(posteam == "SEA") %>%
+    dplyr::filter(PlayType == "Pass" | PlayType == "Run") %>%
+    dplyr::filter(!!comparisonvariable != "NA") %>%
+    dplyr::group_by(PlayType, DefensiveTeam, Date) %>%
+    dplyr::summarise(mean(!!comparisonvariable), n()) %>%
+    dplyr::rename(EPA = `mean(EPA)`) %>%
+    dplyr::rename(n = `n()`) %>%
+    # tidyr::spread(PlayType, n) %>%    
+    arrange(Date) 
+  
+  #reorder by column index
+  nonsea_compare_pass_run <- nonsea_compare_pass_run[c(2,3,1,5,4)]
+
+}
+
+test_df <- compare_sea_runpass_bygame(sym("EPA"), pbp_2019_neutral_situations)
+
+#general rounding function for all numeric valus in a dataframe
+round_df <- function(df, digits) {
+  nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))
+  df[,nums] <- round(df[,nums], digits = digits)
+  (df)
+}
+
+
+```
+
+
+<!--more-->
+![The view from my seats](/img/IMG-9018b.jpg)
+
+
+The Seahawks are known as a run first team. The numbers strongly suggest that passing more would lead to a more successful offense. 
+
+It’s well known in the analytics community that passing is generally better than rushing. See here for some examples:
+
+* https://thepowerrank.com/2018/09/24/the-surprising-truth-about-passing-and-rushing-in-the-nfl/
+* https://fivethirtyeight.com/features/for-a-passing-league-the-nfl-still-doesnt-pass-enough/
+* https://www.cmusportsanalytics.com/nfl-expected-points-nflscrapr-part-1-introduction-expected-points/
+
+Here I’ll review some basic analyses to make that point in general and for the Seahawks in particular for the 2019 regular season. 
+
+To evaluate whether rushing or passing is more effective, I’ll use two measures here: Yards per play and expected points added (EPA). 
+
+Yards per play is straightforward - generally more yards are better than fewer yards. This measure doesn't take into account down, distance, or field position, however, so it's not perfect. 
+
+Expected points (EP) and expected points added (EPA) is explained [here](https://www.pinnacle.com/en/betting-articles/Football/expected-points-added-in-nfl-betting/4M72C83P2TVK77M4). Simplifying a bit, for a given field position, down, and distance, we can calculate the expected number of points that drive will yield. By looking at EP before and after a play and taking the difference, we can get EPA for a given play. A play will generally have a higher EPA if it gains more yards, gains a first down, and puts the offense closer to scoring position. [Brian Burke](https://www.advancedfootballanalytics.com/index.php/home/stats/stats-explained/expected-points-and-epa-explained) gives a nice example:
+
+>Suppose the offense has a 1st and 10 at midfield. This situation is worth +2.0 EP. A 5-yard gain would set up a 2nd and 5 from the 45, which corresponds to a +2.1 EP. Therefore, that 5-yard gain in that particular situation represents a +0.1 gain in EP. This gain is called Expected Points Added (EPA). Likewise, a 5-yard loss on 1st down at midfield would create a 2nd and 15 from the offense’s own 45. That situation is worth +1.2 EP, representing a net difference of -0.8 EPA.
+
+EPA isn't perfect either, as it suggests that teams should pass even if they are far ahead late in the game, when they ought to be running the ball to run out the clock. EPA is a good measure in neutral game situations, though, which is where most coaches are making decisions on run vs pass most of the time.
+
+In general, passing results in more yards per play and higher EPA than rushing. Passing also has more variable results (sd = standard deviation). These results include all teams except the Seahawks for neutral game situations (excludes last five minutes of each half and overtime, win probability between 20 and 80).
+
+For yards per play (all teams ex-Seahawks; total of 
+`r count_neutral_plays_nonSEA`
+plays in 2019), it's clear that passing gets more yards on average:
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+
+nonsea_runpass2 <- compare_nonsea_runpass(sym("Yards.Gained"), pbp_2019_neutral_situations)
+nonsea_runpass2 <- round_df(nonsea_runpass2, 2)
+kableExtra::kable(nonsea_runpass2, caption = "All NFL Teams (ex-SEA) Run vs Pass Yards per Play (2019)")
+
+
+
+```
+<br>
+
+
+And for EPA (all teams ex-Seahawks), it's clear that passing results in positive results for the offense, while running is a slight negative:
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+
+nonsea_runpass <- compare_nonsea_runpass(sym("EPA"), pbp_2019_neutral_situations)
+nonsea_runpass <- round_df(nonsea_runpass, 2)
+kableExtra::kable(nonsea_runpass, caption = "All NFL Teams (ex-SEA) Run vs Pass Expected Points Added (2019)")
+```
+
+<br>
+
+These are massive differences. These results show that teams should be passing by default, and running only in particularly advantageous situations. Pass to set up the run, not the other way around.
+
+The splits for the Seahawks are even more stark (neutral game situations only; total of 
+`r count_neutral_plays_SEA` plays in 2019):
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE}
+
+sea_runpass2 <- compare_sea_runpass(sym("Yards.Gained"), pbp_2019_neutral_situations)
+sea_runpass2 <- round_df(sea_runpass2, 2)
+kableExtra::kable(sea_runpass2, caption = "Seahawks Run vs Pass Yards per Play (2019)")
+
+
+
+```
+
+<br>
+
+And for EPA, where the Seahawks have better passing EPA and worse rushing EPA than the rest of the league:
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+sea_runpass <- compare_sea_runpass(sym("EPA"), pbp_2019_neutral_situations)
+sea_runpass <- round_df(sea_runpass, 2)
+kableExtra::kable(sea_runpass, caption = "Seahawks Run vs Pass Expected Points Added (2019)")
+
+```
+
+<br>
+
+It's not just true that passing is better than running in general, or for the Seahawks across an entire season, but even within almost every individual game. There were only three games during the regular season where in neutral situations rushing had higher EPA than passing:
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+
+sea_runpass_by_game <- compare_sea_runpass_bygame(sym("EPA"), pbp_2019_neutral_situations)
+sea_runpass_by_game <- round_df(sea_runpass_by_game, 2)
+kableExtra::kable(sea_runpass_by_game, caption = "Seahawks Run vs Pass Expected Points Added by Game (2019)")
+
+
+```
+
+<br>
+
+Yes, it matters how many defenders are in the box, game situation, etc., but the general results are what matter in most game situations. 
+
+Implications of these results:
+On offense, passing should be the default play call.
+On defense, stop the pass first.
+
+Thanks to the developers of nflscrapR for making these analyses easy.
