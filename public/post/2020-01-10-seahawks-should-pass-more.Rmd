@@ -90,7 +90,7 @@ compare_sea_runpass_bygame <- function(comparisonvariable, df){
   
   #reorder by column index
   nonsea_compare_pass_run <- nonsea_compare_pass_run[c(2,3,1,5,4)]
-
+  
 }
 
 test_df <- compare_sea_runpass_bygame(sym("EPA"), pbp_2019_neutral_situations)
@@ -209,6 +209,70 @@ kableExtra::kable(sea_runpass_by_game, caption = "Seahawks Run vs Pass Expected 
 ```
 
 <br>
+
+This is also the case across the entire league. Across all neutral game situations, almost every team in the league was more effective in terms of EPA when passing.
+
+<br>
+
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+#do a count of all the games leaguewide where passing outperformed running, show the rates by team - bet that all the teams had more success passing than running
+
+#alter code below or the function at top
+
+#compare run vs pass effectiveness for each team 
+league_runpass_bygame <- pbp_2019_neutral_situations %>%
+  dplyr::filter(PlayType == "Pass" | PlayType == "Run") %>%
+  dplyr::filter(EPA != "NA") %>%
+  dplyr::group_by(PlayType, posteam) %>%
+  dplyr::summarise(mean(EPA), n()) %>%
+  dplyr::rename(EPA = `mean(EPA)`) %>%
+  # dplyr::rename(OffensiveTeam = `posteam`) %>%
+  dplyr::rename(n = `n()`) %>%
+  arrange(posteam, PlayType) 
+
+
+league_runpass_bygame <- round_df(league_runpass_bygame, 2)
+
+kableExtra::kable(league_runpass_bygame, caption = "League Run vs Pass Expected Points Added by Team (2019)")
+
+
+```
+
+<br>
+
+There was only one team where running was better than passing in neutral situations: Baltimore. This, however, was due to the great running ability of Lamar Jackson, not a traditional running game. 
+
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+
+bal_only <- pbp_2019_neutral_situations %>%
+  dplyr::filter(PlayType == "Run") %>%
+  dplyr::filter(posteam == "BAL") %>%
+  dplyr::filter(EPA != "NA") %>%
+  dplyr::group_by(Rusher) %>%
+  dplyr::summarise(mean(EPA), sum(EPA), n()) %>%
+  dplyr::rename(n = `n()`)  %>%
+  arrange(-n) 
+
+bal_only <- round_df(bal_only, 2)
+
+
+kableExtra::kable(bal_only, caption = "Baltimore's success with the run is due to Lamar Jackson")
+
+
+# bal_only_raw <- pbp_2019_neutral_situations %>%
+#   dplyr::filter(PlayType == "Run") %>%
+#   dplyr::filter(posteam == "BAL") 
+
+```
+
+
+
+<br>
+
 
 Yes, it matters how many defenders are in the box, game situation, etc., but the general results are what matter in most game situations. 
 
