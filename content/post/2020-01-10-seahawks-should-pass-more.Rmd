@@ -241,7 +241,7 @@ kableExtra::kable(league_runpass_bygame, caption = "League Run vs Pass Expected 
 
 <br>
 
-There was only one team where running was better than passing in neutral situations: Baltimore. This, however, was due to the great running ability of Lamar Jackson, not a traditional running game. 
+There was only one team where running was better than passing in neutral situations: Baltimore. This, however, was due to the great running ability of Lamar Jackson, not a traditional running game.  
 
 
 <br>
