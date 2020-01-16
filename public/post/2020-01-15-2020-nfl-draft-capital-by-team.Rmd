@@ -1,0 +1,174 @@
+---
+title: 2020 NFL Draft Capital by Team
+author: Mike Morris
+date: '2020-01-15'
+slug: 2020-nfl-draft-capital-by-team
+categories:
+  - Seahawks
+tags:
+  - Seahawks
+keywords:
+  - tech
+---
+
+<!--more-->
+
+
+
+
+With the Seahawks season over, I was curious to look at the current 2020 NFL draft capital of the Seahawks vs the rest of the NFL. The final draft order will not be set until after the Superbowl, but most of it is set as of today.
+
+The Seahawks GM, John Schneider, has often traded down and generated additional picks (and surplus capital), so it would not be surprising to find him doing so again. Nonetheless, at this date, here is where the Seahawks stand relative to the other teams:
+
+<br>
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+
+# <!-- scrape the Chase Stuart values here: -->
+# <!-- https://www.footballperspective.com/draft-value-chart/ -->
+# 
+# <!-- scrape the draft order here: -->
+# <!-- http://www.tankathon.com/nfl/full_draft -->
+
+#package needed to scrape tables
+library(rvest)
+
+#draft values
+url <- "https://www.footballperspective.com/draft-value-chart/"
+draft_values <- url %>%
+  xml2::read_html() %>%
+  html_nodes(xpath='//*[@id="tablepress-276"]') %>%
+  html_table()
+draft_values <- draft_values[[1]]
+
+
+#draft pick order
+url <- "http://www.tankathon.com/nfl/full_draft"
+webpage <- xml2::read_html(url)
+
+#get each of the rounds picks
+r1 <- rvest::html_table(webpage)[[1]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+r2 <- rvest::html_table(webpage)[[2]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+r3 <- rvest::html_table(webpage)[[3]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+r4 <- rvest::html_table(webpage)[[4]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+r5 <- rvest::html_table(webpage)[[5]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+r6 <- rvest::html_table(webpage)[[6]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+r7 <- rvest::html_table(webpage)[[7]] %>% 
+  tibble::as_tibble(.name_repair = "unique") # repair the repeated columns
+
+#combine into one table
+full_draft_order <- rbind(r1, r2, r3, r4, r5, r6, r7)
+
+#change column names to set up for merge
+colnames(full_draft_order) <- c("Pk", "Team")
+
+#merge draft values and draft order
+final_data <- merge(draft_values, full_draft_order, by = "Pk")
+
+
+#clean up the names of the team, which got jumbled up with the logo file names, and trading partners
+
+library(stringr)
+
+
+temp_teams <- unlist(strsplit(full_draft_order$Team, " "))
+
+#take the first two words or just the first one if that's all there is
+final_data$Team <- ifelse(is.na(word(final_data$Team, 1, 2)), final_data$Team, word(final_data$Team, 1, 2))
+
+
+#this include the official and a couple of the previous or unofficial ones in case they appear later
+team_abbreviations <- c("ARI", "ATL", "BAL",
+                        "BUF", "CAR", "CHI", "CIN", "CLE",
+                        "DAL", "DEN", "DET", "GB", "HOU", "IND",
+                        "JAX", "KC", "MIA", "MIN", "NE", "NO", "NYG",
+                        "NYJ", "OAK", "LV", "PHI", "PIT", "SD", "LAC", 
+                        "LAR", "SEA", "SF",
+                        "STL", "TB", "TEN", "WSH")
+
+#remove all team abbreviations
+for (a in team_abbreviations){
+  final_data$Team <- gsub(a,"", final_data$Team)
+}
+
+#start building find/replace dataframe for some weird values
+team_locations <- c("Arizona",
+                    "Atlanta",
+                    "Baltimore",
+                    "Buffalo",
+                    "Carolina",
+                    "Chicago",
+                    "Cincinnati",
+                    "Cleveland",
+                    "Dallas",
+                    "Denver",
+                    "Detroit",
+                    "Green Bay",
+                    "Houston",
+                    "Indianapolis",
+                    "Jacksonville",
+                    "Kansas City",
+                    "LA Rams",
+                    "LA Chargers",
+                    "Miami",
+                    "Minnesota",
+                    "New England",
+                    "New Orleans",
+                    "NY Jets",
+                    "NY Giants",
+                    # "Oakland",
+                    "Las Vegas",
+                    "Philadelphia",
+                    "Pittsburgh",
+                    "San Francisco",
+                    "Seattle",
+                    "Tampa Bay",
+                    "Tennessee",
+                    "Washington")
+
+
+#create values that I need to replace
+team_locations2 <- paste0(team_locations,word(team_locations, 1))
+
+#combine for find/replace command
+team_locations_fr <- as.data.frame(cbind(team_locations, team_locations2))
+
+library(DataCombine)
+
+# Replace patterns and return full data frame
+final_data <- FindReplace(data = final_data, Var = "Team", replaceData = team_locations_fr,
+                          from = "team_locations2", to = "team_locations", exact = FALSE)
+
+
+#remove trailing spaces in team locations
+final_data$Team <- str_trim(final_data$Team, side = "right")
+
+#rename columns
+colnames(final_data) <- c("Pick", "ChaseStuartValue", "JimmyJohnsonValue", "Team")
+
+draft_capital <- final_data %>%
+  dplyr::group_by(Team) %>%
+  dplyr::summarise(sum(ChaseStuartValue), sum(JimmyJohnsonValue), dplyr::n()) %>%
+  dplyr::rename(n = `dplyr::n()`)  %>%
+  # dplyr::rename(n = `n()`)  %>%
+  dplyr::arrange(-`sum(ChaseStuartValue)`) 
+
+
+library(kableExtra)
+library(data.table)
+
+kableExtra::kable(draft_capital
+                    , caption = "2020 NFL Draft Capital (as of Jan 15 2020; does not include compensatory picks; order not finalized until after Super Bowl)")
+
+
+```
+
+
+
+
