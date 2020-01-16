@@ -2,22 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Seahawks on Michael Morris&#39; site</title>
-    <link>/tags/seahawks/</link>
+    <link>https://michael-morris.us/tags/seahawks/</link>
     <description>Recent content in Seahawks on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/seahawks/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://michael-morris.us/tags/seahawks/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2020 NFL Draft Capital by Team</title>
-      <link>/2020/01/2020-nfl-draft-capital-by-team/</link>
+      <link>https://michael-morris.us/2020/01/2020-nfl-draft-capital-by-team/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/01/2020-nfl-draft-capital-by-team/</guid>
+      <guid>https://michael-morris.us/2020/01/2020-nfl-draft-capital-by-team/</guid>
       <description>
+&lt;script src=&#34;https://michael-morris.us/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 
 
 </description>
@@ -25,10 +26,10 @@
     
     <item>
       <title>Seahawks should pass more</title>
-      <link>/2020/01/seahawks-should-pass-more/</link>
+      <link>https://michael-morris.us/2020/01/seahawks-should-pass-more/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/01/seahawks-should-pass-more/</guid>
+      <guid>https://michael-morris.us/2020/01/seahawks-should-pass-more/</guid>
       <description>
 
 
