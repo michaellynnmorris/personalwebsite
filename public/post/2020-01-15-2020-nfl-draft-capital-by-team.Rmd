@@ -155,8 +155,7 @@ colnames(final_data) <- c("Pick", "ChaseStuartValue", "JimmyJohnsonValue", "Team
 draft_capital <- final_data %>%
   dplyr::group_by(Team) %>%
   dplyr::summarise(sum(ChaseStuartValue), sum(JimmyJohnsonValue), dplyr::n()) %>%
-  dplyr::rename(n = `dplyr::n()`)  %>%
-  # dplyr::rename(n = `n()`)  %>%
+  dplyr::rename(NumberofPicks = `dplyr::n()`)  %>%
   dplyr::arrange(-`sum(ChaseStuartValue)`) 
 
 

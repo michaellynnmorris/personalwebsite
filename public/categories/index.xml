@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Michael Morris&#39; site</title>
-    <link>https://michael-morris.us/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://michael-morris.us/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Seahawks</title>
-      <link>https://michael-morris.us/categories/seahawks/</link>
+      <link>/categories/seahawks/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://michael-morris.us/categories/seahawks/</guid>
+      <guid>/categories/seahawks/</guid>
       <description></description>
     </item>
     
