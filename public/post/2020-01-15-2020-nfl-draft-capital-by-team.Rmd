@@ -175,4 +175,10 @@ kableExtra::kable(draft_capital
 
 We can see that the Seahawks are in the bottom half of draft capital before compensatory picks. On the plus side it appears that The 49ers and Rams have even less draft capital to work with. 
 
+Sources:
+
+* [Draft order](http://www.tankathon.com/nfl/full_draft)
+* [Draft pick values](https://www.footballperspective.com/draft-value-chart/)
+
+
 
