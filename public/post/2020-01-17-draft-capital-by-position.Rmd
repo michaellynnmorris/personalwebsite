@@ -1,0 +1,52 @@
+---
+title: Draft capital by position
+author: Mike Morris
+date: '2020-01-17'
+slug: draft-capital-by-position
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+---
+
+<!--more-->
+
+The purpose of this post is to examine:
+
+* How much draft capital has been invested in different position groups over the last 10 years
+* How much investment in different position groups translates into performance in terms of EPA/play the following year
+
+
+
+
+
+```{r}
+
+#read in draft history results by position back to 2009
+
+#load libraries
+library(nflscrapR)
+library(tidyverse)
+library(dplyr)
+library(na.tools)
+library(rlang)
+library(kableExtra)
+
+
+
+
+
+#compare to next years EPA/play
+#load the data that I previously stored so I can work with it easily
+# load("/home/michael/Documents/pbp_2010_to_2019.Rda")
+
+#look at capital by position groups, offense total, defense total, special teams
+
+
+
+
+
+```
+
