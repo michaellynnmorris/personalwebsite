@@ -19,10 +19,10 @@
 
 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NFL analytics assorted links">
-<meta name="twitter:title" content="NFL analytics assorted links">
-<meta property="og:url" content="/2020/01/nfl-analytics-assorted-links/">
-<meta property="twitter:url" content="/2020/01/nfl-analytics-assorted-links/">
+<meta property="og:title" content="Draft capital spent by position (2010-2019)">
+<meta name="twitter:title" content="Draft capital spent by position (2010-2019)">
+<meta property="og:url" content="/2020/01/draft-capital-by-position/">
+<meta property="twitter:url" content="/2020/01/draft-capital-by-position/">
 <meta property="og:site_name" content="Michael Morris&#39; site">
 <meta property="og:description" content="
 
@@ -69,14 +69,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
 
 
-    <title>NFL analytics assorted links</title>
+    <title>Draft capital spent by position (2010-2019)</title>
 
     <link rel="icon" href="/favicon.png">
     
 
     
 
-    <link rel="canonical" href="/2020/01/nfl-analytics-assorted-links/">
+    <link rel="canonical" href="/2020/01/draft-capital-by-position/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,7 +216,7 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      NFL analytics assorted links
+      Draft capital spent by position (2010-2019)
     </h1>
   
   
@@ -243,20 +243,366 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>What I’ve been reading:</p>
+              <p>The purpose of this post is to examine:</p>
 <ul>
-<li><p><a href="https://www.pff.com/news/nfl-true-pass-sets-and-their-importance-to-player-evaluation">On predicting individual offensive line play</a></p></li>
-<li><p><a href="https://www.footballoutsiders.com/stat-analysis/2003/establishment-clause">Winning leads to rushing attempts, not the other way around</a></p></li>
+<li>How much draft capital has been invested in different position groups over the last 10 years?</li>
+<li>Are there trends in investment?</li>
 </ul>
-<blockquote>
-<p>early in games, it is more important to gain yards than just to run the ball for the heck of it, but at the end of the game the number of runs is more important than how many yards they gain.</p>
-</blockquote>
+<p>Sources:</p>
 <ul>
-<li>What the nerds mean when the say <a href="https://gist.github.com/guga31bb/f2a9b4e83539299405556e9ab5a36cec">running backs don’t matter</a>…and other great bits.</li>
+<li><a href="https://www.pro-football-reference.com/draft/">Draft history</a></li>
+<li><a href="https://www.footballperspective.com/draft-value-chart/">Draft pick values</a></li>
 </ul>
-<blockquote>
-<p>Summary: the most convincing recent evidence we have is from the Big Data Bowl, where the winning entry found that the best prediction of the result of a running play – given the positioning of the offense and defense at the time of handoff – can be made by ignoring the identity of the running back. This means that in a predictive sense, the only channel through which running backs “matter” on run plays is their position and acceleration at the time of the handoff. But there isn’t much evidence that that’s something that’s stable for players over time.</p>
-</blockquote>
+<p>Here I looked at results for the 2010-2019 drafts, covering the last 10 years. To value draft capital, I focused on the Chase Stuart model, but I report the Jimmy Johnson model results below as well.</p>
+<p>This is subject to some uncertainty in terms of position. For instance, is a LB really an edge rusher? I am trusting positions from Pro Football Reference here.</p>
+<p>Generally speaking teams have invested slightly more in defense than offense (NAs here are for specialists).</p>
+<p><br></p>
+<table>
+<caption>
+<span id="tab:investmentBySideofBall">Table 1: </span>NFL Draft Capital Invested by Side of Ball (2010-2019)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+SideofBall
+</th>
+<th style="text-align:right;">
+sum(ChaseStuartValue)
+</th>
+<th style="text-align:right;">
+sum(JimmyJohnsonValue)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Defense
+</td>
+<td style="text-align:right;">
+7373.5
+</td>
+<td style="text-align:right;">
+308606.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Offense
+</td>
+<td style="text-align:right;">
+6901.2
+</td>
+<td style="text-align:right;">
+296992.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+71.3
+</td>
+<td style="text-align:right;">
+1245.3
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>By position group, teams have invested more in defensive positions, particularly the line and defensive backs.</p>
+<p><br></p>
+<table>
+<caption>
+<span id="tab:investmentByPositionGroup">Table 2: </span>NFL Draft Capital Invested by Position Group (2010-2019)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+GeneralPosition
+</th>
+<th style="text-align:right;">
+sum(ChaseStuartValue)
+</th>
+<th style="text-align:right;">
+sum(JimmyJohnsonValue)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DL
+</td>
+<td style="text-align:right;">
+2839.4
+</td>
+<td style="text-align:right;">
+129994.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:right;">
+2781.0
+</td>
+<td style="text-align:right;">
+107807.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OL
+</td>
+<td style="text-align:right;">
+2458.2
+</td>
+<td style="text-align:right;">
+106033.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LB
+</td>
+<td style="text-align:right;">
+1753.1
+</td>
+<td style="text-align:right;">
+70804.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WR
+</td>
+<td style="text-align:right;">
+1695.1
+</td>
+<td style="text-align:right;">
+66725.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RB
+</td>
+<td style="text-align:right;">
+1041.3
+</td>
+<td style="text-align:right;">
+38496.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+QB
+</td>
+<td style="text-align:right;">
+1028.7
+</td>
+<td style="text-align:right;">
+62487.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TE
+</td>
+<td style="text-align:right;">
+677.9
+</td>
+<td style="text-align:right;">
+23249.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Specialist
+</td>
+<td style="text-align:right;">
+71.3
+</td>
+<td style="text-align:right;">
+1245.3
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Next I looked for linear trends in draft capital expended (correlations of totals for each group by year). For instance, are teams using more capital for offense, or defense, or certain positions over the past 10 years? For instance, are teams drafting fewer early running backs?</p>
+<p>Let’s take a look at offense vs defense first.</p>
+<p><br></p>
+<table>
+<caption>
+<span id="tab:trendsbyoffdef">Table 3: </span>NFL Draft Capital Trends by Side of Ball (2010-2019)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+SideofBall
+</th>
+<th style="text-align:right;">
+r_ChaseStuartValue_Year
+</th>
+<th style="text-align:right;">
+r_JimmyJohnsonValue_Year
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Offense
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Defense
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>No trends at all. Now let’s look by position group:</p>
+<p><br></p>
+<table>
+<caption>
+<span id="tab:trendsbyposition">Table 4: </span>NFL Draft Capital Trends by Position Group (2010-2019)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+GeneralPosition
+</th>
+<th style="text-align:right;">
+r_ChaseStuartValue_Year
+</th>
+<th style="text-align:right;">
+r_JimmyJohnsonValue_Year
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+LB
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TE
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Specialist
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+QB
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+<td style="text-align:right;">
+0.21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DB
+</td>
+<td style="text-align:right;">
+0.16
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RB
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WR
+</td>
+<td style="text-align:right;">
+-0.18
+</td>
+<td style="text-align:right;">
+-0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OL
+</td>
+<td style="text-align:right;">
+-0.20
+</td>
+<td style="text-align:right;">
+-0.24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DL
+</td>
+<td style="text-align:right;">
+-0.35
+</td>
+<td style="text-align:right;">
+-0.30
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>I have to admit these results surprised me. If we are to interpret these it appears over this time period teams are spending more draft capital on linebackers and tight ends, and less of defensive line, but these trends are not statistically significant with N = 10. Running backs, if anything, appear to be just as likely to be picked early now as they were 10 years ago. And teams are spending just about the same amount on quarterback, despite widespread recognition that having a decent quarterback on a rookie contract is a huge organizational advantage.</p>
+<p>In short, it is not at all clear that the passing revolution has impacted how teams approach drafting position groups.</p>
 
               
             </div>
@@ -282,7 +628,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/draft-capital-by-position/" data-tooltip="Draft capital spent by position (2010-2019)">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -290,7 +636,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/2020-nfl-draft-capital-by-team/" data-tooltip="2020 NFL Draft Capital by Team">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/nfl-analytics-assorted-links/" data-tooltip="NFL analytics assorted links">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -308,19 +654,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/nfl-analytics-assorted-links/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/draft-capital-by-position/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/nfl-analytics-assorted-links/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/draft-capital-by-position/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/nfl-analytics-assorted-links/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/draft-capital-by-position/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -368,7 +714,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/draft-capital-by-position/" data-tooltip="Draft capital spent by position (2010-2019)">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -376,7 +722,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/2020-nfl-draft-capital-by-team/" data-tooltip="2020 NFL Draft Capital by Team">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/nfl-analytics-assorted-links/" data-tooltip="NFL analytics assorted links">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -394,19 +740,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/nfl-analytics-assorted-links/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/draft-capital-by-position/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/nfl-analytics-assorted-links/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/draft-capital-by-position/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/nfl-analytics-assorted-links/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/draft-capital-by-position/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -436,19 +782,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F01%2Fnfl-analytics-assorted-links%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F01%2Fdraft-capital-by-position%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F01%2Fnfl-analytics-assorted-links%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F01%2Fdraft-capital-by-position%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F01%2Fnfl-analytics-assorted-links%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F01%2Fdraft-capital-by-position%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -540,9 +886,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/2020\/01\/nfl-analytics-assorted-links\/';
+          this.page.url = '\/2020\/01\/draft-capital-by-position\/';
           
-            this.page.identifier = '\/2020\/01\/nfl-analytics-assorted-links\/'
+            this.page.identifier = '\/2020\/01\/draft-capital-by-position\/'
           
         };
         (function() {
