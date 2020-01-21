@@ -95,6 +95,7 @@ canonifyurls = true
   identifier = "rss"
   name = "RSS"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
+  rssLimit = 10
   url = "/index.xml"
 
 [params]
