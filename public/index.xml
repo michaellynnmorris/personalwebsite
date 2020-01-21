@@ -11,12 +11,2792 @@
     
     
     <item>
-      <title>Posts</title>
-      <link>/post/</link>
+      <title>Assorted links, draft combine edition</title>
+      <link>/2020/01/assorted-links-draft-combine-edition/</link>
       <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/</guid>
-      <description></description>
+      <guid>/2020/01/assorted-links-draft-combine-edition/</guid>
+      <description>&lt;p&gt;Today’s reading about the draft combine and the theme is that it doesn’t do very well predicting NFL performance.&lt;/p&gt;
+&lt;p&gt;As I read these studies, what really stands out is how difficult it is to measure individual player performance. A predictor can’t possibly do well if the performance measure is unreliable or not valid, and it’s clear there is a lot of be desired from the performance measures that are commonly available. Looking at grades from Pro Football Focus, for instance, would be informative, rather than total yards, or yards per carry, some version of which many of the studies below examine.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;This is the best one, from 2011: “Results suggested that an indicator of &lt;a href=&#34;https://www.tandfonline.com/doi/full/10.1080/08959285.2011.555218?scroll=top&amp;amp;needAccess=true&#34;&gt;past performance, collegiate performance, engendered a stronger relationship with future NFL performance than a variety of physical ability tests administered during the NFL Combine&lt;/a&gt;” The best predictor of future behavior is generally past behavior.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;From 2019: “The primary results of this study suggest that &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/27100168&#34;&gt;the NFL Combine lacks predictive ability when examining first year game performance&lt;/a&gt;. Furthermore, it also lacks correlational strength when examining relationships between performance and subsequent five years performance in the NFL. Caution should be used if coaches, general managers, and other front office staff are considering the use of Combine data as a possible selection for the upcoming NFL Draft.” The only measure of performance here is snaps played.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;From 2018: &lt;a href=&#34;https://journals.lww.com/nsca-jscr/Fulltext/2018/11000/Performance_of_Future_Elite_Players_at_the.14.aspx&#34;&gt;This study&lt;/a&gt; claims to show numerous differences by comparing combine participants overall to those who received All-Pro or Pro Bowl selections, but no effect size calculations, no statistical significance reported, and no standard deviations reported on the comparisons between groups.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;From 2016: “It definitely comes as a surprise that &lt;a href=&#34;https://www.stat.berkeley.edu/~aldous/Research/Ugrad/Paul_Park.pdf&#34;&gt;most of the Combine results lack any prediction power&lt;/a&gt; for neither draft order nor NFL performance. Raw athleticism may not be as important as people make it to be at the professional level.” Like above, this study looks only at QB, WR, and RB, and uses QBR and yard per game to measure performance.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;From 2016: “This study indicates that &lt;a href=&#34;https://journals.lww.com/nsca-jscr/fulltext/2016/05000/predictive_value_of_national_football_league.25.aspx&#34;&gt;the NFL Scouting Combine has some value for predicting future success of RBs and WRs&lt;/a&gt; in the NFL. The Combine data could be used to supplement the evaluation of college football players. Specifically, performance on 10-Y [10 yard] and VJ [vertical jump] may be used to predict future performance for RBs and WRs, respectively. Still, the Combine measures cannot explain a large part of variability in future performance of RBs and WRs. Hence, team executives, coaches, and scouts need to be cautious about using the Combine measures for selecting players for the NFL Draft.” Yard per attempt and per reception to measure performance, again. Taller and lighter receivers (watch our DK Metcalf) seemed to do better.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;From 2008: “&lt;a href=&#34;https://www.researchgate.net/publication/23305472_The_NFL_Combine_Does_It_Predict_Performance_in_the_National_Football_League&#34;&gt;…we question to overall usefulness of the combine&lt;/a&gt;” and “…the inclusion of contemporary human resource selection practices should be an important part of the combine restructure.” But note this only covers QB, WR, and RB positions, and uses metrics like QBR, yards per reception, and yards per carry to measure performance.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bottom line is the combine is generally overrated. Improving individual performance measures is in my view a huge opportunity for improving the ability of teams to select good players.&lt;/p&gt;
+&lt;p&gt;What’s also interesting is that combine performance seems to predict draft order, that teams might be overusing combine performance in their decisions. If combine performance predicts draft position independent of past/collegiate performance, that suggests an opportunity to target players who did not perform well at the combine but did in college. Teams should be able to get good players later in the draft.&lt;/p&gt;
+&lt;p&gt;For a good general writeup describing some of the findings above, see &lt;a href=&#34;https://www.washingtonpost.com/sports/redskins/the-nfl-combine-tells-us-nothing/2019/03/04/888721ca-3e8a-11e9-922c-64d6b7840b82_story.html&#34;&gt;this piece&lt;/a&gt; from the Washington Post last year . Bad luck shading DK Metcalf, though, he’s had a great year. And note he was picked at the end of the second round, not in the top half of the first.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Draft capital spent by position (2010-2019)</title>
+      <link>/2020/01/draft-capital-by-position/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/draft-capital-by-position/</guid>
+      <description>&lt;p&gt;The purpose of this post is to examine:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How much draft capital has been invested in different position groups over the last 10 years?&lt;/li&gt;
+&lt;li&gt;Are there trends in investment?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pro-football-reference.com/draft/&#34;&gt;Draft history&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.footballperspective.com/draft-value-chart/&#34;&gt;Draft pick values&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here I looked at results for the 2010-2019 drafts, covering the last 10 years. To value draft capital, I focused on the Chase Stuart model, but I report the Jimmy Johnson model results below as well.&lt;/p&gt;
+&lt;p&gt;This is subject to some uncertainty in terms of position. For instance, is a LB really an edge rusher? I am trusting positions from Pro Football Reference here.&lt;/p&gt;
+&lt;p&gt;Generally speaking teams have invested slightly more in defense than offense (NAs here are for specialists).&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:investmentBySideofBall&#34;&gt;Table 1: &lt;/span&gt;NFL Draft Capital Invested by Side of Ball (2010-2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+SideofBall
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(ChaseStuartValue)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(JimmyJohnsonValue)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Defense
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7373.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+308606.2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Offense
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6901.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+296992.5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+71.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1245.3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;By position group, teams have invested more in defensive positions, particularly the line and defensive backs.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:investmentByPositionGroup&#34;&gt;Table 2: &lt;/span&gt;NFL Draft Capital Invested by Position Group (2010-2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+GeneralPosition
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(ChaseStuartValue)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(JimmyJohnsonValue)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2839.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+129994.2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2781.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+107807.5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+OL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2458.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+106033.8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1753.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+70804.5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+WR
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1695.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66725.6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+RB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1041.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38496.2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+QB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1028.7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+62487.1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+677.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23249.8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Specialist
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+71.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1245.3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Next I looked for linear trends in draft capital expended (correlations of totals for each group by year). For instance, are teams using more capital for offense, or defense, or certain positions over the past 10 years? For instance, are teams drafting fewer early running backs?&lt;/p&gt;
+&lt;p&gt;Let’s take a look at offense vs defense first.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:trendsbyoffdef&#34;&gt;Table 3: &lt;/span&gt;NFL Draft Capital Trends by Side of Ball (2010-2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+SideofBall
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+r_ChaseStuartValue_Year
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+r_JimmyJohnsonValue_Year
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Offense
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.01
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.05
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Defense
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.05
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;No trends at all. Now let’s look by position group:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:trendsbyposition&#34;&gt;Table 4: &lt;/span&gt;NFL Draft Capital Trends by Position Group (2010-2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+GeneralPosition
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+r_ChaseStuartValue_Year
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+r_JimmyJohnsonValue_Year
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.42
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.41
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.48
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Specialist
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.07
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+QB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.21
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.09
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+RB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.12
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+WR
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.15
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+OL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.24
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.35
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.30
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;I have to admit these results surprised me. If we are to interpret these it appears over this time period teams are spending more draft capital on linebackers and tight ends, and less on defensive line, but these trends are not statistically significant with N = 10. Running backs, if anything, appear to be just as likely to be picked early now as they were 10 years ago. And teams are spending just about the same amount on quarterback, despite widespread recognition that having a decent quarterback on a rookie contract is a huge organizational advantage.&lt;/p&gt;
+&lt;p&gt;In short, it is not at all clear that the passing revolution has impacted how teams approach drafting position groups.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>NFL analytics assorted links</title>
+      <link>/2020/01/nfl-analytics-assorted-links/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/nfl-analytics-assorted-links/</guid>
+      <description>&lt;p&gt;What I’ve been reading:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.pff.com/news/nfl-true-pass-sets-and-their-importance-to-player-evaluation&#34;&gt;On predicting individual offensive line play&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.footballoutsiders.com/stat-analysis/2003/establishment-clause&#34;&gt;Winning leads to rushing attempts, not the other way around&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;early in games, it is more important to gain yards than just to run the ball for the heck of it, but at the end of the game the number of runs is more important than how many yards they gain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;What the nerds mean when the say &lt;a href=&#34;https://gist.github.com/guga31bb/f2a9b4e83539299405556e9ab5a36cec&#34;&gt;running backs don’t matter&lt;/a&gt;…and other great bits.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Summary: the most convincing recent evidence we have is from the Big Data Bowl, where the winning entry found that the best prediction of the result of a running play – given the positioning of the offense and defense at the time of handoff – can be made by ignoring the identity of the running back. This means that in a predictive sense, the only channel through which running backs “matter” on run plays is their position and acceleration at the time of the handoff. But there isn’t much evidence that that’s something that’s stable for players over time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>2020 NFL Draft Capital by Team</title>
+      <link>/2020/01/2020-nfl-draft-capital-by-team/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/2020-nfl-draft-capital-by-team/</guid>
+      <description>&lt;p&gt;With the Seahawks season over, I was curious to look at the current 2020 NFL draft capital of the Seahawks vs the rest of the NFL. The final draft order will not be set until after the Superbowl, but most of it is set as of today.&lt;/p&gt;
+&lt;p&gt;Here I looked at draft capital in two ways: Chase Stuart’s numbers the the older Jimmy Johnson numbers.&lt;/p&gt;
+&lt;p&gt;The Seahawks GM, John Schneider, has often traded down and generated additional picks (and surplus capital), so it would not be surprising to find him doing so again. Nonetheless, at this date, here is where the Seahawks stand relative to the other teams:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table class=&#34;table&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-1&#34;&gt;Table 1: &lt;/span&gt;2020 NFL Draft Capital (as of Jan 15 2020; does not include compensatory picks; order not finalized until after Super Bowl)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Team
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(ChaseStuartValue)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(JimmyJohnsonValue)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+NumberofPicks
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Miami
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+91.7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4503.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Cincinnati
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+67.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4041.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Jacksonville
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+63.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3038.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Detroit
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3205.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Indianapolis
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+59.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2535.7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Las Vegas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+59.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2667.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Denver
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2140.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NY Jets
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+54.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2257.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Arizona
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2322.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA Chargers
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2533.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Carolina
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52.7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2429.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Atlanta
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+51.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2101.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Cleveland
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+51.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2260.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NY Giants
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+49.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2523.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Washington
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+48.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3032.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Buffalo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+45.1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1485.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tampa Bay
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+44.7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1895.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Philadelphia
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+42.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1480.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Dallas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1628.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Baltimore
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1226.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;font-weight: bold;&#34;&gt;
+Seattle
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;font-weight: bold;&#34;&gt;
+37.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;font-weight: bold;&#34;&gt;
+1350.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;font-weight: bold;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Green Bay
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1153.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Minnesota
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1269.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Kansas City
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1068.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Tennessee
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1113.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Chicago
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+984.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+New England
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1031.8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+New Orleans
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28.6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+992.4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA Rams
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24.5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+667.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Houston
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+21.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+512.0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pittsburgh
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20.3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+550.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+San Francisco
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+683.9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;We can see that the Seahawks are in the bottom half of draft capital before compensatory picks. On the plus side it appears that The 49ers and Rams have even less draft capital to work with.&lt;/p&gt;
+&lt;p&gt;Sources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.tankathon.com/nfl/full_draft&#34;&gt;Draft order&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.footballperspective.com/draft-value-chart/&#34;&gt;Draft pick values&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Seahawks should pass more</title>
+      <link>/2020/01/seahawks-should-pass-more/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/seahawks-should-pass-more/</guid>
+      <description>&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/IMG-9018b.jpg&#34; alt=&#34;The view from my seats&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The view from my seats&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The Seahawks are known as a run first team. The numbers strongly suggest that passing more would lead to a more successful offense.&lt;/p&gt;
+&lt;p&gt;It’s well known in the analytics community that passing is generally better than rushing. See here for some examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://thepowerrank.com/2018/09/24/the-surprising-truth-about-passing-and-rushing-in-the-nfl/&#34; class=&#34;uri&#34;&gt;https://thepowerrank.com/2018/09/24/the-surprising-truth-about-passing-and-rushing-in-the-nfl/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/for-a-passing-league-the-nfl-still-doesnt-pass-enough/&#34; class=&#34;uri&#34;&gt;https://fivethirtyeight.com/features/for-a-passing-league-the-nfl-still-doesnt-pass-enough/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cmusportsanalytics.com/nfl-expected-points-nflscrapr-part-1-introduction-expected-points/&#34; class=&#34;uri&#34;&gt;https://www.cmusportsanalytics.com/nfl-expected-points-nflscrapr-part-1-introduction-expected-points/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here I’ll review some basic analyses to make that point in general and for the Seahawks in particular for the 2019 regular season.&lt;/p&gt;
+&lt;p&gt;To evaluate whether rushing or passing is more effective, I’ll use two measures here: Yards per play and expected points added (EPA).&lt;/p&gt;
+&lt;p&gt;Yards per play is straightforward - generally more yards are better than fewer yards. This measure doesn’t take into account down, distance, or field position, however, so it’s not perfect.&lt;/p&gt;
+&lt;p&gt;Expected points (EP) and expected points added (EPA) is explained &lt;a href=&#34;https://www.pinnacle.com/en/betting-articles/Football/expected-points-added-in-nfl-betting/4M72C83P2TVK77M4&#34;&gt;here&lt;/a&gt;. Simplifying a bit, for a given field position, down, and distance, we can calculate the expected number of points that drive will yield. By looking at EP before and after a play and taking the difference, we can get EPA for a given play. A play will generally have a higher EPA if it gains more yards, gains a first down, and puts the offense closer to scoring position. &lt;a href=&#34;https://www.advancedfootballanalytics.com/index.php/home/stats/stats-explained/expected-points-and-epa-explained&#34;&gt;Brian Burke&lt;/a&gt; gives a nice example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Suppose the offense has a 1st and 10 at midfield. This situation is worth +2.0 EP. A 5-yard gain would set up a 2nd and 5 from the 45, which corresponds to a +2.1 EP. Therefore, that 5-yard gain in that particular situation represents a +0.1 gain in EP. This gain is called Expected Points Added (EPA). Likewise, a 5-yard loss on 1st down at midfield would create a 2nd and 15 from the offense’s own 45. That situation is worth +1.2 EP, representing a net difference of -0.8 EPA.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;EPA isn’t perfect either, as it suggests that teams should pass even if they are far ahead late in the game, when they ought to be running the ball to run out the clock. EPA is a good measure in neutral game situations, though, which is where most coaches are making decisions on run vs pass most of the time.&lt;/p&gt;
+&lt;p&gt;In general, passing results in more yards per play and higher EPA than rushing. Passing also has more variable results (sd = standard deviation). These results include all teams except the Seahawks for neutral game situations (excludes last five minutes of each half and overtime, win probability between 20 and 80).&lt;/p&gt;
+&lt;p&gt;For yards per play (all teams ex-Seahawks; total of
+20647
+plays in 2019), it’s clear that passing gets more yards on average:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-2&#34;&gt;Table 1: &lt;/span&gt;All NFL Teams (ex-SEA) Run vs Pass Yards per Play (2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+PlayType
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+mean(Yards.Gained)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sd(Yards.Gained)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.46
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.01
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4.54
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.57
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;And for EPA (all teams ex-Seahawks), it’s clear that passing results in positive results for the offense, while running is a slight negative:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-3&#34;&gt;Table 2: &lt;/span&gt;All NFL Teams (ex-SEA) Run vs Pass Expected Points Added (2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+PlayType
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+mean(EPA)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sd(EPA)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1.66
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1.06
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;These are massive differences. These results show that teams should be passing by default, and running only in particularly advantageous situations. Pass to set up the run, not the other way around.&lt;/p&gt;
+&lt;p&gt;The splits for the Seahawks are even more stark (neutral game situations only; total of
+682 plays in 2019):&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-4&#34;&gt;Table 3: &lt;/span&gt;Seahawks Run vs Pass Yards per Play (2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+PlayType
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+mean(Yards.Gained)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sd(Yards.Gained)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.35
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4.94
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.66
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;And for EPA, where the Seahawks have better passing EPA and worse rushing EPA than the rest of the league:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-5&#34;&gt;Table 4: &lt;/span&gt;Seahawks Run vs Pass Expected Points Added (2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+PlayType
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+mean(EPA)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sd(EPA)
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1.69
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.05
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1.20
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;It’s not just true that passing is better than running in general, or for the Seahawks across an entire season, but even within almost every individual game. There were only three games during the regular season where in neutral situations rushing had higher EPA than passing:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-6&#34;&gt;Table 5: &lt;/span&gt;Seahawks Run vs Pass Expected Points Added by Game (2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+DefensiveTeam
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Date
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+PlayType
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+n
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+EPA
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.27
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.32
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PIT
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.73
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PIT
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.25
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NO
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.54
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NO
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.62
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ARI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.53
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ARI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-09-29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.25
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.51
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.09
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CLE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.46
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CLE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.21
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BAL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.42
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BAL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.08
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ATL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.11
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ATL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-10-27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.50
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-11-03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.29
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-11-03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.04
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-11-11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.50
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-11-11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.28
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PHI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-11-24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.26
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PHI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-11-24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.07
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+MIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.25
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+MIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.21
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.06
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.09
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CAR
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2.08
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CAR
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.31
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ARI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.17
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ARI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.04
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.55
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2019-12-29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.16
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;This is also the case across the entire league. Across all neutral game situations, almost every team in the league was more effective in terms of EPA when passing.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-7&#34;&gt;Table 6: &lt;/span&gt;League Run vs Pass Expected Points Added by Team (2019)
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+PlayType
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+posteam
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+EPA
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+n
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ARI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+293
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ARI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+203
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ATL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+259
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ATL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.04
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+190
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BAL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+199
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BAL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+255
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BUF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+279
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BUF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+254
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CAR
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.01
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+240
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CAR
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+177
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CHI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.04
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+294
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CHI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+204
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.04
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+291
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+222
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CLE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+265
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+CLE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.00
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+210
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DAL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+273
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DAL
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+219
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DEN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+236
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DEN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+196
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DET
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+304
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+DET
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+274
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+GB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+283
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+GB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.04
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+174
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+HOU
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+284
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+HOU
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+252
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+IND
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+256
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+IND
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+307
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+JAX
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+222
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+JAX
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.01
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+214
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+KC
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+290
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+KC
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+147
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+313
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+216
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LAC
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+276
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+LAC
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+198
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+MIA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+277
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+MIA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+183
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+MIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.43
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+248
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+MIN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+222
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+311
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NE
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+211
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NO
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+295
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NO
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+203
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NYG
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+289
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NYG
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.03
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+198
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NYJ
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+205
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+NYJ
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+171
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+OAK
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+237
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+OAK
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.06
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+205
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PHI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+298
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PHI
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.01
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+247
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PIT
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+280
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+PIT
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+233
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SEA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+244
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SEA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.05
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+248
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.26
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+251
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+SF
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+229
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+289
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TB
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.07
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+232
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TEN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+239
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+TEN
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+237
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pass
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+WAS
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.07
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+198
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Run
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+WAS
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+206
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;There was only one team where running was better than passing in neutral situations: Baltimore. This, however, was due to the great running ability of Lamar Jackson, not a traditional running game.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-8&#34;&gt;Table 7: &lt;/span&gt;Baltimore’s success with the run is due to Lamar Jackson
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Rusher
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+mean(EPA)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+sum(EPA)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+n
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+M.Ingram
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+17.57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+101
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+L.Jackson
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38.04
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+87
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+G.Edwards
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.69
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+44
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+J.Hill
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-3.82
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+R.Griffin
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1.02
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3.07
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+J.Conner
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.80
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+C.Moore
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+D.Thomas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+T.McSorley
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0.30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+W.Snead
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.32
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+-0.32
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Yes, it matters how many defenders are in the box, game situation, etc., but the general results are what matter in most game situations.&lt;/p&gt;
+&lt;p&gt;Implications of these results:
+On offense, passing should be the default play call.
+On defense, stop the pass first.&lt;/p&gt;
+&lt;p&gt;Thanks to the developers of nflscrapR for making these analyses easy.&lt;/p&gt;
+
+      </description>
     </item>
     
   </channel>
