@@ -32,7 +32,7 @@ canonifyurls = true
 
 [author]
   name = "Michael Morris"
-  bio = "Good at some things, bad at others."
+  bio = "Good at some things"
   job = "Director of Vocational Interest Research and Data Science"
   location = "Seattle, USA"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
