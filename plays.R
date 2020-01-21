@@ -1,9 +1,13 @@
 source("https://raw.githubusercontent.com/leesharpe/nfldata/master/code/plays-functions.R")
 
+#load 10 years of pbp data
+# playdata <- load("/home/michael/Documents/pbp_2010_2019.Rda")
+
+
 ########## INPUTS ##########
 
 # filename to store plays
-plays_filename = "playdata" # replace this with file where you want to play data
+plays_filename = "/home/michael/Documents/pbp_2010_2019.Rda" # replace this with file where you want to play data
 baldwin_mutations <- TRUE   # do you want to apply Ben Baldwin's mutations?
 sharpe_mutations <- TRUE    # do you want to apply Lee Sharpe's mutations?
 name_fixes <- TRUE          # do you want to apply name fixes?
@@ -130,3 +134,10 @@ if (length(missing) > 0)
   rm(game_plays)
   rm(new_plays)
 }
+
+
+
+save(plays,file="/home/michael/Documents/plays.Rda")
+save(team_colors,file="/home/michael/Documents/team_colors.Rda")
+save(team_logos,file="/home/michael/Documents/team_logos.Rda")
+

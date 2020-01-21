@@ -1,0 +1,42 @@
+---
+title: Assorted links, draft combine edition
+author: Mike Morris
+date: '2020-01-21'
+slug: assorted-links-draft-combine-edition
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+---
+
+<!--more-->
+
+Today’s reading about the draft combine and the theme is that it doesn’t do very well predciting NFL performance. 
+
+As I read these studies, what really stands out is how difficult it is to measure individual player performance. A predictor can’t possibly do well if the performance measure is unreliable or not valid, and it’s clear there is a lot of be desired from the performance measures that are commonly available. Looking at grades from Pro Football Focus, for instance, would be informative, rather than total yards, or yards per carry, some version of which many of the studies below examine. 
+
+* This is the best one, from 2011: “Results suggested that an indicator of [past performance, collegiate performance, engendered a stronger relationship with future NFL performance than a variety of physical ability tests administered during the NFL Combine](https://www.tandfonline.com/doi/full/10.1080/08959285.2011.555218?scroll=top&needAccess=true)” The best predictor of future behavior is generally past behavior. 
+
+* From 2019: “The primary results of this study suggest that [the NFL Combine lacks predictive ability when examining first year game performance](https://www.ncbi.nlm.nih.gov/pubmed/27100168). Furthermore, it also lacks correlational strength when examining relationships between performance and subsequent five years performance in the NFL. Caution should be used if coaches, general managers, and other front office staff are considering the use of Combine data as a possible selection for the upcoming NFL Draft.” The only measure of performance here is snaps played.
+
+* From 2018: [This study](https://journals.lww.com/nsca-jscr/Fulltext/2018/11000/Performance_of_Future_Elite_Players_at_the.14.aspx) claims to show numerous differences by comparing combine participants overall to those who received All-Pro or Pro Bowl selections, but no effect size calculations, no statistical significance reported, and no standard deviations reported on the comparisons between groups. 
+
+* From 2016: “It definitely comes as a surprise that [most of the Combine results lack any prediction power](https://www.stat.berkeley.edu/~aldous/Research/Ugrad/Paul_Park.pdf) for neither draft order nor NFL performance. Raw athleticism may not be as important as people make it to be at the professional level.” Like above, this study looks only at QB, WR, and RB, and uses QBR and yard per game to measure performance. 
+
+* From 2016: “This study indicates that [the NFL Scouting Combine has some value for predicting future success of RBs and WRs](https://journals.lww.com/nsca-jscr/fulltext/2016/05000/predictive_value_of_national_football_league.25.aspx) in the NFL. The Combine data could be used to supplement the evaluation of college football players. Specifically, performance on 10-Y [10 yard] and VJ [vertical jump] may be used to predict future performance for RBs and WRs, respectively. Still, the Combine measures cannot explain a large part of variability in future performance of RBs and WRs. Hence, team executives, coaches, and scouts need to be cautious about using the Combine measures for selecting players for the NFL Draft.” Yard per attempt and per reception to measure performance, again. Taller and lighter receivers (watch our DK Metcalf) seemed to do better. 
+
+* From 2008: “[...we question to overall usefulness of the combine](https://www.researchgate.net/publication/23305472_The_NFL_Combine_Does_It_Predict_Performance_in_the_National_Football_League)” and “...the inclusion of contemporary human resource selection practices should be an important part of the combine restructure.” But note this only covers QB, WR, and RB positions, and uses metrics like QBR, yards per reception, and yards per carry to measure performance.
+
+
+Bottom line is the combine is generally overrated. Improving individual performance measures is in my view a huge opportunity for improving the ability of teams to select good players. 
+
+What’s also interesting is that combine performance seems to predict draft order, that teams might be overusing combine performance in their decisions. If combine performance predicts draft position independent of past/collegiate performance, that suggests an opportunity to target players who did not perform well at the combine but did in college. Teams should be able to get good players later in the draft. 
+
+For a good general writeup describing some of the findings above, see [this piece](https://www.washingtonpost.com/sports/redskins/the-nfl-combine-tells-us-nothing/2019/03/04/888721ca-3e8a-11e9-922c-64d6b7840b82_story.html) from the Washington Post last year . Bad luck shading DK Metcalf, though, he’s had a great year. And note he was picked at the end of the second round, not in the top half of the first.
+
+
+
+
+
