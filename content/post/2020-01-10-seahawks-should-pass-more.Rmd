@@ -106,7 +106,7 @@ round_df <- function(df, digits) {
 ```
 
 
-<!--more-->
+
 ![The view from my seats](/img/IMG-9018b.jpg)
 
 
