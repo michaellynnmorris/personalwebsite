@@ -1,0 +1,281 @@
+---
+title: NFL draft capital by position by team
+author: Mike Morris
+date: '2020-01-23'
+slug: nfl-draft-capital-by-position-by-team
+categories:
+  - NFL
+  - Seahawks
+tags:
+  - NFL
+  - Seahawks
+keywords:
+  - tech
+---
+
+
+
+```{r data, echo=FALSE, warning=FALSE, message = FALSE}
+
+
+#load libraries
+library(nflscrapR)
+library(tidyverse)
+library(dplyr)
+library(na.tools)
+library(rlang)
+library(kableExtra)
+library(rvest)
+library(DT)
+
+#read in draft history results by position back to 2009
+
+#draft history
+
+url <- "https://www.pro-football-reference.com/years/2019/draft.htm"
+
+draft_2019 <- url %>%
+  xml2::read_html() %>%
+  html_nodes(xpath='//*[@id="drafts"]') %>%
+  html_table()
+draft_2019 <- draft_2019[[1]]
+
+draft_2019 <- draft_2019[1:5] 
+colnames(draft_2019) <- c("Round", "Pick", "Team", "Player", "Position")
+draft_2019$Year <- 2019 
+draft_2019 <- draft_2019 %>%
+  dplyr::filter(Round !="Rnd")
+
+#loop through other years, clean it up, and merge with 2019 file
+for (y in 2010:2018){
+  
+  url <- paste0("https://www.pro-football-reference.com/years/", y, "/draft.htm")
+  
+  draft_results <- url %>%
+    xml2::read_html() %>%
+    html_nodes(xpath='//*[@id="drafts"]') %>%
+    html_table()
+  draft_results <- draft_results[[1]]
+  
+  draft_results <- draft_results[1:5] 
+  colnames(draft_results) <- c("Round", "Pick", "Team", "Player", "Position")
+  draft_results$Year <- y 
+  draft_results <- draft_results %>%
+    dplyr::filter(Round !="Rnd")
+  
+  
+  draft_2019 <- rbind(draft_2019, draft_results)
+  
+}
+
+draft_results <- draft_2019
+rm(draft_2019)
+
+
+#get the draft capital table
+
+#draft values
+url <- "https://www.footballperspective.com/draft-value-chart/"
+draft_values <- url %>%
+  xml2::read_html() %>%
+  html_nodes(xpath='//*[@id="tablepress-276"]') %>%
+  html_table()
+draft_values <- draft_values[[1]]
+colnames(draft_values) <- c("Pick", "ChaseStuartValue", "JimmyJohnsonValue")
+
+draft_history_value <- merge(draft_results, draft_values, by = "Pick")
+
+
+
+#compare to next years EPA/play
+#load the data that I previously stored so I can work with it easily
+# load("/home/michael/Documents/pbp_2010_to_2019.Rda")
+
+#look at capital by position groups, offense total, defense total, special teams
+draft_history_value <- draft_history_value %>%
+  dplyr::mutate(GeneralPosition = dplyr::case_when(
+    Position == "WR" ~ "WR",
+    Position == "DE" ~ "DL",
+    Position == "DB" ~ "DB",
+    Position == "T" ~ "OL",
+    Position == "DT" ~ "DL",
+    Position == "LB" ~ "LB",
+    Position == "QB" ~ "QB",
+    Position == "RB" ~ "RB",
+    Position == "CB" ~ "DB",
+    Position == "G" ~ "OL",
+    Position == "TE" ~ "TE",
+    Position == "S" ~ "DB",
+    Position == "OLB" ~ "LB",
+    Position == "C" ~ "OL",
+    Position == "ILB" ~ "LB",
+    Position == "OL" ~ "OL",
+    Position == "NT" ~ "DL",
+    Position == "P" ~ "Specialist",
+    Position == "K" ~ "Specialist",
+    Position == "LS" ~ "Specialist",
+    Position == "P" ~ "Specialist",
+    Position == "DL" ~ "DL",
+    Position == "FB" ~ "RB")) %>%
+  dplyr::mutate(SideofBall = dplyr::case_when(
+    GeneralPosition == "WR" ~ "Offense",
+    GeneralPosition == "QB" ~ "Offense",
+    GeneralPosition == "RB" ~ "Offense",
+    GeneralPosition == "OL" ~ "Offense",
+    GeneralPosition == "TE" ~ "Offense",
+    GeneralPosition == "QB" ~ "Offense",
+    GeneralPosition == "RB" ~ "Offense",
+    GeneralPosition == "DL" ~ "Defense",
+    GeneralPosition == "DB" ~ "Defense",
+    GeneralPosition == "LB" ~ "Defense"))
+
+#recode 
+# SDG to LAC
+# STL to LAR
+
+draft_history_value <- draft_history_value %>%
+  dplyr::mutate(Team = dplyr::case_when(
+    Team == "SDG" ~ "LAC",
+    Team == "STL" ~ "LAR",
+    TRUE ~ .$Team))
+
+```
+
+
+Today’s question: What position groups have each team invested the most draft capital in over the past 10 NFL drafts (2010-2019)? I looked at overall leaguewide trends in draft capital from the last 10 years [here](https://michael-morris.us/2020/01/draft-capital-by-position/). 
+
+This analysis might indicate that certain teams have a tendency to target certain position groups more than others. Let’s not overinterpret these results, though. 
+Teams can bring in players through other means than the draft, such as resigning previous draftees, or signing free agents (veteran or undrafted). 
+Teams may not target certain position groups because they are already strong at that position (e.g., the Seahawks have not drafted a quarterback since Russell Wilson). 
+They may invest more at certain positions because previous draftees have not performed well, suffered injuries, or players depart, etc. 
+
+That said, this analysis might be especially useful for some position groups, such as running back. I would expect that analytically inclined teams would be investing little in running backs.
+
+Here I’ll specifically be looking at the proportion of draft capital (Chase Stuart model) a team has invested in each position group, not draft capital in total. 
+
+First up is proportion of draft capital invested by side of ball.
+
+<br>
+
+```{r proportions, echo=FALSE, warning=FALSE, message = FALSE}
+
+
+#general rounding function for all numeric valus in a dataframe
+round_df <- function(df, digits) {
+  nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))
+  df[,nums] <- round(df[,nums], digits = digits)
+  (df)
+}
+
+# captial invested by side of ball by team
+total_by_sideofball_byteam <- draft_history_value %>%
+  dplyr::group_by(Team, SideofBall) %>%
+  dplyr::summarise(sum(ChaseStuartValue)) %>%
+  tidyr::spread(SideofBall, `sum(ChaseStuartValue)`) %>%
+  dplyr::mutate(Total_Draft_Capital=Defense+Offense) %>%
+  dplyr::mutate(Prop_Offense=Offense/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_Defense=Defense/Total_Draft_Capital) 
+
+
+#drop NA column
+total_by_sideofball_byteam <- total_by_sideofball_byteam[ c(-4) ]
+
+#round
+total_by_sideofball_byteam <- round_df(total_by_sideofball_byteam,2)
+
+#drop total offense and defense
+total_by_sideofball_byteam <- total_by_sideofball_byteam[ -c(2, 3) ]
+
+#sort
+# total_by_sideofball_byteam <- total_by_sideofball_byteam %>%
+#   dplyr::arrange(-Prop_Offense)
+
+#display
+kableExtra::kable(total_by_sideofball_byteam,
+                   caption = "NFL Draft Capital: Proportion Invested by Side of Ball by Team (2010-2019)")
+
+
+
+```
+
+
+<br>
+
+Above we notice that the LA Rams have invested the highest proportion (by far) of their draft capital over the past ten years in their offense. Five teams invested more than 60% of their draft capital in their defense: Green Bay, New Orleans, Oakland, NY Jets, and LA Chargers. Having a good quarterback seems to be part of the story of investing in defense. 
+
+Here is the total draft capital invested by position:
+
+<br>
+
+```{r byposition, echo=FALSE, warning=FALSE, message = FALSE}
+
+# captial invested by side of ball by team
+total_by_position_byteam <- draft_history_value %>%
+  dplyr::group_by(Team, GeneralPosition) %>%
+  dplyr::summarise(sum(ChaseStuartValue)) %>%
+  tidyr::spread(GeneralPosition, `sum(ChaseStuartValue)`) 
+
+
+#display
+kableExtra::kable(total_by_position_byteam, caption = "NFL Draft Capital: Total Invested by Position by Team (2010-2019)")
+
+```
+
+
+
+<br>
+
+Several interesting things to note here:
+
+* Teams with great quarterbacks tend not to draft quarterback (duh). Atlanta has not drafted one at all in the past ten years, while Detriot, Green Bay, LA Chargers also put very little into that position. Dallas and Seattle stand out for not investing much in this position but still picking up good to great quarterbacks in the draft.
+* Teams investing a lot in running backs tend to not be so great (Cleveland, NY Giants). On the other hand teams that invested the least in running backs (NY Jets, Indianapolis) haven't exactly won Super Bowls recently either. 
+* Seattle has invested the sixth most capital in the offensive line. 
+* Teams that invested the least in wide receivers have tended to have pretty strong quarterbacks (Detroit, Green Bay, LA Chargers, New England, Indianpolis, New Orleans)
+
+<br>
+
+
+```{r proportions2, echo=FALSE, warning=FALSE, message = FALSE}
+
+# captial invested by side of ball by team
+prop_by_position_byteam <-merge(total_by_position_byteam, total_by_sideofball_byteam, by = "Team")
+
+
+#drop last two
+prop_by_position_byteam <- prop_by_position_byteam[ -c(12, 13) ]
+
+# captial invested by side of ball by team
+prop_by_position_byteam <- prop_by_position_byteam %>%
+  dplyr::mutate(Prop_DB=DB/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_DL=DL/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_LB=LB/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_OL=OL/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_QB=QB/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_RB=RB/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_TE=TE/Total_Draft_Capital) %>%
+  dplyr::mutate(Prop_WR=WR/Total_Draft_Capital) 
+
+prop_by_position_byteam <- round_df(prop_by_position_byteam, 2)
+
+
+#drop last two
+prop_by_position_byteam <- prop_by_position_byteam[ -c(2, 3, 4, 5, 6, 7, 8, 9, 10) ]
+
+#display
+# DT::datatable(prop_by_position_byteam, options = list(pageLength = 32, autoWidth = TRUE),
+#               rownames= FALSE)
+kableExtra::kable(prop_by_position_byteam,
+                   caption = "NFL Draft Capital: Proportion Invested by Position by Team (2010-2019)")
+
+
+```
+
+
+<br>
+
+Some notes:
+
+* Seattle has invested a lot in their lines. Number six in proportion invested in DL, number three in proportion invested in OL.
+* Tenessee stands out as investing a high proportion in WR, Pittsburgh in LB.
+
+
