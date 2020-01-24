@@ -27,6 +27,7 @@ library(rlang)
 library(kableExtra)
 library(rvest)
 library(DT)
+library(widgetframe)
 
 #read in draft history results by position back to 2009
 
@@ -191,9 +192,10 @@ total_by_sideofball_byteam <- total_by_sideofball_byteam[ -c(2, 3) ]
 #   dplyr::arrange(-Prop_Offense)
 
 #display
-kableExtra::kable(total_by_sideofball_byteam,
-                   caption = "NFL Draft Capital: Proportion Invested by Side of Ball by Team (2010-2019)")
-
+# kableExtra::kable(total_by_sideofball_byteam,
+#                    caption = "NFL Draft Capital: Proportion Invested by Side of Ball by Team (2010-2019)")
+ts1 <- total_by_sideofball_byteam %>% DT::datatable(options = list(pageLength = 32), rownames = FALSE)
+widgetframe::frameWidget(ts1, height = 1250)
 
 
 ```
@@ -217,11 +219,10 @@ total_by_position_byteam <- draft_history_value %>%
 
 
 #display
-kableExtra::kable(total_by_position_byteam, caption = "NFL Draft Capital: Total Invested by Position by Team (2010-2019)")
+ts <- total_by_position_byteam %>% DT::datatable(options = list(pageLength = 32), rownames = FALSE)
+widgetframe::frameWidget(ts, height = 1250)
 
 ```
-
-
 
 <br>
 
@@ -231,6 +232,8 @@ Several interesting things to note here:
 * Teams investing a lot in running backs tend to not be so great (Cleveland, NY Giants). On the other hand teams that invested the least in running backs (NY Jets, Indianapolis) haven't exactly won Super Bowls recently either. 
 * Seattle has invested the sixth most capital in the offensive line. 
 * Teams that invested the least in wide receivers have tended to have pretty strong quarterbacks (Detroit, Green Bay, LA Chargers, New England, Indianpolis, New Orleans)
+
+And here is the proportion by team by position:
 
 <br>
 
@@ -260,12 +263,15 @@ prop_by_position_byteam <- round_df(prop_by_position_byteam, 2)
 
 #drop last two
 prop_by_position_byteam <- prop_by_position_byteam[ -c(2, 3, 4, 5, 6, 7, 8, 9, 10) ]
+prop_by_position_byteam <- prop_by_position_byteam[ -c(2) ]
 
 #display
 # DT::datatable(prop_by_position_byteam, options = list(pageLength = 32, autoWidth = TRUE),
 #               rownames= FALSE)
-kableExtra::kable(prop_by_position_byteam,
-                   caption = "NFL Draft Capital: Proportion Invested by Position by Team (2010-2019)")
+# kableExtra::kable(prop_by_position_byteam,
+#                    caption = "NFL Draft Capital: Proportion Invested by Position by Team (2010-2019)")
+ts2 <- prop_by_position_byteam %>% DT::datatable(options = list(pageLength = 32), rownames = FALSE)
+widgetframe::frameWidget(ts2, width = 1000, height = 1250)
 
 
 ```
