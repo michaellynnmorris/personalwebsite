@@ -6,10 +6,30 @@
     <description>Recent content in NFL on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/nfl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reviewing Kirwan&#39;s predictions 10 years later</title>
+      <link>/2020/02/reviewing-kirwan-s-predictions-10-years-later/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/reviewing-kirwan-s-predictions-10-years-later/</guid>
+      <description>Pat Kirwan’s book with David Seigerman Take Your Eye Off the Ball was published in 2010. There is a second edition, published in 2015, but I’m focusing on a series of predictions made in the original in Chapter 14 (State of the Art Football).
+Here I’ll review his predictions and make some of my own for the next 10 years. No huddle for all. Here Kirwan predicted that the pre play huddle would be phased out, with teams going into the huddle for 10 plays per half.</description>
+    </item>
+    
+    <item>
+      <title>NFL draft capital and next year DVOA</title>
+      <link>/2020/01/nfl-draft-capital-and-next-year-dvoa/</link>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/nfl-draft-capital-and-next-year-dvoa/</guid>
+      <description>I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will once again be determined using the Chase Stuart model.</description>
+    </item>
     
     <item>
       <title>NFL draft capital by position by team</title>

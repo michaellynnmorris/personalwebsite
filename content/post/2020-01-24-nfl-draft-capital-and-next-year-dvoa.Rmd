@@ -1,0 +1,431 @@
+---
+title: NFL draft capital and next year DVOA
+author: Mike Morris
+date: '2020-01-24'
+slug: nfl-draft-capital-and-next-year-dvoa
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+draft: TRUE
+---
+
+
+
+I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year's performance?
+
+To do that, I'll look at draft capital spent on offense and defense across the league and predict the following year's [DVOA](https://www.footballoutsiders.com/info/methods#DVOA). Draft capital will once again be determined using the Chase Stuart model. Note that any picks after 224 are assumed to have no value. Accordingly, there were six teams that invested no draft capital on one side of the ball in a particular year: Carolina in 2016 (offense), Tampa in 2014 (defense), Cleveland in 2013 (offense), Green Bay in 2012 (offense),  New England in 2012 (offense), and Miami in 2011 (defense).
+
+Here I'm predicting nine years of DVOA performance (2011-2019).
+
+
+```{r data, echo=FALSE, warning=FALSE, message = FALSE, cache=TRUE}
+
+
+#load libraries
+library(nflscrapR)
+library(tidyverse)
+library(dplyr)
+library(na.tools)
+library(rlang)
+library(kableExtra)
+library(rvest)
+library(DT)
+library(widgetframe)
+
+#read in draft history results by position back to 2009
+
+#draft history
+
+url <- "https://www.pro-football-reference.com/years/2019/draft.htm"
+
+draft_2019 <- url %>%
+  xml2::read_html() %>%
+  html_nodes(xpath='//*[@id="drafts"]') %>%
+  html_table()
+draft_2019 <- draft_2019[[1]]
+
+draft_2019 <- draft_2019[1:5] 
+colnames(draft_2019) <- c("Round", "Pick", "Team", "Player", "Position")
+draft_2019$Year <- 2019 
+draft_2019 <- draft_2019 %>%
+  dplyr::filter(Round !="Rnd")
+
+#loop through other years, clean it up, and merge with 2019 file
+for (y in 2010:2018){
+  
+  url <- paste0("https://www.pro-football-reference.com/years/", y, "/draft.htm")
+  
+  draft_results <- url %>%
+    xml2::read_html() %>%
+    html_nodes(xpath='//*[@id="drafts"]') %>%
+    html_table()
+  draft_results <- draft_results[[1]]
+  
+  draft_results <- draft_results[1:5] 
+  colnames(draft_results) <- c("Round", "Pick", "Team", "Player", "Position")
+  draft_results$Year <- y 
+  draft_results <- draft_results %>%
+    dplyr::filter(Round !="Rnd")
+  
+  
+  draft_2019 <- rbind(draft_2019, draft_results)
+  
+}
+
+draft_results <- draft_2019
+rm(draft_2019)
+
+
+#get the draft capital table
+
+#draft values
+url <- "https://www.footballperspective.com/draft-value-chart/"
+draft_values <- url %>%
+  xml2::read_html() %>%
+  html_nodes(xpath='//*[@id="tablepress-276"]') %>%
+  html_table()
+draft_values <- draft_values[[1]]
+colnames(draft_values) <- c("Pick", "ChaseStuartValue", "JimmyJohnsonValue")
+
+draft_history_value <- merge(draft_results, draft_values, by = "Pick")
+
+
+
+#compare to next years EPA/play
+#load the data that I previously stored so I can work with it easily
+# load("/home/michael/Documents/pbp_2010_to_2019.Rda")
+
+#look at capital by position groups, offense total, defense total, special teams
+draft_history_value <- draft_history_value %>%
+  dplyr::mutate(GeneralPosition = dplyr::case_when(
+    Position == "WR" ~ "WR",
+    Position == "DE" ~ "DL",
+    Position == "DB" ~ "DB",
+    Position == "T" ~ "OL",
+    Position == "DT" ~ "DL",
+    Position == "LB" ~ "LB",
+    Position == "QB" ~ "QB",
+    Position == "RB" ~ "RB",
+    Position == "CB" ~ "DB",
+    Position == "G" ~ "OL",
+    Position == "TE" ~ "TE",
+    Position == "S" ~ "DB",
+    Position == "OLB" ~ "LB",
+    Position == "C" ~ "OL",
+    Position == "ILB" ~ "LB",
+    Position == "OL" ~ "OL",
+    Position == "NT" ~ "DL",
+    Position == "P" ~ "Specialist",
+    Position == "K" ~ "Specialist",
+    Position == "LS" ~ "Specialist",
+    Position == "P" ~ "Specialist",
+    Position == "DL" ~ "DL",
+    Position == "FB" ~ "RB")) %>%
+  dplyr::mutate(SideofBall = dplyr::case_when(
+    GeneralPosition == "WR" ~ "Offense",
+    GeneralPosition == "QB" ~ "Offense",
+    GeneralPosition == "RB" ~ "Offense",
+    GeneralPosition == "OL" ~ "Offense",
+    GeneralPosition == "TE" ~ "Offense",
+    GeneralPosition == "QB" ~ "Offense",
+    GeneralPosition == "RB" ~ "Offense",
+    GeneralPosition == "DL" ~ "Defense",
+    GeneralPosition == "DB" ~ "Defense",
+    GeneralPosition == "LB" ~ "Defense"))
+
+#recode 
+# SDG to LAC
+# STL to LAR
+draft_history_value <- draft_history_value %>%
+  dplyr::mutate(Team = dplyr::case_when(
+    Team == "SDG" ~ "LAC",
+    Team == "STL" ~ "LAR",
+    TRUE ~ .$Team))
+
+
+#side of by aggregation
+
+draft_capital_sideofball_team_year <- draft_history_value %>%
+  dplyr::group_by(Team, Year, SideofBall) %>%
+  dplyr::summarise(sum(ChaseStuartValue)) %>%
+  dplyr::filter(SideofBall == "Offense" | SideofBall == "Defense")
+
+colnames(draft_capital_sideofball_team_year) <- c("Team", "Year", "SideofBall", "DraftCapital")
+
+
+#there were four teams that did not draft any capital for offense or defense over the 10 years
+missing_rows <- data.frame(stringsAsFactors=FALSE,
+                           Team = c("CAR", "GNB", "MIA", "NWE", "TAM", "CLE"),
+                           Year = c(2016, 2012, 2011, 2012, 2014, 2013),
+                           SideofBall = c("Offense", "Offense", "Defense", "Offense", "Defense", "Offense"),
+                           `sum(ChaseStuartValue)` = c(0, 0, 0, 0, 0, 0))
+colnames(missing_rows) <- c("Team", "Year", "SideofBall", "DraftCapital")
+
+#add rows for no draft captial expended
+draft_capital_sideofball_team_year <- dplyr::bind_rows(draft_capital_sideofball_team_year, missing_rows)
+
+
+
+#all offensive positions
+
+
+draft_capital_all <- draft_history_value %>%
+  dplyr::filter(GeneralPosition != "Specialist") %>%
+  dplyr::group_by(Team, Year, GeneralPosition) %>%
+  dplyr::summarise(sum(ChaseStuartValue)) 
+
+colnames(draft_capital_all) <- c("Team", "Year", "GeneralPosition", "DraftCapital")
+
+draft_capital_all <- draft_capital_all %>%
+  tidyr::pivot_wider( names_from = GeneralPosition, values_from = DraftCapital) %>%
+  replace(is.na(.), 0) %>%
+  dplyr::mutate(total_capital_non_specialist = sum(DB, DL, LB, QB, WR, RB, TE, OL )) %>%
+  dplyr::mutate(total_capital_offense = sum(QB, WR, RB, TE, OL ))  %>%
+  dplyr::mutate(total_capital_defense = sum(DB, DL, LB ))  
+
+
+####
+#grab DVOA data by year
+
+#lists of links and tables to scrape
+url_list <- c("https://www.footballoutsiders.com/dvoa-ratings/2019/final-2019-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2018/final-2018-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2018/final-2017-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2017/final-2016-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2016/final-2015-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2014/final-2014-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2013/final-2013-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2012/final-2012-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2012/final-2011-dvoa-ratings",
+              "https://www.footballoutsiders.com/dvoa-ratings/2011/final-2010-dvoa-ratings")
+xpath_list <- c('//*[@id="node-75221"]/div[2]/div[2]/table[7]',
+                '//*[@id="node-61712"]/div[2]/div[2]/table[4]',
+                '//*[@id="node-61081"]/div[2]/div[2]/table[4]',
+                '//*[@id="node-60658"]/div[2]/div[2]/table[4]',
+                '//*[@id="node-60184"]/div[2]/div[2]/table[5]',
+                '//*[@id="node-58531"]/div[2]/div[2]/table[3]',
+                '//*[@id="node-59402"]/div[2]/div[2]/table[5]',
+                '//*[@id="node-56865"]/div[2]/div/table[4]',
+                '//*[@id="node-55851"]/div[2]/div/table[5]',
+                '//*[@id="node-54912"]/div[2]/div/table[4]')
+years <- c(2019:2010)
+
+#start with blank dataframe
+dvoa_combined <- NULL
+
+#loop through each year
+for (y in 1:10){
+  url <- url_list[y]
+  
+  dvoa <- url %>%
+    xml2::read_html() %>%
+    html_nodes(xpath=xpath_list[y]) %>%
+    html_table()
+  dvoa <- dvoa[[1]]
+  dvoa$Year <- years[y]
+  colnames(dvoa) <- c(1:15)
+  
+  
+  dvoa_combined <- rbind(dvoa_combined, dvoa)
+}
+
+#clean up file, column names, drop unneeded columns
+colnames(dvoa_combined) <- c("OverallRank",
+                             "Team",
+                             "TotalDVOA",
+                             "LastYear",
+                             "LastWeek",
+                             "WEIDVOA",
+                             "Rank",
+                             "WinLoss",
+                             "OffDVOA",
+                             "OffRank",
+                             "DefDVOA",
+                             "DefRank",
+                             "STDVOA",
+                             "STRank",
+                             "Year")
+dvoa_combined <- dvoa_combined %>%
+  dplyr::filter(Team != "TEAM") %>%
+  dplyr::select(-contains("Rank")) %>%
+  dplyr::select(-contains("Last"))
+
+
+#fix team names to merge with draft capital
+dvoa_combined <- dvoa_combined %>%
+  dplyr::mutate(Team = dplyr::case_when(
+    Team == "JAC" ~ "JAX",
+    Team == "LACH" ~ "LAC",
+    Team == "SD" ~ "LAC",
+    Team == "STL" ~ "LAR",
+    Team == "LARM" ~ "LAR",
+    Team == "NE" ~ "NWE",
+    Team == "NO" ~ "NOR",
+    Team == "SF" ~ "SFO",
+    Team == "TB" ~ "TAM",
+    Team == "GB" ~ "GNB",
+    Team == "KC" ~ "KAN",
+    TRUE ~ .$Team))
+
+
+#turn DVOA into numbers
+pct_to_number<- function(x){
+  x_replace_pct<-sub("%", "", x)
+  x_as_numeric<-as.numeric(x_replace_pct)
+}
+dvoa_combined$TotalDVOA = pct_to_number(dvoa_combined$TotalDVOA)
+dvoa_combined$DefDVOA = pct_to_number(dvoa_combined$DefDVOA)
+dvoa_combined$OffDVOA = pct_to_number(dvoa_combined$OffDVOA)
+dvoa_combined$WEIDVOA = pct_to_number(dvoa_combined$WEIDVOA)
+dvoa_combined$STDVOA = pct_to_number(dvoa_combined$STDVOA)
+
+
+#compute previous year DVOA
+previous_year_DVOAs <- dvoa_combined %>%
+  dplyr::mutate(Year = Year+1)
+
+colnames(previous_year_DVOAs) <- c("Team",
+                                   "previous_TotalDVOA",
+                                   "previous_WEIDVOA",
+                                   "previous_WinLoss",
+                                   "previous_OffDVOA",
+                                   "previous_DefDVOA",
+                                   "previous_STDVOA",
+                                   "Year")
+
+previous_year_DVOAs <- previous_year_DVOAs %>%
+  dplyr::filter(Year < 2020)
+
+#DVOA with prior year DVOA merge
+dvoa_combined_withpreviousyear <- merge(dvoa_combined, previous_year_DVOAs, by = c("Team", "Year"))
+
+#merge draft capital
+dvoa_draftcapital_all <- merge(dvoa_combined_withpreviousyear, draft_capital_all, by = c("Team", "Year"))
+
+
+
+
+###run the glms
+
+
+#overall draft capital to overall DVOA
+overall_glm1 <- stats::glm(TotalDVOA ~ previous_TotalDVOA,
+                           data = dvoa_draftcapital_all)
+overall_glm2 <- stats::glm(TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist,
+                           data = dvoa_draftcapital_all)
+anova(overall_glm1, overall_glm2) # this compares the output of your model fit
+summary(overall_glm1)
+summary(overall_glm2)
+
+overall_glm3 <- stats::glm(TotalDVOA ~ previous_TotalDVOA + 
+                             QB +
+                             WR +
+                             RB +
+                             TE +
+                             OL +
+                             DL +
+                             LB +
+                             DB,
+                           data = dvoa_draftcapital_all)
+summary(overall_glm3)
+
+
+#offense GLM
+offense_glm <- stats::glm(OffDVOA ~ previous_OffDVOA + total_capital_offense,
+                          data = dvoa_draftcapital_all)
+summary(offense_glm)
+
+#defense GLM
+defense_glm <- stats::glm(DefDVOA ~ previous_DefDVOA + total_capital_defense,
+                          data = dvoa_draftcapital_all)
+summary(defense_glm)
+
+
+#check all position groups at the same time
+offense_glm_all <- stats::glm(OffDVOA ~ previous_OffDVOA + 
+                             QB +
+                             WR +
+                             RB +
+                             TE +
+                             OL ,
+                           data = dvoa_draftcapital_all)
+summary(offense_glm_all)
+
+defense_glm_all <- stats::glm(DefDVOA ~ previous_DefDVOA + 
+                             DL +
+                             LB +
+                             DB ,
+                           data = dvoa_draftcapital_all)
+summary(defense_glm_all)
+
+
+
+
+####
+#can i look at draft capital from two years ago controlling for only the previous year dvoa?
+####
+draft_capital_oneyearearlier <- draft_capital_all  
+draft_capital_oneyearearlier$Year <- draft_capital_oneyearearlier$Year +1
+
+
+  
+#merge draft capital
+dvoa_draftcapitaloneyearearlier_all <- merge(dvoa_combined_withpreviousyear, draft_capital_oneyearearlier, by = c("Team", "Year"))
+
+
+overall_oneyearearlierdraft_glm <- stats::glm(TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist,
+                           data = dvoa_draftcapitaloneyearearlier_all)
+
+summary(overall_oneyearearlierdraft_glm)
+
+
+offense_oneyearearlierdraft_glm <- stats::glm(OffDVOA ~ previous_OffDVOA + total_capital_offense,
+                          data = dvoa_draftcapitaloneyearearlier_all)
+summary(offense_oneyearearlierdraft_glm)
+
+defense_oneyearearlierdraft_glm <- stats::glm(DefDVOA ~ previous_DefDVOA + total_capital_defense,
+                          data = dvoa_draftcapitaloneyearearlier_all)
+summary(defense_oneyearearlierdraft_glm)
+
+offense_oneyearearlierdraft_glm_all <- stats::glm(OffDVOA ~ previous_OffDVOA + 
+                             QB +
+                             WR +
+                             RB +
+                             TE +
+                             OL ,
+                           data = dvoa_draftcapitaloneyearearlier_all)
+summary(offense_oneyearearlierdraft_glm_all)
+
+defense_oneyearearlierdraft_glm_all <- stats::glm(DefDVOA ~ previous_DefDVOA + 
+                             DL +
+                             LB +
+                             DB ,
+                           data = dvoa_draftcapitaloneyearearlier_all)
+summary(defense_oneyearearlierdraft_glm_all)
+
+###
+#none of the above seems to give anything significant
+###
+
+
+
+#quick correlations among all the dvoa variables
+library(Hmisc)
+
+dvoa_temp <- dvoa_combined_withpreviousyear %>%
+  dplyr::select(contains("DVOA"))
+Hmisc::rcorr(as.matrix(dvoa_temp), type="pearson") # type can be pearson or spearman
+
+
+```
+
+Draft capital overall does not add anything significant after cotrolling for performance (total DVOA) from the prior year Similarly, there appears to be no effect of draft capital on either offensive or defensive performance after controlling for performance from the prior year (offensive or defensive DVOA, respectively). 
+
+Why is this?
+
+Or maybe this is all nonsense. Teams may draft a lot on one side of the ball to replace talent they've lost the previous year, or because they signed free agents on the other side of the ball. The analysis itself could be flawed. Nontheless, this would suggest that teams that are spending high draft picks on offense are unlikely to see their offense improve the next year.
+
+I plan to reexamine this after the 2020 NFL draft and make predictions on next year's offensive DVOA. 

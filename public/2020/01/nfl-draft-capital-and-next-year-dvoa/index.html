@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Michael Morris">
+<meta name="keywords" content="tech">
+<meta name="description" content="I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will once again be determined using the Chase Stuart model.">
+
+
+<meta property="og:description" content="I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will once again be determined using the Chase Stuart model.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NFL draft capital and next year DVOA">
+<meta name="twitter:title" content="NFL draft capital and next year DVOA">
+<meta property="og:url" content="/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+<meta property="twitter:url" content="/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+<meta property="og:site_name" content="Michael Morris&#39; site">
+<meta property="og:description" content="I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will once again be determined using the Chase Stuart model.">
+<meta name="twitter:description" content="I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will once again be determined using the Chase Stuart model.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-01-24T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-01-24T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="NFL">
+    
+  
+  
+    
+      <meta property="article:tag" content="NFL">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
+
+
+    <title>NFL draft capital and next year DVOA</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Michael Morris&#39; site</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Michael Morris</h4>
+        
+          <h5 class="sidebar-profile-bio">Good at some things</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      NFL draft capital and next year DVOA
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-01-24T00:00:00Z">
+        
+  January 24, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/nfl">NFL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p>I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?</p>
+<p>To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s <a href="https://www.footballoutsiders.com/info/methods#DVOA">DVOA</a>. Draft capital will once again be determined using the Chase Stuart model. Note that any picks after 224 are assumed to have no value. Accordingly, there were six teams that invested no draft capital on one side of the ball in a particular year: Carolina in 2016 (offense), Tampa in 2014 (defense), Cleveland in 2013 (offense), Green Bay in 2012 (offense), New England in 2012 (offense), and Miami in 2011 (defense).</p>
+<p>Here I’m predicting nine years of DVOA performance (2011-2019).</p>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: TotalDVOA ~ previous_TotalDVOA
+## Model 2: TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist
+##   Resid. Df Resid. Dev Df Deviance
+## 1       286      71033            
+## 2       285      70919  1    113.3</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = TotalDVOA ~ previous_TotalDVOA, data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -37.601  -11.060   -0.564   11.070   41.408  
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        -0.10282    0.92865  -0.111    0.912    
+## previous_TotalDVOA  0.42776    0.05337   8.014 2.84e-14 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 248.3659)
+## 
+##     Null deviance: 86985  on 287  degrees of freedom
+## Residual deviance: 71033  on 286  degrees of freedom
+## AIC: 2409.6
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -37.521  -10.849   -0.753   10.911   41.771  
+## 
+## Coefficients:
+##                              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                  -2.78245    4.07856  -0.682    0.496    
+## previous_TotalDVOA            0.45243    0.06474   6.989 1.97e-11 ***
+## total_capital_non_specialist  0.06004    0.08899   0.675    0.500    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 248.8398)
+## 
+##     Null deviance: 86985  on 287  degrees of freedom
+## Residual deviance: 70919  on 285  degrees of freedom
+## AIC: 2411.1
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = TotalDVOA ~ previous_TotalDVOA + QB + WR + 
+##     RB + TE + OL + DL + LB + DB, data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -35.254  -10.056   -1.122   10.419   42.477  
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        -2.838230   4.170923  -0.680   0.4968    
+## previous_TotalDVOA  0.435315   0.065958   6.600 2.08e-10 ***
+## QB                 -0.136596   0.141561  -0.965   0.3354    
+## WR                  0.051840   0.158572   0.327   0.7440    
+## RB                  0.428861   0.196833   2.179   0.0302 *  
+## TE                 -0.054639   0.241424  -0.226   0.8211    
+## OL                  0.064705   0.139571   0.464   0.6433    
+## DL                  0.090402   0.124947   0.724   0.4700    
+## LB                  0.066786   0.158861   0.420   0.6745    
+## DB                 -0.004596   0.136361  -0.034   0.9731    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 248.4968)
+## 
+##     Null deviance: 86985  on 287  degrees of freedom
+## Residual deviance: 69082  on 278  degrees of freedom
+## AIC: 2417.6
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = OffDVOA ~ previous_OffDVOA + total_capital_offense, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -33.406   -9.050   -0.352    8.221   35.956  
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            0.012205   1.606840   0.008    0.994    
+## previous_OffDVOA       0.404604   0.059054   6.851 4.51e-11 ***
+## total_capital_offense -0.001569   0.064531  -0.024    0.981    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 161.0767)
+## 
+##     Null deviance: 55371  on 287  degrees of freedom
+## Residual deviance: 45907  on 285  degrees of freedom
+## AIC: 2285.9
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = DefDVOA ~ previous_DefDVOA + total_capital_defense, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -25.0316   -6.4784    0.7658    6.7415   21.5138  
+## 
+## Coefficients:
+##                       Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            0.49757    1.20135   0.414    0.679    
+## previous_DefDVOA       0.36160    0.05930   6.098 3.48e-09 ***
+## total_capital_defense -0.01734    0.04757  -0.364    0.716    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 83.61108)
+## 
+##     Null deviance: 27158  on 287  degrees of freedom
+## Residual deviance: 23829  on 285  degrees of freedom
+## AIC: 2097
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = OffDVOA ~ previous_OffDVOA + QB + WR + RB + 
+##     TE + OL, data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -31.274   -8.161   -0.897    8.139   40.578  
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      -0.25264    1.64240  -0.154   0.8779    
+## previous_OffDVOA  0.38852    0.05922   6.561 2.57e-10 ***
+## QB               -0.13583    0.10452  -1.300   0.1948    
+## WR               -0.07592    0.11554  -0.657   0.5117    
+## RB                0.29708    0.15317   1.940   0.0534 .  
+## TE               -0.09903    0.18851  -0.525   0.5998    
+## OL                0.04268    0.09801   0.436   0.6635    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 159.0437)
+## 
+##     Null deviance: 55371  on 287  degrees of freedom
+## Residual deviance: 44691  on 281  degrees of freedom
+## AIC: 2286.1
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = DefDVOA ~ previous_DefDVOA + DL + LB + DB, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -25.0180   -6.5026    0.7343    6.7403   21.6061  
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       0.47575    1.20638   0.394    0.694    
+## previous_DefDVOA  0.35965    0.05980   6.014 5.57e-09 ***
+## DL               -0.04332    0.06456  -0.671    0.503    
+## LB               -0.02898    0.08351  -0.347    0.729    
+## DB                0.01893    0.07249   0.261    0.794    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 84.06188)
+## 
+##     Null deviance: 27158  on 287  degrees of freedom
+## Residual deviance: 23790  on 283  degrees of freedom
+## AIC: 2100.6
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist, 
+##     data = dvoa_draftcapitaloneyearearlier_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -37.289  -10.792   -0.617   11.025   42.549  
+## 
+## Coefficients:
+##                              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                   2.12427    3.53137   0.602    0.548    
+## previous_TotalDVOA            0.42091    0.05444   7.731 1.84e-13 ***
+## total_capital_non_specialist -0.04990    0.07633  -0.654    0.514    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 248.8642)
+## 
+##     Null deviance: 86985  on 287  degrees of freedom
+## Residual deviance: 70926  on 285  degrees of freedom
+## AIC: 2411.2
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = OffDVOA ~ previous_OffDVOA + total_capital_offense, 
+##     data = dvoa_draftcapitaloneyearearlier_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -33.845   -8.946   -0.339    7.988   35.830  
+## 
+## Coefficients:
+##                       Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            0.79273    1.47396   0.538    0.591    
+## previous_OffDVOA       0.39835    0.05391   7.389 1.64e-12 ***
+## total_capital_offense -0.03753    0.05848  -0.642    0.522    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 160.8446)
+## 
+##     Null deviance: 55371  on 287  degrees of freedom
+## Residual deviance: 45841  on 285  degrees of freedom
+## AIC: 2285.5
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = DefDVOA ~ previous_DefDVOA + total_capital_defense, 
+##     data = dvoa_draftcapitaloneyearearlier_all)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -25.2147   -6.4234    0.6722    6.7595   21.3269  
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            0.157655   1.190237   0.132    0.895    
+## previous_DefDVOA       0.355117   0.056597   6.275  1.3e-09 ***
+## total_capital_defense -0.002229   0.046219  -0.048    0.962    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 83.64937)
+## 
+##     Null deviance: 27158  on 287  degrees of freedom
+## Residual deviance: 23840  on 285  degrees of freedom
+## AIC: 2097.2
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = OffDVOA ~ previous_OffDVOA + QB + WR + RB + 
+##     TE + OL, data = dvoa_draftcapitaloneyearearlier_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -32.935   -8.432   -0.192    8.453   35.319  
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       0.96053    1.52358   0.630    0.529    
+## previous_OffDVOA  0.41229    0.05474   7.532 6.86e-13 ***
+## QB                0.04762    0.10217   0.466    0.642    
+## WR               -0.04581    0.11458  -0.400    0.690    
+## RB               -0.18725    0.14643  -1.279    0.202    
+## TE                0.30643    0.19065   1.607    0.109    
+## OL               -0.11649    0.09350  -1.246    0.214    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 159.089)
+## 
+##     Null deviance: 55371  on 287  degrees of freedom
+## Residual deviance: 44704  on 281  degrees of freedom
+## AIC: 2286.2
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>## 
+## Call:
+## stats::glm(formula = DefDVOA ~ previous_DefDVOA + DL + LB + DB, 
+##     data = dvoa_draftcapitaloneyearearlier_all)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -25.1703   -6.4600    0.6156    6.8823   21.4413  
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       0.178263   1.198025   0.149    0.882    
+## previous_DefDVOA  0.356096   0.056901   6.258 1.44e-09 ***
+## DL                0.009142   0.062029   0.147    0.883    
+## LB               -0.002248   0.083110  -0.027    0.978    
+## DB               -0.016042   0.069983  -0.229    0.819    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 84.21526)
+## 
+##     Null deviance: 27158  on 287  degrees of freedom
+## Residual deviance: 23833  on 283  degrees of freedom
+## AIC: 2101.1
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre><code>##                    TotalDVOA WEIDVOA OffDVOA DefDVOA STDVOA previous_TotalDVOA
+## TotalDVOA               1.00    0.94    0.79   -0.53   0.33               0.43
+## WEIDVOA                 0.94    1.00    0.76   -0.57   0.25               0.34
+## OffDVOA                 0.79    0.76    1.00    0.05   0.11               0.35
+## DefDVOA                -0.53   -0.57    0.05    1.00  -0.05              -0.20
+## STDVOA                  0.33    0.25    0.11   -0.05   1.00               0.15
+## previous_TotalDVOA      0.43    0.34    0.35   -0.20   0.15               1.00
+## previous_WEIDVOA        0.23    0.41    0.14   -0.16   0.03               0.66
+## previous_OffDVOA        0.33    0.25    0.41    0.01   0.05               0.80
+## previous_DefDVOA       -0.19   -0.17    0.01    0.35  -0.04              -0.51
+## previous_STDVOA         0.24    0.17    0.12   -0.10   0.38               0.31
+##                    previous_WEIDVOA previous_OffDVOA previous_DefDVOA
+## TotalDVOA                      0.23             0.33            -0.19
+## WEIDVOA                        0.41             0.25            -0.17
+## OffDVOA                        0.14             0.41             0.01
+## DefDVOA                       -0.16             0.01             0.35
+## STDVOA                         0.03             0.05            -0.04
+## previous_TotalDVOA             0.66             0.80            -0.51
+## previous_WEIDVOA               1.00             0.53            -0.33
+## previous_OffDVOA               0.53             1.00             0.06
+## previous_DefDVOA              -0.33             0.06             1.00
+## previous_STDVOA                0.27             0.10            -0.04
+##                    previous_STDVOA
+## TotalDVOA                     0.24
+## WEIDVOA                       0.17
+## OffDVOA                       0.12
+## DefDVOA                      -0.10
+## STDVOA                        0.38
+## previous_TotalDVOA            0.31
+## previous_WEIDVOA              0.27
+## previous_OffDVOA              0.10
+## previous_DefDVOA             -0.04
+## previous_STDVOA               1.00
+## 
+## n
+##                    TotalDVOA WEIDVOA OffDVOA DefDVOA STDVOA previous_TotalDVOA
+## TotalDVOA                288     128     288     288    288                288
+## WEIDVOA                  128     128     128     128    128                128
+## OffDVOA                  288     128     288     288    288                288
+## DefDVOA                  288     128     288     288    288                288
+## STDVOA                   288     128     288     288    288                288
+## previous_TotalDVOA       288     128     288     288    288                288
+## previous_WEIDVOA         128      64     128     128    128                128
+## previous_OffDVOA         288     128     288     288    288                288
+## previous_DefDVOA         288     128     288     288    288                288
+## previous_STDVOA          288     128     288     288    288                288
+##                    previous_WEIDVOA previous_OffDVOA previous_DefDVOA
+## TotalDVOA                       128              288              288
+## WEIDVOA                          64              128              128
+## OffDVOA                         128              288              288
+## DefDVOA                         128              288              288
+## STDVOA                          128              288              288
+## previous_TotalDVOA              128              288              288
+## previous_WEIDVOA                128              128              128
+## previous_OffDVOA                128              288              288
+## previous_DefDVOA                128              288              288
+## previous_STDVOA                 128              288              288
+##                    previous_STDVOA
+## TotalDVOA                      288
+## WEIDVOA                        128
+## OffDVOA                        288
+## DefDVOA                        288
+## STDVOA                         288
+## previous_TotalDVOA             288
+## previous_WEIDVOA               128
+## previous_OffDVOA               288
+## previous_DefDVOA               288
+## previous_STDVOA                288
+## 
+## P
+##                    TotalDVOA WEIDVOA OffDVOA DefDVOA STDVOA previous_TotalDVOA
+## TotalDVOA                    0.0000  0.0000  0.0000  0.0000 0.0000            
+## WEIDVOA            0.0000            0.0000  0.0000  0.0050 0.0000            
+## OffDVOA            0.0000    0.0000          0.4146  0.0638 0.0000            
+## DefDVOA            0.0000    0.0000  0.4146          0.3596 0.0005            
+## STDVOA             0.0000    0.0050  0.0638  0.3596         0.0125            
+## previous_TotalDVOA 0.0000    0.0000  0.0000  0.0005  0.0125                   
+## previous_WEIDVOA   0.0097    0.0009  0.1039  0.0718  0.7770 0.0000            
+## previous_OffDVOA   0.0000    0.0049  0.0000  0.8249  0.3742 0.0000            
+## previous_DefDVOA   0.0010    0.0559  0.8062  0.0000  0.4924 0.0000            
+## previous_STDVOA    0.0000    0.0514  0.0359  0.0801  0.0000 0.0000            
+##                    previous_WEIDVOA previous_OffDVOA previous_DefDVOA
+## TotalDVOA          0.0097           0.0000           0.0010          
+## WEIDVOA            0.0009           0.0049           0.0559          
+## OffDVOA            0.1039           0.0000           0.8062          
+## DefDVOA            0.0718           0.8249           0.0000          
+## STDVOA             0.7770           0.3742           0.4924          
+## previous_TotalDVOA 0.0000           0.0000           0.0000          
+## previous_WEIDVOA                    0.0000           0.0001          
+## previous_OffDVOA   0.0000                            0.3173          
+## previous_DefDVOA   0.0001           0.3173                           
+## previous_STDVOA    0.0019           0.1042           0.5331          
+##                    previous_STDVOA
+## TotalDVOA          0.0000         
+## WEIDVOA            0.0514         
+## OffDVOA            0.0359         
+## DefDVOA            0.0801         
+## STDVOA             0.0000         
+## previous_TotalDVOA 0.0000         
+## previous_WEIDVOA   0.0019         
+## previous_OffDVOA   0.1042         
+## previous_DefDVOA   0.5331         
+## previous_STDVOA</code></pre>
+<p>Draft capital overall does not add anything significant after cotrolling for performance (total DVOA) from the prior year Similarly, there appears to be no effect of draft capital on either offensive or defensive performance after controlling for performance from the prior year (offensive or defensive DVOA, respectively).</p>
+<p>Why is this?</p>
+<p>Or maybe this is all nonsense. Teams may draft a lot on one side of the ball to replace talent they’ve lost the previous year, or because they signed free agents on the other side of the ball. The analysis itself could be flawed. Nontheless, this would suggest that teams that are spending high draft picks on offense are unlikely to see their offense improve the next year.</p>
+<p>I plan to reexamine this after the 2020 NFL draft and make predictions on next year’s offensive DVOA.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/nfl/">NFL</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/02/reviewing-kirwan-s-predictions-10-years-later/" data-tooltip="Reviewing Kirwan&#39;s predictions 10 years later">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/nfl-draft-capital-by-position-by-team/" data-tooltip="NFL draft capital by position by team">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Michael Morris. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/02/reviewing-kirwan-s-predictions-10-years-later/" data-tooltip="Reviewing Kirwan&#39;s predictions 10 years later">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/nfl-draft-capital-by-position-by-team/" data-tooltip="NFL draft capital by position by team">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/01/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F01%2Fnfl-draft-capital-and-next-year-dvoa%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F01%2Fnfl-draft-capital-and-next-year-dvoa%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F01%2Fnfl-draft-capital-and-next-year-dvoa%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Michael Morris</h4>
+    
+      <div id="about-card-bio">Good at some things</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Director of Vocational Interest Research and Data Science
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seattle, USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/img/trees2.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2020\/01\/nfl-draft-capital-and-next-year-dvoa\/';
+          
+            this.page.identifier = '\/2020\/01\/nfl-draft-capital-and-next-year-dvoa\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

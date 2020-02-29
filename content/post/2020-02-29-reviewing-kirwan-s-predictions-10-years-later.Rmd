@@ -1,0 +1,43 @@
+---
+title: Reviewing Kirwan's predictions 10 years later
+author: Mike Morris
+date: '2020-02-29'
+slug: reviewing-kirwan-s-predictions-10-years-later
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+---
+
+Pat Kirwan's book with David Seigerman [Take Your Eye Off the Ball](https://www.amazon.com/Take-Your-Eye-Off-Ball/dp/1600783910) was published in 2010. There is a [second edition](https://www.amazon.com/Take-Your-Eye-Off-Ball/dp/1629371696/ref=dp_ob_title_bk), published in 2015, but I'm focusing on a series of predictions made in the original in Chapter 14 (State of the Art Football).
+
+Here I'll review his predictions and make some of my own for the next 10 years.
+<br>
+
+No huddle for all. Here Kirwan predicted that the pre play huddle would be phased out, with teams going into the huddle for 10 plays per half. There [was](https://www.footballoutsiders.com/stat-analysis/2013/recent-history-no-huddle-offense) [some](http://www.nfl.com/news/story/0ap1000000094859/article/nohuddle-snaps-in-nfl-have-doubled-since-2010-season) [increase](https://www.nytimes.com/2017/10/19/sports/football/nfl-huddle-offense.html) in no huddle offense, but recently it seems this has dropped off. In the 2019 season the Cardinals ranked #1 in proportion of no huddle offense, with 28% of their snaps forgoing huddles. The Bills were #2 at 14%. The lowest in the league? The Chiefs at just over 1%. Surely some of this is driven by good teams being ahead late in games, but it is not at all clear that successful teams are abandoning the huddle in general.
+
+Dressed for success. This prediction was about better protective padding. There has certainly been attention to this, specifically [helmets](https://www.canalstreetchronicles.com/2019/8/13/20802798/everything-you-need-to-know-about-the-nfl-helmet-guidelines-restrictions-antonio-brown), but there have been [other improvements](https://www.espn.com/nfl/story/_/id/14097898/ten-ways-nfl-players-rig-their-uniforms) as well. Good prediction, I expect that equipment will continue to evolve
+
+
+Surface matters. This prediction had to do with field conditions, making sure that the surface itself was in good condition and didn't cause injury. There is clearly [attention](https://operations.nfl.com/the-game/game-day-behind-the-scenes/nfl-field-certification/) paid to this by the league. There have also been efforts by teams to make sure that even very cold temperatures don't result in frozen fields, as was done in [Minnesota](https://www.thedailygopher.com/2016/5/4/11576228/tcf-bank-stadium-field-turf-minnesota-football-vikings). Good prediction.
+
+
+In plane sight. This prediction has to do with placing microchips in the ball to better tell when a player has crossed the goal line or to spot the ball. There are now RFID microchips in the ball, and all players wear chips so that their movements can be tracked, but these results are [not being used for officiating](https://www.si.com/nfl/2017/11/29/nfl-football-location-tracking-chips-zebra-sports-rfid) yet. One of the issues is that you also have to be able to tell whether or not the player is down, which a chip in the ball can't help with. 
+
+
+Eye in the sky. Here Kirwan predicts an official in the booth, making calls. [Good prediction](https://operations.nfl.com/the-officials/these-officials-are-really-good/nfl-instant-replay-process/). 
+
+
+For your viewing pleasure. Kirwan predicts that All-22 views and more interactive choices would be available for fans, perhaps with screen built into stadium seats. He got this partially correct, as fans [can get](http://www.nfl.com/coachesfilm) All-22 views now, and ordinary broadcasts are using higher quality cameras and have better angles, but there is still not much interactivity. From personal experience, using the internet on a phone at the stadium is not that great. 
+
+
+Overall, Kirwan did pretty well, perhaps with the exception of the no huddle predictions.
+
+Here are some of my own:
+
+* Teams will pass more in general. The numbers support it and that's the way the trends are going. A likely consequence of this is that quarterback salaries will escalate relative to other players. 
+* Teams will go for it on fourth downs more. The numbers support this one as well. As a result, punters will likely see their salaries and importance shrink - it's possible that punting duties will become the responsibility of the placekicker, or perhaps we'll see another Danny White (quarterback/punter). Saving a roster spot should be viewed as an opportunity. 
+* Overtime rules will be changed and become more fair and exciting. This prediction is born out of the XFL's very interesting [shootout like](https://www.sportingnews.com/us/nfl/news/xfl-rules-differences-vs-nfl-overtime-kickoffs-explained/1if7a6vb6kb271966993zxdynx) overtime setup. I'd love the see the NFL implement something like this - it would be better to have both teams touch the ball. 
+
