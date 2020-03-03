@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on Michael Morris&#39; site</title>
+    <link>/categories/personal/</link>
+    <description>Recent content in Personal on Michael Morris&#39; site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Walt Disney World tips</title>
+      <link>/2020/03/walt-disney-world-tips/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/03/walt-disney-world-tips/</guid>
+      <description>My family and I recently spent a day at Walt Disney World (Magic Kingdom) in Orlando. Here’s what I recommend if you are considering going yourself:
+Before you book, strongly consider not going at all. My wife and I agreed after that even though our day went ok, it was a big effort in time and money and it probably wasn’t worth it. There are many other theme parks and places to go.</description>
+    </item>
+    
+  </channel>
+</rss>
