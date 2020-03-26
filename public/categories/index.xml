@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apolcalypse</title>
+      <link>/categories/apolcalypse/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/apolcalypse/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Personal</title>
@@ -17,6 +26,15 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transportation</title>
+      <link>/categories/transportation/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/transportation/</guid>
       <description></description>
     </item>
     

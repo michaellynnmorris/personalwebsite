@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Education</title>
+      <link>/tags/education/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transportation</title>
+      <link>/tags/transportation/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/transportation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Theme parks</title>
@@ -17,6 +35,15 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/theme-parks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Urbanism</title>
+      <link>/tags/urbanism/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/urbanism/</guid>
       <description></description>
     </item>
     

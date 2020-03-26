@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Urbanism on Michael Morris&#39; site</title>
+    <link>/tags/urbanism/</link>
+    <description>Recent content in Urbanism on Michael Morris&#39; site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/urbanism/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Busses and bikes and parking</title>
+      <link>/2020/03/busses-and-bikes-and-parking/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/03/busses-and-bikes-and-parking/</guid>
+      <description>A collection of thoughts on transportation in cities:
+ Busses are underrated. They should be the backbone of urban public transportation. They are cost effective and can change according to demand (frequency and routes). Bus only lanes, preferences at stop lights, better signage with expected wait times and maps, and other measures can make them more effective.
+ Electric bikes are underrated. Progress in the last few years has been great.</description>
+    </item>
+    
+  </channel>
+</rss>
