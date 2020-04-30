@@ -1,0 +1,25 @@
+---
+title: 'PFF''s review on the NFL draft and positional value '
+author: Mike Morris
+date: '2020-04-29'
+slug: pff-s-review-on-the-nfl-draft-and-positional-value
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+
+---
+
+Pro Football Focus has a [new article](https://www.pff.com/news/draft-2020-nfl-draft-what-the-draft-tells-about-the-nfls-perception-of-positional-value) looking at the positions that teams have spent the most draft capital on over the past few years. This is similar to what I did [here](https://michael-morris.us/2020/01/draft-capital-by-position/) three months ago. 
+
+Let me review what I like about their approach and add some comments:
+
+- They used their own [PFF WAR](https://www.pff.com/news/draft-2020-nfl-draft-what-the-draft-tells-about-the-nfls-perception-of-positional-value) metric to measure draft capital of each pick. Although I don't fully understand their approach, I like trying to quantify value in this way. In my post I looked at draft capital using Jimmy Johnson and Chase Stuart values.
+- They adjusted for the number of positions that are typically on the field at a given time to make comparing the amount invested by position simpler. For example, there is typically one and only one quarterback on the field for a given play, but there are typically at least two cornerbacks. 
+- This analysis clearly shows that teams are investing a lot in running backs. As the article notes, this seems to go against what many analysts suggest, because as the saying goes running backs don't matter.
+- PFFs results were a bit different than mine, but we agreed that teams look to be spending a bit more in recent years on quarterbacks. Beyond using a different measure of draft capital and different position groupings (e.g., they had Edge), PFF also looked at a larger range of years (2006-2020) than I did (2010-2019), perhaps that accounts for some of the differences.
+
+Overall, I'd probably trust their analysis more than mine, and it's interesting to see the trends - passing continues to take over the league, and teams are allocating too many resources to running backs. 
+
