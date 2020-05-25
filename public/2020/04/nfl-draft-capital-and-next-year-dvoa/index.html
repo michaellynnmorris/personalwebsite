@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Michael Morris">
+<meta name="keywords" content="tech">
+<meta name="description" content="I previously took a look at draft capital spent by team from 2010-2019 and draft capital by team by position over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will be determined using the Chase Stuart model.">
+
+
+<meta property="og:description" content="I previously took a look at draft capital spent by team from 2010-2019 and draft capital by team by position over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will be determined using the Chase Stuart model.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NFL draft capital and next year DVOA">
+<meta name="twitter:title" content="NFL draft capital and next year DVOA">
+<meta property="og:url" content="/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+<meta property="twitter:url" content="/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+<meta property="og:site_name" content="Michael Morris&#39; site">
+<meta property="og:description" content="I previously took a look at draft capital spent by team from 2010-2019 and draft capital by team by position over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will be determined using the Chase Stuart model.">
+<meta name="twitter:description" content="I previously took a look at draft capital spent by team from 2010-2019 and draft capital by team by position over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will be determined using the Chase Stuart model.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-04-01T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-04-01T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="NFL">
+    
+  
+  
+    
+      <meta property="article:tag" content="NFL">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
+
+
+    <title>NFL draft capital and next year DVOA</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Michael Morris&#39; site</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Michael Morris</h4>
+        
+          <h5 class="sidebar-profile-bio">Good at some things</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      NFL draft capital and next year DVOA
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-04-01T00:00:00Z">
+        
+  April 1, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/nfl">NFL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p>I previously took a look at <a href="https://michael-morris.us/2020/01/2020-nfl-draft-capital-by-team/">draft capital spent by team from 2010-2019</a> and <a href="https://michael-morris.us/2020/01/draft-capital-by-position/">draft capital by team by position</a> over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?</p>
+<p>To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s <a href="https://www.footballoutsiders.com/info/methods#DVOA">DVOA</a>. Draft capital will be determined using the Chase Stuart model. Note that any picks after 224 are assumed to have no value. There were six teams that invested no draft capital on one side of the ball in a particular year: Carolina in 2016 (offense), Tampa in 2014 (defense), Cleveland in 2013 (offense), Green Bay in 2012 (offense), New England in 2012 (offense), and Miami in 2011 (defense).</p>
+<p>Here I’m predicting nine years of DVOA performance (2011-2019).</p>
+<p>First let’s take a look at using (non-specialist) overall draft capital used to overall DVOA, controlling for prior year’s DVOA:</p>
+<pre><code>## 
+## Call:
+## stats::glm(formula = TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -37.521  -10.849   -0.753   10.911   41.771  
+## 
+## Coefficients:
+##                              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                  -2.78245    4.07856  -0.682    0.496    
+## previous_TotalDVOA            0.45243    0.06474   6.989 1.97e-11 ***
+## total_capital_non_specialist  0.06004    0.08899   0.675    0.500    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 248.8398)
+## 
+##     Null deviance: 86985  on 287  degrees of freedom
+## Residual deviance: 70919  on 285  degrees of freedom
+## AIC: 2411.1
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<p>We get nothing - it appears that spending a lot of draft capital tells us nothing about a team’s subsequent DVOA, once the prior year’s DVOA is controlled for.</p>
+<p>How about if we look just at offensive DVOA and offensive draft capital?</p>
+<pre><code>## 
+## Call:
+## stats::glm(formula = OffDVOA ~ previous_OffDVOA + total_capital_offense, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -33.406   -9.050   -0.352    8.221   35.956  
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            0.012205   1.606840   0.008    0.994    
+## previous_OffDVOA       0.404604   0.059054   6.851 4.51e-11 ***
+## total_capital_offense -0.001569   0.064531  -0.024    0.981    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 161.0767)
+## 
+##     Null deviance: 55371  on 287  degrees of freedom
+## Residual deviance: 45907  on 285  degrees of freedom
+## AIC: 2285.9
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<p>Again, we get nothing. Spending a lot of draft capital on offensive players does nothing to a tean’s offensive DVOA in the subsequent year.</p>
+<p>How about defense and defensive draft capital?</p>
+<pre><code>## 
+## Call:
+## stats::glm(formula = DefDVOA ~ previous_DefDVOA + total_capital_defense, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -25.0316   -6.4784    0.7658    6.7415   21.5138  
+## 
+## Coefficients:
+##                       Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)            0.49757    1.20135   0.414    0.679    
+## previous_DefDVOA       0.36160    0.05930   6.098 3.48e-09 ***
+## total_capital_defense -0.01734    0.04757  -0.364    0.716    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 83.61108)
+## 
+##     Null deviance: 27158  on 287  degrees of freedom
+## Residual deviance: 23829  on 285  degrees of freedom
+## AIC: 2097
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<p>Draft capital spent on defensive players does nothing for a team’s subsequent defensive DVOA.</p>
+<p>There seems to be a theme here. Note that a teams’s prior year DVOA (total, offensive, defensive) always predicts the subsequent year, but draft capital does not tell us much of anything.</p>
+<p>The implications here are clear: Teams and fans should not expect the draft capital that a team spends to change their fortunes significantly for the better or worse in the subsequent year. This finding lines up with the view that rookies have a lot to learn.</p>
+<p>But maybe this is a hasty conclusion, and perhaps certain position groups can contribute meaningfully in their first year. Let’s take a look at draft captial by offensive position and see if they tend to produce any changes in DVOA, first with total DVOA:</p>
+<pre><code>## 
+## Call:
+## stats::glm(formula = TotalDVOA ~ previous_TotalDVOA + QB + WR + 
+##     RB + TE + OL + DL + LB + DB, data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -35.254  -10.056   -1.122   10.419   42.477  
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        -2.838230   4.170923  -0.680   0.4968    
+## previous_TotalDVOA  0.435315   0.065958   6.600 2.08e-10 ***
+## QB                 -0.136596   0.141561  -0.965   0.3354    
+## WR                  0.051840   0.158572   0.327   0.7440    
+## RB                  0.428861   0.196833   2.179   0.0302 *  
+## TE                 -0.054639   0.241424  -0.226   0.8211    
+## OL                  0.064705   0.139571   0.464   0.6433    
+## DL                  0.090402   0.124947   0.724   0.4700    
+## LB                  0.066786   0.158861   0.420   0.6745    
+## DB                 -0.004596   0.136361  -0.034   0.9731    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 248.4968)
+## 
+##     Null deviance: 86985  on 287  degrees of freedom
+## Residual deviance: 69082  on 278  degrees of freedom
+## AIC: 2417.6
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<p>Now this is interesting. If you use draft capital spent by position, and control for prior year’s total DVOA, the only statistically significant effect is with running backs producing a positive change in total DVOA. Tentative implication is that if you want to improve your team immediately, spend a lot of draft capital on a running back.</p>
+<p>Let’s see if this holds up looking at offensive DVOA:</p>
+<pre><code>## 
+## Call:
+## stats::glm(formula = OffDVOA ~ previous_OffDVOA + QB + WR + RB + 
+##     TE + OL, data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -31.274   -8.161   -0.897    8.139   40.578  
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      -0.25264    1.64240  -0.154   0.8779    
+## previous_OffDVOA  0.38852    0.05922   6.561 2.57e-10 ***
+## QB               -0.13583    0.10452  -1.300   0.1948    
+## WR               -0.07592    0.11554  -0.657   0.5117    
+## RB                0.29708    0.15317   1.940   0.0534 .  
+## TE               -0.09903    0.18851  -0.525   0.5998    
+## OL                0.04268    0.09801   0.436   0.6635    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 159.0437)
+## 
+##     Null deviance: 55371  on 287  degrees of freedom
+## Residual deviance: 44691  on 281  degrees of freedom
+## AIC: 2286.1
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<p>It’s not quite statistically significant, but running backs may very well improve offensive DVOA in their rookie years.</p>
+<pre><code>## 
+## Call:
+## stats::glm(formula = DefDVOA ~ previous_DefDVOA + DL + LB + DB, 
+##     data = dvoa_draftcapital_all)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -25.0180   -6.5026    0.7343    6.7403   21.6061  
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       0.47575    1.20638   0.394    0.694    
+## previous_DefDVOA  0.35965    0.05980   6.014 5.57e-09 ***
+## DL               -0.04332    0.06456  -0.671    0.503    
+## LB               -0.02898    0.08351  -0.347    0.729    
+## DB                0.01893    0.07249   0.261    0.794    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 84.06188)
+## 
+##     Null deviance: 27158  on 287  degrees of freedom
+## Residual deviance: 23790  on 283  degrees of freedom
+## AIC: 2100.6
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<p>For defense, draft capital spent does not seem to matter by position group.</p>
+<p>Bottom line is that we should not expect the Miami Dolphins, who had a huge amount of draft capital in the 2020 draft, to improve a lot in the 2020 season because of their draft picks (they may improve for other reasons, of course).</p>
+<p>Of course, maybe players take a while to get used to the league, so we should not expect them to contribute much their rookie years. In this vein, PFF looked at the contribution of players by position in their first four years <a href="https://www.pff.com/news/nfl-investigating-learning-curves-from-college-football-to-the-nfl">here</a>. The found that rookies increased their performance by 75% after their rookie years, and that this is driven by rookies generally playing less and playing less effectively. Interestingly they find that “the learning curve for running backs doesn’t really exist,” with their rookie year performance being similar to years 2-4. Other positions see little contribution in year one and increase their production in years 2-4. This tends to support the anlaysis here.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/nfl/">NFL</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/04/pff-s-review-on-the-nfl-draft-and-positional-value/" data-tooltip="PFF&#39;s review on the NFL draft and positional value ">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/03/coronavirus-assorted-thoughts/" data-tooltip="Coronavirus assorted thoughts">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Michael Morris. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/04/pff-s-review-on-the-nfl-draft-and-positional-value/" data-tooltip="PFF&#39;s review on the NFL draft and positional value ">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/03/coronavirus-assorted-thoughts/" data-tooltip="Coronavirus assorted thoughts">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/04/nfl-draft-capital-and-next-year-dvoa/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F04%2Fnfl-draft-capital-and-next-year-dvoa%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F04%2Fnfl-draft-capital-and-next-year-dvoa%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F04%2Fnfl-draft-capital-and-next-year-dvoa%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Michael Morris</h4>
+    
+      <div id="about-card-bio">Good at some things</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Director of Vocational Interest Research and Data Science
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seattle, USA
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/img/trees2.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2020\/04\/nfl-draft-capital-and-next-year-dvoa\/';
+          
+            this.page.identifier = '\/2020\/04\/nfl-draft-capital-and-next-year-dvoa\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
