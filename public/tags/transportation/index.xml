@@ -6,10 +6,31 @@
     <description>Recent content in Transportation on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/transportation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Busses and bikes and parking</title>
+      <link>/2020/05/busses-and-bikes-and-parking/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/busses-and-bikes-and-parking/</guid>
+      <description>A collection of thoughts on transportation in cities:
+ Busses are underrated. They should be the backbone of urban public transportation. They are cost effective and can change according to demand (frequency and routes). Bus only lanes, preferences at stop lights, better signage with expected wait times and maps, and other measures can make them more effective. The virus makes this more challenging, admittedly, although I’m optimistic that we’ll eventually have some combination of vaccine, protective clothing, and behavioral practices that minimize risk.</description>
+    </item>
+    
+    <item>
+      <title>Coronavirus questions for later</title>
+      <link>/2020/05/coronavirus-questions-for-later/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/coronavirus-questions-for-later/</guid>
+      <description>Things I’m curious to read about in the coming years about coronavirus impacts:
+ Work related
+ Will companies become more friendly to remote work? Will they seek out remote employees as a form of resilience to future disease waves? Will they increase their demand for office space to give their employees more space or decrease their demand as they shift to remote work? Will a home office boost the value of one’s house more than before?</description>
+    </item>
     
     <item>
       <title>Coronavirus assorted thoughts</title>
@@ -19,17 +40,6 @@
       <guid>/2020/03/coronavirus-assorted-thoughts/</guid>
       <description>Some random thoughts and observations:
  Widespread mask usage seem like a good idea If we have lots of easy cheap testing (and at home), it would be much easier to allow certain people to break quarantine and possibly donate blood to help others get well. Opening up the Seattle express lanes and certain other roads to bikes seem like a great limited duration idea. They are not needed at present traffic volumes, easy to monitor/police, and provide a needed entertainment outlet with so many other parks and outdoor options closed.</description>
-    </item>
-    
-    <item>
-      <title>Busses and bikes and parking</title>
-      <link>/2020/03/busses-and-bikes-and-parking/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/03/busses-and-bikes-and-parking/</guid>
-      <description>A collection of thoughts on transportation in cities:
- Busses are underrated. They should be the backbone of urban public transportation. They are cost effective and can change according to demand (frequency and routes). Bus only lanes, preferences at stop lights, better signage with expected wait times and maps, and other measures can make them more effective.
- Electric bikes are underrated. Progress in the last few years has been great.</description>
     </item>
     
   </channel>

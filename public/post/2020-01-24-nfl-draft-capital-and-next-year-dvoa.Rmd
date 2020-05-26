@@ -1,7 +1,7 @@
 ---
 title: NFL draft capital and next year DVOA
 author: Mike Morris
-date: '2020-01-24'
+date: '2020-05-01'
 slug: nfl-draft-capital-and-next-year-dvoa
 categories:
   - NFL
@@ -9,14 +9,13 @@ tags:
   - NFL
 keywords:
   - tech
-draft: TRUE
 ---
 
 
 
-I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year's performance?
+I previously took a look at [draft capital spent by team from 2010-2019](https://michael-morris.us/2020/01/2020-nfl-draft-capital-by-team/) and [draft capital by team by position](https://michael-morris.us/2020/01/draft-capital-by-position/) over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year's performance?
 
-To do that, I'll look at draft capital spent on offense and defense across the league and predict the following year's [DVOA](https://www.footballoutsiders.com/info/methods#DVOA). Draft capital will once again be determined using the Chase Stuart model. Note that any picks after 224 are assumed to have no value. Accordingly, there were six teams that invested no draft capital on one side of the ball in a particular year: Carolina in 2016 (offense), Tampa in 2014 (defense), Cleveland in 2013 (offense), Green Bay in 2012 (offense),  New England in 2012 (offense), and Miami in 2011 (defense).
+To do that, I'll look at draft capital spent on offense and defense across the league and predict the following year's [DVOA](https://www.footballoutsiders.com/info/methods#DVOA). Draft capital will be determined using the Chase Stuart model. Note that any picks after 224 are assumed to have no value. There were six teams that invested no draft capital on one side of the ball in a particular year: Carolina in 2016 (offense), Tampa in 2014 (defense), Cleveland in 2013 (offense), Green Bay in 2012 (offense),  New England in 2012 (offense), and Miami in 2011 (defense).
 
 Here I'm predicting nine years of DVOA performance (2011-2019).
 
@@ -308,19 +307,75 @@ dvoa_draftcapital_all <- merge(dvoa_combined_withpreviousyear, draft_capital_all
 
 
 
-###run the glms
 
+```
+
+
+First let's take a look at using (non-specialist) overall draft capital used to overall DVOA, controlling for prior year's DVOA:
+
+```{r model overall draft capital, echo=FALSE}
 
 #overall draft capital to overall DVOA
-overall_glm1 <- stats::glm(TotalDVOA ~ previous_TotalDVOA,
-                           data = dvoa_draftcapital_all)
 overall_glm2 <- stats::glm(TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist,
                            data = dvoa_draftcapital_all)
-anova(overall_glm1, overall_glm2) # this compares the output of your model fit
-summary(overall_glm1)
+
 summary(overall_glm2)
 
-overall_glm3 <- stats::glm(TotalDVOA ~ previous_TotalDVOA + 
+
+```
+
+
+
+We get nothing - it appears that spending a lot of draft capital tells us nothing about a team's subsequent DVOA, once the prior year's DVOA is controlled for. 
+
+How about if we look just at offensive DVOA and offensive draft capital?
+
+
+```{r offensive draft capital, echo=FALSE}
+
+
+
+
+#offense GLM
+offense_glm <- stats::glm(OffDVOA ~ previous_OffDVOA + total_capital_offense,
+                          data = dvoa_draftcapital_all)
+summary(offense_glm)
+
+
+
+
+```
+
+
+Again, we get nothing. Spending a lot of draft capital on offensive players does nothing to a team's offensive DVOA in the subsequent year.
+
+How about defense and defensive draft capital?
+
+
+
+```{r defensive draft capital, echo=FALSE}
+
+#defense GLM
+defense_glm <- stats::glm(DefDVOA ~ previous_DefDVOA + total_capital_defense,
+                          data = dvoa_draftcapital_all)
+summary(defense_glm)
+
+
+```
+
+Draft capital spent on defensive players does nothing for a team's subsequent defensive DVOA.
+
+There seems to be a theme here. Note that a teams's prior year DVOA (total, offensive, defensive) always predicts the subsequent year, but adding draft capital does not tell us much of anything.
+
+The implications here are clear: Teams and fans should not expect the draft capital that a team spends to change their fortunes significantly for the better or worse in the subsequent year. This finding lines up with the view that rookies have a lot to learn. 
+
+But maybe this is a hasty conclusion, and perhaps certain position groups can contribute meaningfully in their first year. Let's take a look at draft captial by  position (let's just throw them all in there) and see if they tend to produce any changes in DVOA, first with total DVOA:
+
+
+```{r total by position, echo=FALSE}
+
+#check all position groups at the same time
+overall_glm3 <- stats::glm(TotalDVOA ~ previous_TotalDVOA +
                              QB +
                              WR +
                              RB +
@@ -333,19 +388,18 @@ overall_glm3 <- stats::glm(TotalDVOA ~ previous_TotalDVOA +
 summary(overall_glm3)
 
 
-#offense GLM
-offense_glm <- stats::glm(OffDVOA ~ previous_OffDVOA + total_capital_offense,
-                          data = dvoa_draftcapital_all)
-summary(offense_glm)
 
-#defense GLM
-defense_glm <- stats::glm(DefDVOA ~ previous_DefDVOA + total_capital_defense,
-                          data = dvoa_draftcapital_all)
-summary(defense_glm)
+```
+
+Now this is interesting. If you use draft capital spent by position, and control for prior year's total DVOA, the only statistically significant effect is with running backs producing a positive change in total DVOA. Tentative implication is that if you want to improve your team immediately, spend a lot of draft capital on a running back. 
+
+Let's see if this holds up looking at offensive DVOA:
 
 
-#check all position groups at the same time
-offense_glm_all <- stats::glm(OffDVOA ~ previous_OffDVOA + 
+```{r offense by position, echo=FALSE}
+
+#check all position groups at the same time - offense
+offense_glm_all <- stats::glm(OffDVOA ~ previous_OffDVOA +
                              QB +
                              WR +
                              RB +
@@ -354,7 +408,15 @@ offense_glm_all <- stats::glm(OffDVOA ~ previous_OffDVOA +
                            data = dvoa_draftcapital_all)
 summary(offense_glm_all)
 
-defense_glm_all <- stats::glm(DefDVOA ~ previous_DefDVOA + 
+
+```
+It's not quite statistically significant, but running backs may very well improve offensive DVOA in their rookie years. 
+
+
+```{r defense by position, echo=FALSE}
+
+#check all position groups at the same time - defense
+defense_glm_all <- stats::glm(DefDVOA ~ previous_DefDVOA +
                              DL +
                              LB +
                              DB ,
@@ -362,70 +424,15 @@ defense_glm_all <- stats::glm(DefDVOA ~ previous_DefDVOA +
 summary(defense_glm_all)
 
 
-
-
-####
-#can i look at draft capital from two years ago controlling for only the previous year dvoa?
-####
-draft_capital_oneyearearlier <- draft_capital_all  
-draft_capital_oneyearearlier$Year <- draft_capital_oneyearearlier$Year +1
-
-
-  
-#merge draft capital
-dvoa_draftcapitaloneyearearlier_all <- merge(dvoa_combined_withpreviousyear, draft_capital_oneyearearlier, by = c("Team", "Year"))
-
-
-overall_oneyearearlierdraft_glm <- stats::glm(TotalDVOA ~ previous_TotalDVOA + total_capital_non_specialist,
-                           data = dvoa_draftcapitaloneyearearlier_all)
-
-summary(overall_oneyearearlierdraft_glm)
-
-
-offense_oneyearearlierdraft_glm <- stats::glm(OffDVOA ~ previous_OffDVOA + total_capital_offense,
-                          data = dvoa_draftcapitaloneyearearlier_all)
-summary(offense_oneyearearlierdraft_glm)
-
-defense_oneyearearlierdraft_glm <- stats::glm(DefDVOA ~ previous_DefDVOA + total_capital_defense,
-                          data = dvoa_draftcapitaloneyearearlier_all)
-summary(defense_oneyearearlierdraft_glm)
-
-offense_oneyearearlierdraft_glm_all <- stats::glm(OffDVOA ~ previous_OffDVOA + 
-                             QB +
-                             WR +
-                             RB +
-                             TE +
-                             OL ,
-                           data = dvoa_draftcapitaloneyearearlier_all)
-summary(offense_oneyearearlierdraft_glm_all)
-
-defense_oneyearearlierdraft_glm_all <- stats::glm(DefDVOA ~ previous_DefDVOA + 
-                             DL +
-                             LB +
-                             DB ,
-                           data = dvoa_draftcapitaloneyearearlier_all)
-summary(defense_oneyearearlierdraft_glm_all)
-
-###
-#none of the above seems to give anything significant
-###
-
-
-
-#quick correlations among all the dvoa variables
-library(Hmisc)
-
-dvoa_temp <- dvoa_combined_withpreviousyear %>%
-  dplyr::select(contains("DVOA"))
-Hmisc::rcorr(as.matrix(dvoa_temp), type="pearson") # type can be pearson or spearman
-
-
 ```
 
-Draft capital overall does not add anything significant after cotrolling for performance (total DVOA) from the prior year Similarly, there appears to be no effect of draft capital on either offensive or defensive performance after controlling for performance from the prior year (offensive or defensive DVOA, respectively). 
+For defense, draft capital spent does not seem to matter by position group.
 
-Why is this?
+Bottom line is that we should not expect the Miami Dolphins, who had a huge amount of draft capital in the 2020 draft, to improve a lot in the 2020 season because of their draft picks (they may improve for other reasons, of course). We should not expect players to contribute much their rookie years. 
 
-Or maybe this is all nonsense. Teams may draft a lot on one side of the ball to replace talent they've lost the previous year, or because they signed free agents on the other side of the ball. The analysis itself could be flawed. Nontheless, this would suggest that teams that are spending high draft picks on offense are unlikely to see their offense improve the next year.
+In this vein, PFF looked at the [contribution of players by position in their first four years](https://www.pff.com/news/nfl-investigating-learning-curves-from-college-football-to-the-nfl). They found that rookies increased their performance by 75% after their rookie years, and that this is driven by rookies generally playing less and playing less effectively. Interestingly they find that "the learning curve for running backs doesn't really exist," with their rookie year performance being similar to years 2-4. Other positions see little contribution in year one and increase their production in years 2-4. This set of findings is consistent with the anlaysis here.
 
-I plan to reexamine this after the 2020 NFL draft and make predictions on next year's offensive DVOA. 
+Does this suggest that spending draft capital on running backs is a good idea? No, because [running backs don't matter](https://www.kaggle.com/c/nfl-big-data-bowl-2020/discussion/112044). It does suggest, however, that if a team is short term focused and wants to improve immediately, drafting a highly touted running back may help. 
+
+
+

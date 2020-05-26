@@ -6,10 +6,52 @@
     <description>Recent content in Posts on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Busses and bikes and parking</title>
+      <link>/2020/05/busses-and-bikes-and-parking/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/busses-and-bikes-and-parking/</guid>
+      <description>A collection of thoughts on transportation in cities:
+ Busses are underrated. They should be the backbone of urban public transportation. They are cost effective and can change according to demand (frequency and routes). Bus only lanes, preferences at stop lights, better signage with expected wait times and maps, and other measures can make them more effective. The virus makes this more challenging, admittedly, although I’m optimistic that we’ll eventually have some combination of vaccine, protective clothing, and behavioral practices that minimize risk.</description>
+    </item>
+    
+    <item>
+      <title>Coronavirus questions for later</title>
+      <link>/2020/05/coronavirus-questions-for-later/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/coronavirus-questions-for-later/</guid>
+      <description>Things I’m curious to read about in the coming years about coronavirus impacts:
+ Work related
+ Will companies become more friendly to remote work? Will they seek out remote employees as a form of resilience to future disease waves? Will they increase their demand for office space to give their employees more space or decrease their demand as they shift to remote work? Will a home office boost the value of one’s house more than before?</description>
+    </item>
+    
+    <item>
+      <title>NFL draft capital and next year DVOA</title>
+      <link>/2020/05/nfl-draft-capital-and-next-year-dvoa/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/nfl-draft-capital-and-next-year-dvoa/</guid>
+      <description>I previously took a look at draft capital spent by team from 2010-2019 and draft capital by team by position over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
+To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will be determined using the Chase Stuart model.</description>
+    </item>
+    
+    <item>
+      <title>PFF&#39;s review on the NFL draft and positional value </title>
+      <link>/2020/04/pff-s-review-on-the-nfl-draft-and-positional-value/</link>
+      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/04/pff-s-review-on-the-nfl-draft-and-positional-value/</guid>
+      <description>Pro Football Focus has a new article looking at the positions that teams have spent the most draft capital on over the past few years. This is similar to what I did here three months ago.
+Let me review what I like about their approach and add some comments:
+ They used their own PFF WAR metric to measure draft capital of each pick. Although I don’t fully understand their approach, I like trying to quantify value in this way.</description>
+    </item>
     
     <item>
       <title>Coronavirus assorted thoughts</title>
@@ -19,17 +61,6 @@
       <guid>/2020/03/coronavirus-assorted-thoughts/</guid>
       <description>Some random thoughts and observations:
  Widespread mask usage seem like a good idea If we have lots of easy cheap testing (and at home), it would be much easier to allow certain people to break quarantine and possibly donate blood to help others get well. Opening up the Seattle express lanes and certain other roads to bikes seem like a great limited duration idea. They are not needed at present traffic volumes, easy to monitor/police, and provide a needed entertainment outlet with so many other parks and outdoor options closed.</description>
-    </item>
-    
-    <item>
-      <title>Busses and bikes and parking</title>
-      <link>/2020/03/busses-and-bikes-and-parking/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/03/busses-and-bikes-and-parking/</guid>
-      <description>A collection of thoughts on transportation in cities:
- Busses are underrated. They should be the backbone of urban public transportation. They are cost effective and can change according to demand (frequency and routes). Bus only lanes, preferences at stop lights, better signage with expected wait times and maps, and other measures can make them more effective.
- Electric bikes are underrated. Progress in the last few years has been great.</description>
     </item>
     
     <item>
@@ -50,16 +81,6 @@ Before you book, strongly consider not going at all. My wife and I agreed after 
       <guid>/2020/02/reviewing-kirwan-s-predictions-10-years-later/</guid>
       <description>Pat Kirwan’s book with David Seigerman Take Your Eye Off the Ball was published in 2010. There is a second edition, published in 2015, but I’m focusing on a series of predictions made in the original in Chapter 14 (State of the Art Football).
 Here I’ll review his predictions and make some of my own for the next 10 years. No huddle for all. Here Kirwan predicted that the pre play huddle would be phased out, with teams going into the huddle for 10 plays per half.</description>
-    </item>
-    
-    <item>
-      <title>NFL draft capital and next year DVOA</title>
-      <link>/2020/01/nfl-draft-capital-and-next-year-dvoa/</link>
-      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/01/nfl-draft-capital-and-next-year-dvoa/</guid>
-      <description>I previously took a look at [draft capital spent from 2010-2019] and [draft capital by team by position] over the same period. Here I will extend that analysis further with the question: Does draft capital spent have an impact on the subsequent year’s performance?
-To do that, I’ll look at draft capital spent on offense and defense across the league and predict the following year’s DVOA. Draft capital will once again be determined using the Chase Stuart model.</description>
     </item>
     
     <item>
