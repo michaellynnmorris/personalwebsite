@@ -6,10 +6,20 @@
     <description>Recent content in NFL on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/nfl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring expected points added (EPA) by different play outcomes</title>
+      <link>/2020/06/exploring-expected-points-added-epa/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/06/exploring-expected-points-added-epa/</guid>
+      <description>In a previous post, I looked at some run vs pass splits using expected points added (EPA). Here I’m going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package nflfastr.
+Let’s start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors.</description>
+    </item>
     
     <item>
       <title>NFL draft capital and next year DVOA</title>
