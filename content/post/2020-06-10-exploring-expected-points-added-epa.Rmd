@@ -1,0 +1,256 @@
+---
+title: Exploring expected points added (EPA) by different play outcomes
+author: Mike Morris
+date: '2020-06-12'
+slug: exploring-expected-points-added-epa
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+---
+
+
+```{r prepare data, echo=FALSE, cache=TRUE, include=FALSE, warning=FALSE}
+
+
+library(tidyverse)
+
+
+#load the play by play data
+pbp <- readRDS(file = "/home/michael/Documents/NFL/pbp2000through2019.rds")
+
+
+#trim the file
+
+keep <- c("play_type",
+          "epa",
+          "ep",
+          "wp",
+          "season",
+          "season_type",
+          "complete_pass",
+          "incomplete_pass",
+          "interception",
+          "sack",
+          "desc",
+          "fumble",
+          "penalty",
+          "yardline_100",
+          "down",
+          "ydstogo",
+          "half_seconds_remaining")
+
+pbp <- pbp %>% 
+  dplyr::select(all_of(keep))
+
+#select only pass or run plays
+pbp <- pbp %>% 
+  dplyr::filter(play_type == "pass" | play_type == "run") %>% 
+  dplyr::filter(season_type == "REG") %>% 
+  dplyr::filter(!is.na(epa)) %>% 
+  dplyr::filter(penalty==0) %>% 
+  dplyr::filter(down < 4) %>% 
+  dplyr::filter(wp>=.20) %>% 
+  dplyr::filter(wp<=.80) %>% 
+  dplyr::filter(half_seconds_remaining >299)
+
+
+
+
+#specific kinds of plays
+pbp_pass <- pbp %>% 
+  dplyr::filter(play_type == "pass")
+
+pbp_run <- pbp %>% 
+  dplyr::filter(play_type == "run")
+
+completed_passes <- pbp_pass %>% 
+  dplyr::filter(complete_pass==1)
+
+incompleted_passes <- pbp_pass %>% 
+  dplyr::filter(incomplete_pass==1)
+
+sack_passes <- pbp_pass %>% 
+  dplyr::filter(sack==1)
+
+interception_passes <- pbp_pass %>% 
+  dplyr::filter(interception==1)
+
+
+```
+
+
+
+In a [previous post](https://michael-morris.us/2020/01/seahawks-should-pass-more/), I looked at some run vs pass splits using expected points added (EPA). Here I'm going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package [nflfastr](https://github.com/mrcaseb/nflfastR).
+
+Let's start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors. This calculation is based on hundreds of thousands of plays and looks at the liklihood of the next score (possibilities include a touchdown or field goal for the team with the ball, no score, or safety, field goal, or touchdown for the opposing team).
+
+* EP basics explained [here](https://arxiv.org/pdf/1802.00998.pdf)
+* EP model construction for [nflfastr](https://gist.github.com/guga31bb/2e827358b9957c727282b843685e524f), which differs slightly from other EPA models. 
+
+
+As a simple example of expected points (EP) and expected points added (EPA) is descibed [here](https://www.advancedfootballanalytics.com/index.php/home/stats/stats-explained/expected-points-and-epa-explained): 
+
+> Suppose the offense has a 1st and 10 at midfield. This situation is worth +2.0 EP. A 5-yard gain would set up a 2nd and 5 from the 45, which corresponds to a +2.1 EP. Therefore, that 5-yard gain in that particular situation represents a +0.1 gain in EP.
+
+This example play was worth .1 EPA.
+
+Here I wanted to take a look at some common outcomes of passing plays to get an idea of what a typical pass play generates in terms of EPA, specifically completed passes, incomplete passes, sacks, and interceptions. I also included runs for comparison. Anybody who follows football certainly realizes that completed passes are generally positive for the offense (though they sometimes lose yards), while incomplete passes, sacks, and interceptions are almost always negative. 
+
+
+Let's look at the entire distribution of EPA as well, to get an idea of the spread of each outcome. I'll concentrate on regular season games and neutral game situations, where win probability is between 20 and 80 percent, where there are more than five minutes remaining in the game, and look only at first through third downs. Over the 2000-2019 seasons this covers `r nrow(pbp_pass)` plays.
+
+
+```{r pass_graphic, echo=FALSE, cache=TRUE, include=FALSE, warning=FALSE, fig.width = 6, fig.show = "hold"}
+
+#epa distribution all pass attempts
+epa_all_pass <- ggplot(pbp_pass, aes(x=epa, y = ..density..)) + 
+  geom_density() +
+  geom_vline(xintercept=mean(pbp_pass$epa),
+             color='#619CFF')   +
+  scale_x_continuous(breaks=sort(round(c(-10, 0, 5, mean(pbp_pass$epa)), digits = 1)), 
+                     limits = c(-10, 5)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle("Passes: All") 
+
+#run attempts
+epa_run <- ggplot(pbp_run, aes(x=epa)) +
+  geom_density() +
+  geom_vline(xintercept=mean(pbp_run$epa),
+             color='#619CFF') +
+  scale_x_continuous(breaks=sort(round(c(-10, 0, 5, mean(pbp_run$epa)), digits = 1)),
+                     limits = c(-10, 5)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle("Rushes") 
+
+
+#pass outcomes
+epa_complete_pass <- ggplot(completed_passes, aes(x=epa, y = ..density..)) +
+  geom_density() +
+  geom_vline(xintercept=mean(completed_passes$epa),
+             color='#619CFF')   +
+  scale_x_continuous(breaks=sort(round(c(-10, 0, 5, mean(completed_passes$epa)), digits = 1)),
+                     limits = c(-10, 5)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle("Passes: Complete") 
+
+
+
+epa_incomplete_pass <- ggplot(incompleted_passes, aes(x=epa)) +
+  geom_density() +
+  geom_vline(xintercept=mean(incompleted_passes$epa),
+             color='#619CFF')  +
+  scale_x_continuous(breaks=sort(round(c(-10, 0, 5, mean(incompleted_passes$epa)), digits = 1)),
+                     limits = c(-10, 5)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle("Passes: Incomplete") 
+
+
+
+epa_sack_pass <- ggplot(sack_passes, aes(x=epa)) +
+  geom_density() +
+  geom_vline(xintercept=mean(sack_passes$epa),
+             color='#619CFF') +
+  scale_x_continuous(breaks=sort(round(c(-10, 0, 5, mean(sack_passes$epa)), digits = 1)),
+                     limits = c(-10, 5)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle("Passes: Sacks") 
+
+
+
+
+
+
+#epa for interception
+
+epa_interception_pass <- ggplot(interception_passes, aes(x=epa)) +
+  geom_density() +
+  geom_vline(xintercept=mean(interception_passes$epa),
+             color='#619CFF') +
+  scale_x_continuous(breaks=sort(round(c(-10, 0, 5, mean(interception_passes$epa)), digits = 1)),
+                     limits = c(-10, 5)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle("Passes: Interceptions") 
+
+
+
+
+
+
+
+
+
+```
+
+
+The blue vertical line in each figure is the mean. Looking at all passes, we have an average EPA of zero. It looks like passes are giving us the finger for not running more of them.
+
+
+```{r plot1, echo=FALSE, warning=FALSE}
+epa_all_pass 
+```
+
+
+Rushes, meanwhile, have a mean EPA of slighly less than zero, and a much narrower distribution of EPA. 
+
+```{r plot2, echo=FALSE, warning=FALSE}
+epa_run
+```
+
+
+Completed passes are where all the upside is, obviously, with an average EPA gain of .9.
+
+```{r plot3, echo=FALSE, warning=FALSE}
+epa_complete_pass 
+
+```
+
+
+Incomplete passes cost an offense around .8 EPA, and are never positive.
+
+```{r plot4, echo=FALSE, warning=FALSE}
+epa_incomplete_pass 
+
+```
+
+Sacks cost an offense 1.8 EPA, and are never positive.
+
+
+```{r plot5, echo=FALSE, warning=FALSE}
+epa_sack_pass 
+
+```
+
+
+Interceptions are very costly, averaging a cost of 4.5 EPA for the offense, with a lot of variance. If you squint you can see that there are a small number of interceptions that are positive EPA. At first I thought these would be plays where a long pass is intercepted close to the defense's goal line (like a long punt), but it turns out these were almost all plays where there was an interception followed by a fumble that the offense recovered. 
+
+```{r plot6, echo=FALSE, warning=FALSE}
+epa_interception_pass 
+
+# pos_epq_interceptions <- interception_passes %>% 
+#   dplyr::filter(epa>0)
+# 
+# pos_epq_interceptions$desc
+
+```
+
+
+I conclude that in general, fans can watch a game and conclude that the average pass completion is worth a little less than a point, the average incompletion costs about a point, the average sack about two points, and the average interception 4-5 points. 
+
+
+
+
+
+
+
+
+
+
