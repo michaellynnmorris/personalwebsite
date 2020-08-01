@@ -1,0 +1,631 @@
+---
+title: Expect points added cheatsheet
+author: Mike Morris
+date: '2020-08-01'
+slug: expect-points-added-cheatsheet
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+---
+
+
+
+<p>Like everyone else I am hoping that we have NFL football this fall, but also like everyone else I want that to be safe (at least as far as football can be) from virus related problems. I doubt that will happen but we’ll see.</p>
+<p>When sitting in the stands, I’ve sometimes mentioned the concepts of expected points (EP) and expected points added (EPA) but I’ve never had a great feel for how many EP a given situation was worth. Farther away from the end zone is obviously less than close to the end zone, and first down is better than third down, but what specific EP should we expect in a given situation?</p>
+<p>To help the average fan, I’ve used the latest version of nflfastR (2.1.0) to build the cheetsheet below. This two pager is the same information in table and graphic format. It’s designed to be printed out and carried to a game, or to sit next to you on the couch so can refer to it during the course of watching games.</p>
+<p>Get the cheat sheet <a href="https://drive.google.com/file/d/1aTmgXt1bHGmEeTqPRiVklobGXfWUkGL_/view?usp=sharing">here</a>.</p>
+<p>EP table:</p>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#lyeyzyjffs .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lyeyzyjffs .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lyeyzyjffs .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lyeyzyjffs .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lyeyzyjffs .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lyeyzyjffs .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lyeyzyjffs .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lyeyzyjffs .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lyeyzyjffs .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lyeyzyjffs .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lyeyzyjffs .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lyeyzyjffs .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lyeyzyjffs .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lyeyzyjffs .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#lyeyzyjffs .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lyeyzyjffs .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lyeyzyjffs .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#lyeyzyjffs .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lyeyzyjffs .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#lyeyzyjffs .gt_left {
+  text-align: left;
+}
+
+#lyeyzyjffs .gt_center {
+  text-align: center;
+}
+
+#lyeyzyjffs .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lyeyzyjffs .gt_font_normal {
+  font-weight: normal;
+}
+
+#lyeyzyjffs .gt_font_bold {
+  font-weight: bold;
+}
+
+#lyeyzyjffs .gt_font_italic {
+  font-style: italic;
+}
+
+#lyeyzyjffs .gt_super {
+  font-size: 65%;
+}
+
+#lyeyzyjffs .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="lyeyzyjffs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">YdsToEndzone</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">1d&amp;10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">2d&amp;10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">2d&amp;7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">2d&amp;5</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">2d&amp;3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">2nd&amp;1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">3d&amp;10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">3d&amp;7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">3d&amp;5</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">3d&amp;3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">3d&amp;1</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_right">10</td>
+      <td class="gt_row gt_right">5.0</td>
+      <td class="gt_row gt_right">4.5</td>
+      <td class="gt_row gt_right">4.6</td>
+      <td class="gt_row gt_right">4.8</td>
+      <td class="gt_row gt_right">4.9</td>
+      <td class="gt_row gt_right">5.2</td>
+      <td class="gt_row gt_right">3.8</td>
+      <td class="gt_row gt_right">3.9</td>
+      <td class="gt_row gt_right">4.1</td>
+      <td class="gt_row gt_right">4.3</td>
+      <td class="gt_row gt_right">4.6</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">15</td>
+      <td class="gt_row gt_right">4.8</td>
+      <td class="gt_row gt_right">4.4</td>
+      <td class="gt_row gt_right">4.4</td>
+      <td class="gt_row gt_right">4.6</td>
+      <td class="gt_row gt_right">4.7</td>
+      <td class="gt_row gt_right">5.0</td>
+      <td class="gt_row gt_right">3.7</td>
+      <td class="gt_row gt_right">3.8</td>
+      <td class="gt_row gt_right">3.9</td>
+      <td class="gt_row gt_right">4.1</td>
+      <td class="gt_row gt_right">4.4</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">20</td>
+      <td class="gt_row gt_right">4.4</td>
+      <td class="gt_row gt_right">4.0</td>
+      <td class="gt_row gt_right">4.1</td>
+      <td class="gt_row gt_right">4.3</td>
+      <td class="gt_row gt_right">4.3</td>
+      <td class="gt_row gt_right">4.5</td>
+      <td class="gt_row gt_right">3.4</td>
+      <td class="gt_row gt_right">3.5</td>
+      <td class="gt_row gt_right">3.7</td>
+      <td class="gt_row gt_right">3.7</td>
+      <td class="gt_row gt_right">4.1</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">25</td>
+      <td class="gt_row gt_right">4.1</td>
+      <td class="gt_row gt_right">3.7</td>
+      <td class="gt_row gt_right">3.8</td>
+      <td class="gt_row gt_right">3.9</td>
+      <td class="gt_row gt_right">4.0</td>
+      <td class="gt_row gt_right">4.2</td>
+      <td class="gt_row gt_right">3.1</td>
+      <td class="gt_row gt_right">3.2</td>
+      <td class="gt_row gt_right">3.4</td>
+      <td class="gt_row gt_right">3.4</td>
+      <td class="gt_row gt_right">3.7</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">30</td>
+      <td class="gt_row gt_right">3.8</td>
+      <td class="gt_row gt_right">3.4</td>
+      <td class="gt_row gt_right">3.5</td>
+      <td class="gt_row gt_right">3.6</td>
+      <td class="gt_row gt_right">3.7</td>
+      <td class="gt_row gt_right">3.9</td>
+      <td class="gt_row gt_right">2.7</td>
+      <td class="gt_row gt_right">2.8</td>
+      <td class="gt_row gt_right">2.9</td>
+      <td class="gt_row gt_right">3.1</td>
+      <td class="gt_row gt_right">3.3</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">35</td>
+      <td class="gt_row gt_right">3.5</td>
+      <td class="gt_row gt_right">3.0</td>
+      <td class="gt_row gt_right">3.1</td>
+      <td class="gt_row gt_right">3.3</td>
+      <td class="gt_row gt_right">3.4</td>
+      <td class="gt_row gt_right">3.6</td>
+      <td class="gt_row gt_right">2.3</td>
+      <td class="gt_row gt_right">2.3</td>
+      <td class="gt_row gt_right">2.5</td>
+      <td class="gt_row gt_right">2.7</td>
+      <td class="gt_row gt_right">3.0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">40</td>
+      <td class="gt_row gt_right">3.2</td>
+      <td class="gt_row gt_right">2.6</td>
+      <td class="gt_row gt_right">2.8</td>
+      <td class="gt_row gt_right">2.9</td>
+      <td class="gt_row gt_right">3.0</td>
+      <td class="gt_row gt_right">3.2</td>
+      <td class="gt_row gt_right">1.9</td>
+      <td class="gt_row gt_right">1.9</td>
+      <td class="gt_row gt_right">2.1</td>
+      <td class="gt_row gt_right">2.3</td>
+      <td class="gt_row gt_right">2.7</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">45</td>
+      <td class="gt_row gt_right">2.8</td>
+      <td class="gt_row gt_right">2.4</td>
+      <td class="gt_row gt_right">2.4</td>
+      <td class="gt_row gt_right">2.6</td>
+      <td class="gt_row gt_right">2.8</td>
+      <td class="gt_row gt_right">3.0</td>
+      <td class="gt_row gt_right">1.6</td>
+      <td class="gt_row gt_right">1.7</td>
+      <td class="gt_row gt_right">1.8</td>
+      <td class="gt_row gt_right">2.0</td>
+      <td class="gt_row gt_right">2.5</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">50</td>
+      <td class="gt_row gt_right">2.5</td>
+      <td class="gt_row gt_right">2.1</td>
+      <td class="gt_row gt_right">2.1</td>
+      <td class="gt_row gt_right">2.3</td>
+      <td class="gt_row gt_right">2.4</td>
+      <td class="gt_row gt_right">2.7</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">1.5</td>
+      <td class="gt_row gt_right">1.6</td>
+      <td class="gt_row gt_right">2.1</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">55</td>
+      <td class="gt_row gt_right">2.2</td>
+      <td class="gt_row gt_right">1.7</td>
+      <td class="gt_row gt_right">1.8</td>
+      <td class="gt_row gt_right">2.0</td>
+      <td class="gt_row gt_right">2.0</td>
+      <td class="gt_row gt_right">2.4</td>
+      <td class="gt_row gt_right">0.9</td>
+      <td class="gt_row gt_right">1.0</td>
+      <td class="gt_row gt_right">1.1</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">1.8</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">60</td>
+      <td class="gt_row gt_right">1.8</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">1.6</td>
+      <td class="gt_row gt_right">1.7</td>
+      <td class="gt_row gt_right">2.0</td>
+      <td class="gt_row gt_right">0.6</td>
+      <td class="gt_row gt_right">0.7</td>
+      <td class="gt_row gt_right">0.8</td>
+      <td class="gt_row gt_right">0.9</td>
+      <td class="gt_row gt_right">1.5</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">65</td>
+      <td class="gt_row gt_right">1.5</td>
+      <td class="gt_row gt_right">0.9</td>
+      <td class="gt_row gt_right">1.0</td>
+      <td class="gt_row gt_right">1.2</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">1.7</td>
+      <td class="gt_row gt_right">0.3</td>
+      <td class="gt_row gt_right">0.3</td>
+      <td class="gt_row gt_right">0.5</td>
+      <td class="gt_row gt_right">0.6</td>
+      <td class="gt_row gt_right">1.1</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">70</td>
+      <td class="gt_row gt_right">1.2</td>
+      <td class="gt_row gt_right">0.7</td>
+      <td class="gt_row gt_right">0.8</td>
+      <td class="gt_row gt_right">1.1</td>
+      <td class="gt_row gt_right">1.1</td>
+      <td class="gt_row gt_right">1.5</td>
+      <td class="gt_row gt_right">0.1</td>
+      <td class="gt_row gt_right">0.1</td>
+      <td class="gt_row gt_right">0.3</td>
+      <td class="gt_row gt_right">0.5</td>
+      <td class="gt_row gt_right">1.0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">75</td>
+      <td class="gt_row gt_right">1.1</td>
+      <td class="gt_row gt_right">0.5</td>
+      <td class="gt_row gt_right">0.5</td>
+      <td class="gt_row gt_right">0.7</td>
+      <td class="gt_row gt_right">0.8</td>
+      <td class="gt_row gt_right">1.1</td>
+      <td class="gt_row gt_right">-0.2</td>
+      <td class="gt_row gt_right">-0.2</td>
+      <td class="gt_row gt_right">0.0</td>
+      <td class="gt_row gt_right">0.1</td>
+      <td class="gt_row gt_right">0.6</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">80</td>
+      <td class="gt_row gt_right">0.6</td>
+      <td class="gt_row gt_right">0.1</td>
+      <td class="gt_row gt_right">0.1</td>
+      <td class="gt_row gt_right">0.3</td>
+      <td class="gt_row gt_right">0.5</td>
+      <td class="gt_row gt_right">0.6</td>
+      <td class="gt_row gt_right">-0.6</td>
+      <td class="gt_row gt_right">-0.5</td>
+      <td class="gt_row gt_right">-0.4</td>
+      <td class="gt_row gt_right">-0.2</td>
+      <td class="gt_row gt_right">0.2</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">85</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_right">-0.3</td>
+      <td class="gt_row gt_right">-0.3</td>
+      <td class="gt_row gt_right">0.0</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_right">0.4</td>
+      <td class="gt_row gt_right">-0.9</td>
+      <td class="gt_row gt_right">-0.9</td>
+      <td class="gt_row gt_right">-0.8</td>
+      <td class="gt_row gt_right">-0.6</td>
+      <td class="gt_row gt_right">-0.2</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">90</td>
+      <td class="gt_row gt_right">-0.1</td>
+      <td class="gt_row gt_right">-0.6</td>
+      <td class="gt_row gt_right">-0.6</td>
+      <td class="gt_row gt_right">-0.4</td>
+      <td class="gt_row gt_right">-0.1</td>
+      <td class="gt_row gt_right">0.1</td>
+      <td class="gt_row gt_right">-1.3</td>
+      <td class="gt_row gt_right">-1.2</td>
+      <td class="gt_row gt_right">-1.1</td>
+      <td class="gt_row gt_right">-0.8</td>
+      <td class="gt_row gt_right">-0.5</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">95</td>
+      <td class="gt_row gt_right">-0.4</td>
+      <td class="gt_row gt_right">-0.9</td>
+      <td class="gt_row gt_right">-0.9</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">-1.6</td>
+      <td class="gt_row gt_right">-1.5</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">NA</td>
+      <td class="gt_row gt_right">NA</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>EP figure</p>
+<p><img src="/post/2020-07-06-expect-points-added-cheatsheet_files/figure-html/graphic%20EPA-1.png" width="672" /></p>

@@ -6,10 +6,20 @@
     <description>Recent content in NFL on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/nfl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Expect points added cheatsheet</title>
+      <link>/2020/08/expect-points-added-cheatsheet/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/08/expect-points-added-cheatsheet/</guid>
+      <description>Like everyone else I am hoping that we have NFL football this fall, but also like everyone else I want that to be safe (at least as far as football can be) from virus related problems. I doubt that will happen but we’ll see.
+When sitting in the stands, I’ve sometimes mentioned the concepts of expected points (EP) and expected points added (EPA) but I’ve never had a great feel for how many EP a given situation was worth.</description>
+    </item>
     
     <item>
       <title>Exploring expected points added (EPA) by different play outcomes</title>

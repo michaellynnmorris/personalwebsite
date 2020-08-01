@@ -1,0 +1,254 @@
+---
+title: Expect points added cheatsheet
+author: Mike Morris
+date: '2020-08-01'
+slug: expect-points-added-cheatsheet
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+---
+
+Like everyone else I am hoping that we have NFL football this fall, but also like everyone else I want that to be safe (at least as far as football can be) from virus related problems. I doubt that will happen but we'll see.
+
+When sitting in the stands, I've sometimes mentioned the concepts of expected points (EP) and expected points added (EPA) but I've never had a great feel for how many EP a given situation was worth. Farther away from the end zone is obviously less than close to the end zone, and first down is better than third down, but what specific EP should we expect in a given situation?
+
+To help the average fan, I've used the latest version of nflfastR (2.1.0) to build the cheetsheet below. This two pager is the same information in table and graphic format. It's designed to be printed out and carried to a game, or to sit next to you on the couch so can refer to it during the course of watching games.
+
+Get the cheat sheet [here](https://drive.google.com/file/d/1aTmgXt1bHGmEeTqPRiVklobGXfWUkGL_/view?usp=sharing).
+
+
+```{r data prep, echo=FALSE, cache=TRUE, warning=FALSE,message=FALSE}
+
+
+
+#nflfastR download game pbp data
+
+library(nflfastR)
+library(tidyverse)
+library(ggeasy)
+library(kableExtra)
+
+
+
+
+#need to filter for neutral game situations first
+
+pbp <- readRDS("/home/michael/Documents/NFL/pbp2000through2019b.rds")
+
+#trim the file
+
+keep <- c("play_type",
+          "epa",
+          "ep",
+          "wp",
+          "season",
+          "season_type",
+          "complete_pass",
+          "incomplete_pass",
+          "interception",
+          "sack",
+          "desc",
+          "fumble",
+          "penalty",
+          "yardline_100",
+          "down",
+          "ydstogo",
+          "half_seconds_remaining")
+
+pbp <- pbp %>% 
+  dplyr::select(all_of(keep))
+
+pbp <- pbp %>% 
+  dplyr::filter(season_type == "REG" &
+                  !is.na(ep) &
+                  penalty==0 &
+                  down < 4 &
+                  wp>=.2 &
+                  wp<=.8 &
+                  half_seconds_remaining >299)
+
+
+
+
+df_down_distance <- function(input_down, input_distance){
+  
+  df <- pbp %>% 
+    dplyr::filter(down == input_down & ydstogo == input_distance) %>% 
+    dplyr::group_by(yardline_100) %>% 
+    dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+    dplyr::filter(yardline_100>9)
+  
+  df$down <- input_down
+  df$distance <- input_distance
+  
+  keep_yardlines <- seq(10, 95, by = 5)
+  df <- df %>% 
+    filter(yardline_100 %in% keep_yardlines)
+  
+  return(df)
+}
+
+
+
+d1and10 <- df_down_distance(1, 10)
+d2and10 <- df_down_distance(2, 10)
+d2and7 <- df_down_distance(2, 7)
+d2and5 <- df_down_distance(2, 5)
+d2and3 <- df_down_distance(2, 3)
+d2and1 <- df_down_distance(2, 1)
+d3and10 <- df_down_distance(3, 10)
+d3and7 <- df_down_distance(3, 7)
+d3and5 <- df_down_distance(3, 5)
+d3and3 <- df_down_distance(3, 3)
+d3and1 <- df_down_distance(3, 1)
+
+merged_ep <- rbind(d1and10, 
+                   d2and10,
+                   d2and7,
+                   d2and5,
+                   d2and3,
+                   d2and1,
+                   d3and10,
+                   d3and7,
+                   d3and5,
+                   d3and3,
+                   d3and1)
+
+
+merged_ep$mean_ep <- round(merged_ep$mean_ep, digits = 1)
+
+merged_ep <- merged_ep %>% 
+  tidyr::pivot_wider(id_cols = c(yardline_100, down, distance),
+                     values_from = mean_ep,
+                     names_from = c(down, distance))
+
+
+
+
+```
+
+EP table:
+
+```{r table EPA, echo=FALSE, cache=TRUE, warning=FALSE,message=FALSE}
+
+
+
+library(gt)
+
+table_columns_names <- c("YdsToEndzone",
+                         "1d&10",
+                         "2d&10",
+                         "2d&7",
+                         "2d&5",
+                         "2d&3",
+                         "2nd&1",
+                         "3d&10",
+                         "3d&7",
+                         "3d&5",
+                         "3d&3",
+                         "3d&1")
+
+colnames(merged_ep) <- table_columns_names
+
+
+gt(merged_ep)
+
+```
+
+
+EP figure
+
+```{r graphic EPA, echo=FALSE, cache=TRUE, warning=FALSE,message=FALSE}
+
+
+
+#start here and simplify below
+
+
+first_and_ten <- pbp %>% 
+  dplyr::filter(down == 1 & ydstogo == 10) %>% 
+  dplyr::group_by(yardline_100) %>% 
+  dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+  dplyr::filter(yardline_100>9)
+
+
+second_and_ten <- pbp %>% 
+  dplyr::filter(down == 2 & ydstogo == 10) %>% 
+  dplyr::group_by(yardline_100) %>% 
+  dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+  dplyr::filter(yardline_100>9)
+
+
+second_and_5 <- pbp %>% 
+  dplyr::filter(down == 2 & ydstogo == 5) %>% 
+  dplyr::group_by(yardline_100) %>% 
+  dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+  dplyr::filter(yardline_100>9)
+
+second_and_2 <- pbp %>% 
+  dplyr::filter(down == 2 & ydstogo == 2) %>% 
+  dplyr::group_by(yardline_100) %>% 
+  dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+  dplyr::filter(yardline_100>9)
+
+third_and_ten <- pbp %>% 
+  dplyr::filter(down == 3 & ydstogo == 10) %>% 
+  dplyr::group_by(yardline_100) %>% 
+  dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+  dplyr::filter(yardline_100>9)
+
+
+third_and_1 <- pbp %>% 
+  dplyr::filter(down == 3 & ydstogo == 1) %>% 
+  dplyr::group_by(yardline_100) %>% 
+  dplyr::summarise(mean_ep = mean(ep, na.rm = TRUE)) %>% 
+  dplyr::filter(yardline_100>9)
+
+p <- ggplot() + 
+  geom_line(data = first_and_ten, aes(x = yardline_100, y = mean_ep), color = "darkgreen", linetype=1, size=2) +
+  geom_line(data = second_and_ten, aes(x = yardline_100, y = mean_ep), color = "darkorange", linetype=1, size=2) +
+  geom_line(data = third_and_ten, aes(x = yardline_100, y = mean_ep), color = "red", linetype=1, size=2) +
+  scale_x_continuous(limits = c(0, 100), breaks = seq(0, 100, by=5)) +
+  scale_y_continuous(sec.axis = dup_axis(), breaks = seq(-2, 5.5, by = .5)) +
+  labs(x = "Yards to opposing endzone",
+       y = "Expected points")+
+  ggtitle("Expected points in neutral situations \n (win prob btw 20 and 80, >5 minutes in half)") +
+
+  # ggeasy::easy_center_title() +
+  # theme(plot.title = element_text(hjust = 0.5)) +
+
+  annotate(geom = "text", label = "1st & 10",
+           x = 3, y = 4.8,
+           color = "darkgreen") +
+  annotate(geom = "text", label = "2nd & 10",
+           x = 3, y = 4.4,
+           color = "darkorange") +
+  annotate(geom = "text", label = "3rd & 10",
+           x = 3, y = 3.7,
+           color = "red") +
+  annotate(geom = "text", label = expression(atop("2nd & 2 line (not shown) approx = 1st & 10 line", ~"3rd & 1 line (not shown) approx = 2nd & 10 line")),
+           x = 65, y = 4.4,
+           color = "black") +
+  annotate(geom = "text", label = "For more details on this graph see \nmichael-morris.us",
+           x = 35, y = -1,
+           color = "black") +
+  annotate(geom = "text", label = "thanks to the developers on nflfastR",
+           x = 35, y = -1.7,
+           color = "black") +
+  annotate(geom = "text", label = expression(atop("2nd & 3-9 yards will be between", ~"1st & 10 and 2nd & 10 lines.")),
+           x = 75, y = 3.4,
+           color = "black") +
+  annotate(geom = "text", label = expression(atop("3rd & 2-9 will be between", ~"2nd & 10 and 3rd & 10 lines.")),
+           x = 80, y = 2.6,
+           color = "black") +
+  theme_minimal(base_size = 16)
+
+
+p
+
+
+```
+
