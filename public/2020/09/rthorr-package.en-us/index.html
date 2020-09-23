@@ -8,39 +8,35 @@
 <meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Michael Morris">
 <meta name="keywords" content="tech">
-<meta name="description" content="In a previous post, I looked at some run vs pass splits using expected points added (EPA). Here I’m going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package nflfastr.
-Let’s start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors.">
+<meta name="description" content="I’ve recently made available my first public R package. RTHORR is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp; Arabie, 1987). Terence Tracey, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.">
 
 
-<meta property="og:description" content="In a previous post, I looked at some run vs pass splits using expected points added (EPA). Here I’m going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package nflfastr.
-Let’s start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors.">
+<meta property="og:description" content="I’ve recently made available my first public R package. RTHORR is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp; Arabie, 1987). Terence Tracey, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exploring expected points added (EPA) by different play outcomes">
-<meta name="twitter:title" content="Exploring expected points added (EPA) by different play outcomes">
-<meta property="og:url" content="/2020/06/exploring-expected-points-added-epa/">
-<meta property="twitter:url" content="/2020/06/exploring-expected-points-added-epa/">
+<meta property="og:title" content="RTHORR package now available">
+<meta name="twitter:title" content="RTHORR package now available">
+<meta property="og:url" content="/2020/09/rthorr-package.en-us/">
+<meta property="twitter:url" content="/2020/09/rthorr-package.en-us/">
 <meta property="og:site_name" content="Michael Morris&#39; site">
-<meta property="og:description" content="In a previous post, I looked at some run vs pass splits using expected points added (EPA). Here I’m going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package nflfastr.
-Let’s start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors.">
-<meta name="twitter:description" content="In a previous post, I looked at some run vs pass splits using expected points added (EPA). Here I’m going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package nflfastr.
-Let’s start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors.">
+<meta property="og:description" content="I’ve recently made available my first public R package. RTHORR is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp; Arabie, 1987). Terence Tracey, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.">
+<meta name="twitter:description" content="I’ve recently made available my first public R package. RTHORR is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp; Arabie, 1987). Terence Tracey, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-06-12T00:00:00">
+    <meta property="article:published_time" content="2020-09-23T00:00:00">
   
   
-    <meta property="article:modified_time" content="2020-06-12T00:00:00">
+    <meta property="article:modified_time" content="2020-09-23T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="NFL">
-    
   
   
     
-      <meta property="article:tag" content="NFL">
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="R">
     
   
 
@@ -61,14 +57,14 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
 
 
-    <title>Exploring expected points added (EPA) by different play outcomes</title>
+    <title>RTHORR package now available</title>
 
     <link rel="icon" href="/favicon.png">
     
 
     
 
-    <link rel="canonical" href="/2020/06/exploring-expected-points-added-epa/">
+    <link rel="canonical" href="/2020/09/rthorr-package.en-us/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -218,15 +214,15 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Exploring expected points added (EPA) by different play outcomes
+      RTHORR package now available
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-06-12T00:00:00Z">
+      <time itemprop="datePublished" datetime="2020-09-23T00:00:00Z">
         
-  June 12, 2020
+  September 23, 2020
 
       </time>
     
@@ -235,7 +231,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/nfl">NFL</a>
+      <a class="category-link" href="/categories/r">R</a>
     
   
 
@@ -248,32 +244,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
               
 
 
-<p>In a <a href="https://michael-morris.us/2020/01/seahawks-should-pass-more/">previous post</a>, I looked at some run vs pass splits using expected points added (EPA). Here I’m going to explore 20 years of data to look at some basic but I think interesting things related to EPA using the great newish package <a href="https://github.com/mrcaseb/nflfastR">nflfastr</a>.</p>
-<p>Let’s start with a review of EPA. By using models, analysts can estimate the expected number of points (EP) that accompany a given field position, down, distance, and other factors. This calculation is based on hundreds of thousands of plays and looks at the liklihood of the next score (possibilities include a touchdown or field goal for the team with the ball, no score, or safety, field goal, or touchdown for the opposing team).</p>
-<ul>
-<li>EP basics explained <a href="https://arxiv.org/pdf/1802.00998.pdf">here</a></li>
-<li>EP model construction for <a href="https://gist.github.com/guga31bb/2e827358b9957c727282b843685e524f">nflfastr</a>, which differs slightly from other EPA models.</li>
-</ul>
-<p>As a simple example of expected points (EP) and expected points added (EPA) is descibed <a href="https://www.advancedfootballanalytics.com/index.php/home/stats/stats-explained/expected-points-and-epa-explained">here</a>:</p>
-<blockquote>
-<p>Suppose the offense has a 1st and 10 at midfield. This situation is worth +2.0 EP. A 5-yard gain would set up a 2nd and 5 from the 45, which corresponds to a +2.1 EP. Therefore, that 5-yard gain in that particular situation represents a +0.1 gain in EP.</p>
-</blockquote>
-<p>This example play was worth .1 EPA.</p>
-<p>Here I wanted to take a look at some common outcomes of passing plays to get an idea of what a typical pass play generates in terms of EPA, specifically completed passes, incomplete passes, sacks, and interceptions. I also included runs for comparison. Anybody who follows football certainly realizes that completed passes are generally positive for the offense (though they sometimes lose yards), while incomplete passes, sacks, and interceptions are almost always negative.</p>
-<p>Let’s look at the entire distribution of EPA as well, to get an idea of the spread of each outcome. I’ll concentrate on regular season games and neutral game situations, where win probability is between 20 and 80 percent, where there are more than five minutes remaining in the game, and look only at first through third downs. Over the 2000-2019 seasons this covers 172040 plays.</p>
-<p>The blue vertical line in each figure is the mean. Looking at all passes, we have an average EPA of zero. It looks like passes are giving us the finger for not running more of them.</p>
-<p><img src="/post/2020-06-10-exploring-expected-points-added-epa_files/figure-html/plot1-1.png" width="672" /></p>
-<p>Rushes, meanwhile, have a mean EPA of slighly less than zero, and a much narrower distribution of EPA.</p>
-<p><img src="/post/2020-06-10-exploring-expected-points-added-epa_files/figure-html/plot2-1.png" width="672" /></p>
-<p>Completed passes are where all the upside is, obviously, with an average EPA gain of .9.</p>
-<p><img src="/post/2020-06-10-exploring-expected-points-added-epa_files/figure-html/plot3-1.png" width="672" /></p>
-<p>Incomplete passes cost an offense around .8 EPA, and are never positive.</p>
-<p><img src="/post/2020-06-10-exploring-expected-points-added-epa_files/figure-html/plot4-1.png" width="672" /></p>
-<p>Sacks cost an offense 1.8 EPA, and are never positive.</p>
-<p><img src="/post/2020-06-10-exploring-expected-points-added-epa_files/figure-html/plot5-1.png" width="672" /></p>
-<p>Interceptions are very costly, averaging a cost of 4.5 EPA for the offense, with a lot of variance. If you squint you can see that there are a small number of interceptions that are positive EPA. At first I thought these would be plays where a long pass is intercepted close to the defense’s goal line (like a long punt), but it turns out these were almost all plays where there was an interception followed by a fumble that the offense recovered.</p>
-<p><img src="/post/2020-06-10-exploring-expected-points-added-epa_files/figure-html/plot6-1.png" width="672" /></p>
-<p>I conclude that in general, fans can watch a game and conclude that the average pass completion is worth a little less than a point, the average incompletion costs about a point, the average sack about two points, and the average interception 4-5 points.</p>
+<p>I’ve recently made available my first public R package. <a href="https://github.com/michaellynnmorris/RTHORR">RTHORR</a> is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp; Arabie, 1987). <a href="https://en.wikipedia.org/wiki/Terence_Tracey">Terence Tracey</a>, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.</p>
 
               
             </div>
@@ -286,7 +257,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="/tags/nfl/">NFL</a>
+  <a class="tag tag--primary tag--small" href="/tags/r/">R</a>
 
                   </div>
                 
@@ -299,7 +270,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/ppp-loans/" data-tooltip="PPP loans">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -307,7 +278,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/05/busses-and-bikes-and-parking/" data-tooltip="Busses and bikes and parking">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/08/expect-points-added-cheatsheet/" data-tooltip="Expect points added cheatsheet">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -325,19 +296,19 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/06/exploring-expected-points-added-epa/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/09/rthorr-package.en-us/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/06/exploring-expected-points-added-epa/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/09/rthorr-package.en-us/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/06/exploring-expected-points-added-epa/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/09/rthorr-package.en-us/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -385,7 +356,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/07/ppp-loans/" data-tooltip="PPP loans">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -393,7 +364,7 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/05/busses-and-bikes-and-parking/" data-tooltip="Busses and bikes and parking">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/08/expect-points-added-cheatsheet/" data-tooltip="Expect points added cheatsheet">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -411,19 +382,19 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/06/exploring-expected-points-added-epa/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/09/rthorr-package.en-us/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/06/exploring-expected-points-added-epa/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/09/rthorr-package.en-us/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/06/exploring-expected-points-added-epa/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/09/rthorr-package.en-us/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -453,19 +424,19 @@ Let’s start with a review of EPA. By using models, analysts can estimate the e
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F06%2Fexploring-expected-points-added-epa%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F09%2Frthorr-package.en-us%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F06%2Fexploring-expected-points-added-epa%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F09%2Frthorr-package.en-us%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F06%2Fexploring-expected-points-added-epa%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F09%2Frthorr-package.en-us%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -557,9 +528,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/2020\/06\/exploring-expected-points-added-epa\/';
+          this.page.url = '\/2020\/09\/rthorr-package.en-us\/';
           
-            this.page.identifier = '\/2020\/06\/exploring-expected-points-added-epa\/'
+            this.page.identifier = '\/2020\/09\/rthorr-package.en-us\/'
           
         };
         (function() {

@@ -5,10 +5,24 @@
     <description>Recent content on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RTHORR package now available</title>
+      <link>/2020/09/rthorr-package.en-us/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/rthorr-package.en-us/</guid>
+      <description>
+
+
+&lt;p&gt;I’ve recently made available my first public R package. &lt;a href=&#34;https://github.com/michaellynnmorris/RTHORR&#34;&gt;RTHORR&lt;/a&gt; is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp;amp; Arabie, 1987). &lt;a href=&#34;https://en.wikipedia.org/wiki/Terence_Tracey&#34;&gt;Terence Tracey&lt;/a&gt;, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.&lt;/p&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Expect points added cheatsheet</title>

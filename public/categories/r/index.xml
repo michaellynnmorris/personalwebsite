@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Michael Morris&#39; site</title>
+    <link>/categories/r/</link>
+    <description>Recent content in R on Michael Morris&#39; site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RTHORR package now available</title>
+      <link>/2020/09/rthorr-package.en-us/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/rthorr-package.en-us/</guid>
+      <description>I’ve recently made available my first public R package. RTHORR is designed to make it easy to run the randomaization test of hypothesized order relations (RTHOR; Hubert &amp;amp; Arabie, 1987). Terence Tracey, who wrote most of the original code, graciously agreed to let me make some minor alterations and turn his code into this package. Please see the link above for installation instructions and more information.</description>
+    </item>
+    
+  </channel>
+</rss>
