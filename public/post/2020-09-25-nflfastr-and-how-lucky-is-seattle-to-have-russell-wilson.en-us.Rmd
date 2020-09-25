@@ -1,0 +1,64 @@
+---
+title: nflfastR and how lucky is Seattle to have Russell Wilson?
+author: Mike Morris
+date: '2020-09-25'
+slug: nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us
+categories:
+  - NFL
+  - R
+  - Seahawks
+tags:
+  - NFL
+  - R
+  - Seahawks
+keywords:
+  - tech
+
+---
+
+
+The relatively new [nflfastR](https://github.com/mrcaseb/nflfastR) package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:
+
+> update_db(
+>   dbdir = "/home/michael/Documents/NFL/",
+>   dbname = "nflpbpdb",
+>   tblname = "pbp_raw",
+>   force_rebuild = FALSE)
+
+
+
+And you can run the same command to update with any new games. Incredible.
+
+Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes. Russell Wilson has been one of the better quarterbacks in the league by this measure, so I was curious to see how his annual numbers stacked up compared to the years prior, where Seahawks fans were entertained by the like of Tavaris Jackson (RIP) and Charlie Whitehurst, and latter stage Matt Hasselbeck. Here are the team CPOE values for each season as far back as we have it in nflfastR:
+
+
+
+```{r Seahawks CPOE by year, echo=FALSE, cache=TRUE, warning=FALSE, message=FALSE}
+
+library(RSQLite)
+library(glue)
+library(tidyverse)
+library(gt)
+
+#build connection and select some data
+con <- DBI::dbConnect(SQLite(), glue('/home/michael/Documents/NFL/nflpbpdb'))
+pbp_db <- dplyr::tbl(con, "pbp_raw") %>% 
+  dplyr::select(season, week, home_wp, posteam, defteam, cpoe) %>%
+  dplyr::filter(posteam=="SEA") %>%
+  collect()
+
+DBI::dbDisconnect(con)
+
+
+
+sea_runpass_year <- pbp_db %>% 
+  dplyr::group_by(season) %>% 
+  summarize(cpoe_mean = round(mean(cpoe, na.rm = TRUE), digits = 2) ) %>% 
+  dplyr::filter(!is.na(cpoe_mean))
+
+gt(sea_runpass_year)
+
+```
+
+
+Russ arrived in 2012 - do you think the city noticed? And no wonder people are talking about 2020 being his MVP year. Seattle is lucky to have this guy,
