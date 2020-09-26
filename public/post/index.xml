@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>nflfastR and how lucky is Seattle to have Russell Wilson?</title>
+      <link>/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/</guid>
+      <description>The relatively new nflfastR package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:
+ update_db( dbdir = “/home/michael/Documents/NFL/”, dbname = “nflpbpdb”, tblname = “pbp_raw”, force_rebuild = FALSE)
+ And you can run the same command to update with any new games. Incredible.
+Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes.</description>
+    </item>
     
     <item>
       <title>RTHORR package now available</title>
@@ -28,15 +40,6 @@
       <guid>/2020/08/expect-points-added-cheatsheet/</guid>
       <description>Like everyone else I am hoping that we have NFL football this fall, but also like everyone else I want that to be safe (at least as far as football can be) from virus related problems. I doubt that will happen but we’ll see.
 When sitting in the stands, I’ve sometimes mentioned the concepts of expected points (EP) and expected points added (EPA) but I’ve never had a great feel for how many EP a given situation was worth.</description>
-    </item>
-    
-    <item>
-      <title>PPP loans</title>
-      <link>/2020/07/ppp-loans/</link>
-      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/07/ppp-loans/</guid>
-      <description>## ── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ── ## ✓ ggplot2 3.3.2 ✓ purrr 0.3.4 ## ✓ tibble 3.0.3 ✓ dplyr 1.0.0 ## ✓ tidyr 1.1.0 ✓ stringr 1.4.0 ## ✓ readr 1.3.1 ✓ forcats 0.5.0 ## ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ── ## x dplyr::filter() masks stats::filter() ## x dplyr::lag() masks stats::lag() ## `summarise()` ungrouping output (override with `.groups` argument) ## [1] &amp;quot;MAVERICK TECHNOLOGIES INC&amp;quot; &amp;quot;MAVERICK TECHNOLOGY SOLUTIONS, INC.&amp;quot; ## [3] &amp;quot;MAVERICK TECHNOLOGY PARTNERS, INC.</description>
     </item>
     
     <item>

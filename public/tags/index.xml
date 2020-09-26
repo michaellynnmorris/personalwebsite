@@ -6,26 +6,35 @@
     <description>Recent content in Tags on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>NFL</title>
+      <link>/tags/nfl/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/nfl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>NFL</title>
-      <link>/tags/nfl/</link>
-      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <title>Seahawks</title>
+      <link>/tags/seahawks/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/nfl/</guid>
+      <guid>/tags/seahawks/</guid>
       <description></description>
     </item>
     
@@ -62,15 +71,6 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/theme-parks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Seahawks</title>
-      <link>/tags/seahawks/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/seahawks/</guid>
       <description></description>
     </item>
     

@@ -4,36 +4,61 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nfl/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nfl/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2020/09/rthorr-package.en-us/</loc>
-    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/seahawks/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/seahawks/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/09/rthorr-package.en-us/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,28 +68,13 @@
   </url>
   
   <url>
-    <loc>/tags/nfl/</loc>
-    <lastmod>2020-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/nfl/</loc>
-    <lastmod>2020-08-01T00:00:00+00:00</lastmod>
+    <loc>/2020/06/exploring-expected-points-added-epa/</loc>
+    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/apolcalypse/</loc>
-    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2020/07/ppp-loans/</loc>
-    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2020/06/exploring-expected-points-added-epa/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -134,16 +144,6 @@
   
   <url>
     <loc>/2020/01/nfl-draft-capital-by-position-by-team/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/seahawks/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/seahawks/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url>
   
