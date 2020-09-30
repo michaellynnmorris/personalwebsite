@@ -1,0 +1,115 @@
+---
+title: Best QBs by CPOE and EPA
+author: Mike Morris
+date: '2020-09-29'
+slug: best-qbs-by-cpoe-and-epa.en-us
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+
+---
+
+```{r data prep, echo=FALSE, cache=TRUE, warning=FALSE, message=FALSE}
+
+
+library(RSQLite)
+library(glue)
+library(tidyverse)
+library(DBI)
+library(gt)
+
+con <- DBI::dbConnect(SQLite(), glue('/home/michael/Documents/NFL/nflpbpdb'))
+pbp_db <- tbl(con, "pbp_raw")
+
+
+passer_epa_all_time <- pbp_db %>% 
+  select(play_type, yards_gained, penalty, season, posteam, defteam, play_id, game_id, epa, desc,
+         down, ydstogo, passer_player_name) %>%
+  filter(play_type == "pass", penalty == 0) %>%
+  filter(!is.na(passer_player_name)) %>% 
+  filter(!is.na(epa)) %>% 
+  dplyr::group_by(passer_player_name) %>% 
+  dplyr::summarise(n = n(),
+                   mean_epa = round(mean(epa, na.rm = TRUE), digits = 2),
+                   total_epa = round(sum(epa, na.rm = TRUE), digits = 2)) %>% 
+  dplyr::filter(n>99) %>% 
+  dplyr::mutate(rank_mean_epa = rank(-mean_epa)) %>% 
+  dplyr::arrange(-mean_epa) %>% 
+  collect()
+
+passer_cpoe_all_time <- pbp_db %>% 
+  select(play_type, yards_gained, penalty, season, posteam, defteam, play_id, game_id, epa, desc,
+         down, ydstogo, passer_player_name, cpoe) %>%
+  filter(play_type == "pass", penalty == 0) %>%
+  filter(!is.na(passer_player_name)) %>% 
+  filter(!is.na(cpoe)) %>% 
+  dplyr::group_by(passer_player_name) %>% 
+  dplyr::summarise(n = n(),
+                   mean_cpoe = round(mean(cpoe, na.rm = TRUE), digits = 2)) %>% 
+  dplyr::filter(n>99) %>% 
+  dplyr::mutate(rank_cpoe = rank(-mean_cpoe)) %>% 
+  dplyr::arrange(-mean_cpoe) %>% 
+  collect()
+
+
+DBI::dbDisconnect(con)
+
+
+cpoe_epa_all_time <- merge(passer_cpoe_all_time, passer_epa_all_time, by = "passer_player_name")
+
+top10_cpoe_epa_all_time <- cpoe_epa_all_time %>% 
+  dplyr::filter(rank_cpoe <11 | rank_mean_epa <11) %>% 
+  dplyr::mutate(rank_sum = rank_cpoe + rank_mean_epa) %>% 
+  dplyr::arrange(rank_sum) %>% 
+  dplyr::relocate(rank_sum, .after = passer_player_name)
+
+
+colnames(top10_cpoe_epa_all_time) <- c("QB",
+                                       "Rank sum",
+                                       "CPOE plays",
+                                       "CPOE average",
+                                       "CPOE rank",
+                                       "EPA plays",
+                                       "EPA average",
+                                       "EPA total",
+                                       "EPA rank")
+
+
+
+```
+
+
+
+
+I'm really enjoying playing with [nflfastR](https://github.com/mrcaseb/nflfastR).
+
+There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were `r nrow(cpoe_epa_all_time)` of them. This covers from 2006 forward through this past weekend's games.
+
+There were `r nrow(top10_cpoe_epa_all_time)` that were top 10 on either measure:
+
+
+```{r top10 table, echo=FALSE, cache=TRUE, warning=FALSE, message=FALSE}
+
+gt::gt(top10_cpoe_epa_all_time)
+ 
+```
+
+
+
+To make a quick index I summed the ranks of the two measures and sorted. These overall results are not too surprising - Manning on top, Rodgers, Brees, and Wilson next. But Chad Pennington over Brady? Who knew Pennington's CPOE was so good?
+
+Returning to theme of my last post, Seattle is lucky to have Wilson. Is he the most accurate passer of the last 15 years? First in CPOE would seem to suggest he's as good or better than anyone. 
+
+Other surprises: 
+
+* Joe Burrow is already top 10 in CPOE
+* Garappolo above Lamar Jackson? I'm surprised Jimmy G is on this list at all.
+* I had to look up [Quinton Gray](https://twitter.com/CoachQGray) - never heard of him before this exercise. Gray threw a relatively small number of passes and had a great EPA rating. He's now the quarterbacks coach at Alcorn State. 
+
+
+
+
+

@@ -6,10 +6,21 @@
     <description>Recent content in NFL on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/nfl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Best QBs by CPOE and EPA</title>
+      <link>/2020/09/best-qbs-by-cpoe-and-epa.en-us/</link>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/best-qbs-by-cpoe-and-epa.en-us/</guid>
+      <description>I’m really enjoying playing with nflfastR.
+There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.
+There were 15 that were top 10 on either measure:</description>
+    </item>
     
     <item>
       <title>nflfastR and how lucky is Seattle to have Russell Wilson?</title>

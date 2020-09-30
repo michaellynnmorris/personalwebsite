@@ -8,55 +8,43 @@
 <meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Michael Morris">
 <meta name="keywords" content="tech">
-<meta name="description" content="The relatively new nflfastR package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:
- update_db( dbdir = “/home/michael/Documents/NFL/”, dbname = “nflpbpdb”, tblname = “pbp_raw”, force_rebuild = FALSE)
- And you can run the same command to update with any new games. Incredible.
-Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes.">
+<meta name="description" content="I’m really enjoying playing with nflfastR.
+There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.
+There were 15 that were top 10 on either measure:">
 
 
-<meta property="og:description" content="The relatively new nflfastR package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:
- update_db( dbdir = “/home/michael/Documents/NFL/”, dbname = “nflpbpdb”, tblname = “pbp_raw”, force_rebuild = FALSE)
- And you can run the same command to update with any new games. Incredible.
-Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes.">
+<meta property="og:description" content="I’m really enjoying playing with nflfastR.
+There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.
+There were 15 that were top 10 on either measure:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nflfastR and how lucky is Seattle to have Russell Wilson?">
-<meta name="twitter:title" content="nflfastR and how lucky is Seattle to have Russell Wilson?">
-<meta property="og:url" content="/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
-<meta property="twitter:url" content="/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+<meta property="og:title" content="Best QBs by CPOE and EPA">
+<meta name="twitter:title" content="Best QBs by CPOE and EPA">
+<meta property="og:url" content="/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
+<meta property="twitter:url" content="/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
 <meta property="og:site_name" content="Michael Morris&#39; site">
-<meta property="og:description" content="The relatively new nflfastR package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:
- update_db( dbdir = “/home/michael/Documents/NFL/”, dbname = “nflpbpdb”, tblname = “pbp_raw”, force_rebuild = FALSE)
- And you can run the same command to update with any new games. Incredible.
-Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes.">
-<meta name="twitter:description" content="The relatively new nflfastR package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:
- update_db( dbdir = “/home/michael/Documents/NFL/”, dbname = “nflpbpdb”, tblname = “pbp_raw”, force_rebuild = FALSE)
- And you can run the same command to update with any new games. Incredible.
-Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes.">
+<meta property="og:description" content="I’m really enjoying playing with nflfastR.
+There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.
+There were 15 that were top 10 on either measure:">
+<meta name="twitter:description" content="I’m really enjoying playing with nflfastR.
+There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.
+There were 15 that were top 10 on either measure:">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-09-25T00:00:00">
+    <meta property="article:published_time" content="2020-09-29T00:00:00">
   
   
-    <meta property="article:modified_time" content="2020-09-25T00:00:00">
+    <meta property="article:modified_time" content="2020-09-29T00:00:00">
   
   
   
     
       <meta property="article:section" content="NFL">
     
-      <meta property="article:section" content="R">
-    
-      <meta property="article:section" content="Seahawks">
-    
   
   
     
       <meta property="article:tag" content="NFL">
-    
-      <meta property="article:tag" content="R">
-    
-      <meta property="article:tag" content="Seahawks">
     
   
 
@@ -77,14 +65,14 @@ Playing around with it, one measure you get is completion percentage above expec
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/6ea588c268f7f73136ccf232b87de425?s=640">
 
 
-    <title>nflfastR and how lucky is Seattle to have Russell Wilson?</title>
+    <title>Best QBs by CPOE and EPA</title>
 
     <link rel="icon" href="/favicon.png">
     
 
     
 
-    <link rel="canonical" href="/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+    <link rel="canonical" href="/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -234,15 +222,15 @@ Playing around with it, one measure you get is completion percentage above expec
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      nflfastR and how lucky is Seattle to have Russell Wilson?
+      Best QBs by CPOE and EPA
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-09-25T00:00:00Z">
+      <time itemprop="datePublished" datetime="2020-09-29T00:00:00Z">
         
-  September 25, 2020
+  September 29, 2020
 
       </time>
     
@@ -251,11 +239,7 @@ Playing around with it, one measure you get is completion percentage above expec
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/nfl">NFL</a>, 
-    
-      <a class="category-link" href="/categories/r">R</a>, 
-    
-      <a class="category-link" href="/categories/seahawks">Seahawks</a>
+      <a class="category-link" href="/categories/nfl">NFL</a>
     
   
 
@@ -268,21 +252,14 @@ Playing around with it, one measure you get is completion percentage above expec
               
 
 
-<p>The relatively new <a href="https://github.com/mrcaseb/nflfastR">nflfastR</a> package is pretty incredible. One command and you get a local SQLite database with 20 years of cleaned play by play data:</p>
-<blockquote>
-<p>update_db(
-dbdir = “/home/michael/Documents/NFL/”,
-dbname = “nflpbpdb”,
-tblname = “pbp_raw”,
-force_rebuild = FALSE)</p>
-</blockquote>
-<p>And you can run the same command to update with any new games. Incredible.</p>
-<p>Playing around with it, one measure you get is completion percentage above expectation (CPOE), which takes into account the relative difficulty of each throw and the outcomes. Russell Wilson has been one of the better quarterbacks in the league by this measure, so I was curious to see how his annual numbers stacked up compared to the years prior, where Seahawks fans were entertained by the like of Tavaris Jackson (RIP) and Charlie Whitehurst, and latter stage Matt Hasselbeck. Here are the team CPOE values for each season as far back as we have it in nflfastR:</p>
+<p>I’m really enjoying playing with <a href="https://github.com/mrcaseb/nflfastR">nflfastR</a>.</p>
+<p>There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.</p>
+<p>There were 15 that were top 10 on either measure:</p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bvcqcjbupf .gt_table {
+#vmbbwozojd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -305,7 +282,7 @@ force_rebuild = FALSE)</p>
   border-left-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_heading {
+#vmbbwozojd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -317,7 +294,7 @@ force_rebuild = FALSE)</p>
   border-right-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_title {
+#vmbbwozojd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -327,7 +304,7 @@ force_rebuild = FALSE)</p>
   border-bottom-width: 0;
 }
 
-#bvcqcjbupf .gt_subtitle {
+#vmbbwozojd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -337,13 +314,13 @@ force_rebuild = FALSE)</p>
   border-top-width: 0;
 }
 
-#bvcqcjbupf .gt_bottom_border {
+#vmbbwozojd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_col_headings {
+#vmbbwozojd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -358,7 +335,7 @@ force_rebuild = FALSE)</p>
   border-right-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_col_heading {
+#vmbbwozojd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -378,7 +355,7 @@ force_rebuild = FALSE)</p>
   overflow-x: hidden;
 }
 
-#bvcqcjbupf .gt_column_spanner_outer {
+#vmbbwozojd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -390,15 +367,15 @@ force_rebuild = FALSE)</p>
   padding-right: 4px;
 }
 
-#bvcqcjbupf .gt_column_spanner_outer:first-child {
+#vmbbwozojd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bvcqcjbupf .gt_column_spanner_outer:last-child {
+#vmbbwozojd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bvcqcjbupf .gt_column_spanner {
+#vmbbwozojd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -410,7 +387,7 @@ force_rebuild = FALSE)</p>
   width: 100%;
 }
 
-#bvcqcjbupf .gt_group_heading {
+#vmbbwozojd .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -432,7 +409,7 @@ force_rebuild = FALSE)</p>
   vertical-align: middle;
 }
 
-#bvcqcjbupf .gt_empty_group_heading {
+#vmbbwozojd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -447,19 +424,19 @@ force_rebuild = FALSE)</p>
   vertical-align: middle;
 }
 
-#bvcqcjbupf .gt_striped {
+#vmbbwozojd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bvcqcjbupf .gt_from_md > :first-child {
+#vmbbwozojd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bvcqcjbupf .gt_from_md > :last-child {
+#vmbbwozojd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bvcqcjbupf .gt_row {
+#vmbbwozojd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -478,7 +455,7 @@ force_rebuild = FALSE)</p>
   overflow-x: hidden;
 }
 
-#bvcqcjbupf .gt_stub {
+#vmbbwozojd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -490,7 +467,7 @@ force_rebuild = FALSE)</p>
   padding-left: 12px;
 }
 
-#bvcqcjbupf .gt_summary_row {
+#vmbbwozojd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -500,7 +477,7 @@ force_rebuild = FALSE)</p>
   padding-right: 5px;
 }
 
-#bvcqcjbupf .gt_first_summary_row {
+#vmbbwozojd .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -510,7 +487,7 @@ force_rebuild = FALSE)</p>
   border-top-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_grand_summary_row {
+#vmbbwozojd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -520,7 +497,7 @@ force_rebuild = FALSE)</p>
   padding-right: 5px;
 }
 
-#bvcqcjbupf .gt_first_grand_summary_row {
+#vmbbwozojd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +507,7 @@ force_rebuild = FALSE)</p>
   border-top-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_table_body {
+#vmbbwozojd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -539,7 +516,7 @@ force_rebuild = FALSE)</p>
   border-bottom-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_footnotes {
+#vmbbwozojd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -553,13 +530,13 @@ force_rebuild = FALSE)</p>
   border-right-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_footnote {
+#vmbbwozojd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#bvcqcjbupf .gt_sourcenotes {
+#vmbbwozojd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -573,119 +550,238 @@ force_rebuild = FALSE)</p>
   border-right-color: #D3D3D3;
 }
 
-#bvcqcjbupf .gt_sourcenote {
+#vmbbwozojd .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#bvcqcjbupf .gt_left {
+#vmbbwozojd .gt_left {
   text-align: left;
 }
 
-#bvcqcjbupf .gt_center {
+#vmbbwozojd .gt_center {
   text-align: center;
 }
 
-#bvcqcjbupf .gt_right {
+#vmbbwozojd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bvcqcjbupf .gt_font_normal {
+#vmbbwozojd .gt_font_normal {
   font-weight: normal;
 }
 
-#bvcqcjbupf .gt_font_bold {
+#vmbbwozojd .gt_font_bold {
   font-weight: bold;
 }
 
-#bvcqcjbupf .gt_font_italic {
+#vmbbwozojd .gt_font_italic {
   font-style: italic;
 }
 
-#bvcqcjbupf .gt_super {
+#vmbbwozojd .gt_super {
   font-size: 65%;
 }
 
-#bvcqcjbupf .gt_footnote_marks {
+#vmbbwozojd .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="bvcqcjbupf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="vmbbwozojd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">season</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cpoe_mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">QB</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Rank sum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">CPOE plays</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">CPOE average</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">CPOE rank</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">EPA plays</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">EPA average</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">EPA total</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">EPA rank</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_center">2006</td>
-      <td class="gt_row gt_right">-2.00</td>
+      <td class="gt_row gt_left">P.Manning</td>
+      <td class="gt_row gt_center">5</td>
+      <td class="gt_row gt_center">5615</td>
+      <td class="gt_row gt_right">4.23</td>
+      <td class="gt_row gt_center">3</td>
+      <td class="gt_row gt_center">10037</td>
+      <td class="gt_row gt_right">0.20</td>
+      <td class="gt_row gt_right">2022.79</td>
+      <td class="gt_row gt_center">2</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2007</td>
-      <td class="gt_row gt_right">1.89</td>
+      <td class="gt_row gt_left">A.Rodgers</td>
+      <td class="gt_row gt_center">12</td>
+      <td class="gt_row gt_center">6561</td>
+      <td class="gt_row gt_right">3.25</td>
+      <td class="gt_row gt_center">7</td>
+      <td class="gt_row gt_center">7222</td>
+      <td class="gt_row gt_right">0.17</td>
+      <td class="gt_row gt_right">1192.57</td>
+      <td class="gt_row gt_center">5</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2008</td>
-      <td class="gt_row gt_right">-4.94</td>
+      <td class="gt_row gt_left">D.Brees</td>
+      <td class="gt_row gt_center">12</td>
+      <td class="gt_row gt_center">8796</td>
+      <td class="gt_row gt_right">4.07</td>
+      <td class="gt_row gt_center">5</td>
+      <td class="gt_row gt_center">11161</td>
+      <td class="gt_row gt_right">0.16</td>
+      <td class="gt_row gt_right">1757.39</td>
+      <td class="gt_row gt_center">7</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2009</td>
-      <td class="gt_row gt_right">-1.51</td>
+      <td class="gt_row gt_left">R.Wilson</td>
+      <td class="gt_row gt_center">14</td>
+      <td class="gt_row gt_center">4065</td>
+      <td class="gt_row gt_right">5.63</td>
+      <td class="gt_row gt_center">1</td>
+      <td class="gt_row gt_center">4611</td>
+      <td class="gt_row gt_right">0.12</td>
+      <td class="gt_row gt_right">557.67</td>
+      <td class="gt_row gt_center">13</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2010</td>
-      <td class="gt_row gt_right">-1.67</td>
+      <td class="gt_row gt_left">P.Rivers</td>
+      <td class="gt_row gt_center">15</td>
+      <td class="gt_row gt_center">7656</td>
+      <td class="gt_row gt_right">3.54</td>
+      <td class="gt_row gt_center">6</td>
+      <td class="gt_row gt_center">8380</td>
+      <td class="gt_row gt_right">0.15</td>
+      <td class="gt_row gt_right">1291.72</td>
+      <td class="gt_row gt_center">9</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2011</td>
+      <td class="gt_row gt_left">K.Warner</td>
+      <td class="gt_row gt_center">17</td>
+      <td class="gt_row gt_center">1849</td>
+      <td class="gt_row gt_right">4.18</td>
+      <td class="gt_row gt_center">4</td>
+      <td class="gt_row gt_center">4663</td>
+      <td class="gt_row gt_right">0.12</td>
+      <td class="gt_row gt_right">560.33</td>
+      <td class="gt_row gt_center">13</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">P.Mahomes</td>
+      <td class="gt_row gt_center">18</td>
+      <td class="gt_row gt_center">1288</td>
+      <td class="gt_row gt_right">2.26</td>
+      <td class="gt_row gt_center">17</td>
+      <td class="gt_row gt_center">1391</td>
+      <td class="gt_row gt_right">0.28</td>
+      <td class="gt_row gt_right">382.74</td>
+      <td class="gt_row gt_center">1</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">T.Romo</td>
+      <td class="gt_row gt_center">18</td>
+      <td class="gt_row gt_center">4382</td>
+      <td class="gt_row gt_right">3.19</td>
+      <td class="gt_row gt_center">8</td>
+      <td class="gt_row gt_center">4717</td>
+      <td class="gt_row gt_right">0.14</td>
+      <td class="gt_row gt_right">640.08</td>
+      <td class="gt_row gt_center">10</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">C.Pennington</td>
+      <td class="gt_row gt_center">28</td>
+      <td class="gt_row gt_center">1326</td>
+      <td class="gt_row gt_right">4.37</td>
+      <td class="gt_row gt_center">2</td>
+      <td class="gt_row gt_center">2829</td>
       <td class="gt_row gt_right">0.06</td>
+      <td class="gt_row gt_right">173.53</td>
+      <td class="gt_row gt_center">26</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2012</td>
-      <td class="gt_row gt_right">5.22</td>
+      <td class="gt_row gt_left">T.Brady</td>
+      <td class="gt_row gt_center">31</td>
+      <td class="gt_row gt_center">8577</td>
+      <td class="gt_row gt_right">1.67</td>
+      <td class="gt_row gt_center">26</td>
+      <td class="gt_row gt_center">12133</td>
+      <td class="gt_row gt_right">0.17</td>
+      <td class="gt_row gt_right">2009.46</td>
+      <td class="gt_row gt_center">5</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2013</td>
-      <td class="gt_row gt_right">5.84</td>
+      <td class="gt_row gt_left">J.Garoppolo</td>
+      <td class="gt_row gt_center">36</td>
+      <td class="gt_row gt_center">910</td>
+      <td class="gt_row gt_right">1.40</td>
+      <td class="gt_row gt_center">29</td>
+      <td class="gt_row gt_center">999</td>
+      <td class="gt_row gt_right">0.16</td>
+      <td class="gt_row gt_right">162.64</td>
+      <td class="gt_row gt_center">7</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2014</td>
-      <td class="gt_row gt_right">3.77</td>
+      <td class="gt_row gt_left">L.Jackson</td>
+      <td class="gt_row gt_center">41</td>
+      <td class="gt_row gt_center">667</td>
+      <td class="gt_row gt_right">0.75</td>
+      <td class="gt_row gt_center">38</td>
+      <td class="gt_row gt_center">751</td>
+      <td class="gt_row gt_right">0.19</td>
+      <td class="gt_row gt_right">143.69</td>
+      <td class="gt_row gt_center">3</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2015</td>
-      <td class="gt_row gt_right">7.17</td>
+      <td class="gt_row gt_left">S.McNair</td>
+      <td class="gt_row gt_center">46</td>
+      <td class="gt_row gt_center">622</td>
+      <td class="gt_row gt_right">3.13</td>
+      <td class="gt_row gt_center">10</td>
+      <td class="gt_row gt_center">3853</td>
+      <td class="gt_row gt_right">0.04</td>
+      <td class="gt_row gt_right">142.21</td>
+      <td class="gt_row gt_center">36</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2016</td>
-      <td class="gt_row gt_right">5.18</td>
+      <td class="gt_row gt_left">J.Burrow</td>
+      <td class="gt_row gt_center">48</td>
+      <td class="gt_row gt_center">132</td>
+      <td class="gt_row gt_right">3.14</td>
+      <td class="gt_row gt_center">9</td>
+      <td class="gt_row gt_center">149</td>
+      <td class="gt_row gt_right">0.03</td>
+      <td class="gt_row gt_right">4.29</td>
+      <td class="gt_row gt_center">39</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">2017</td>
-      <td class="gt_row gt_right">4.54</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">2018</td>
-      <td class="gt_row gt_right">7.06</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">2019</td>
-      <td class="gt_row gt_right">7.04</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">2020</td>
-      <td class="gt_row gt_right">18.82</td>
+      <td class="gt_row gt_left">Q.Gray</td>
+      <td class="gt_row gt_center">102</td>
+      <td class="gt_row gt_center">148</td>
+      <td class="gt_row gt_right">-2.33</td>
+      <td class="gt_row gt_center">99</td>
+      <td class="gt_row gt_center">197</td>
+      <td class="gt_row gt_right">0.19</td>
+      <td class="gt_row gt_right">36.76</td>
+      <td class="gt_row gt_center">3</td>
     </tr>
   </tbody>
   
   
 </table></div>
-<p>Russ arrived in 2012 - do you think the city noticed? And no wonder people are talking about 2020 being his MVP year. Seattle is lucky to have this guy.</p>
+<p>To make a quick index I summed the ranks of the two measures and sorted. These overall results are not too surprising - Manning on top, Rodgers, Brees, and Wilson next. But Chad Pennington over Brady? Who knew Pennington’s CPOE was so good?</p>
+<p>Returning to theme of my last post, Seattle is lucky to have Wilson. Is he the most accurate passer of the last 15 years? First in CPOE would seem to suggest he’s as good or better than anyone.</p>
+<p>Other surprises:</p>
+<ul>
+<li>Joe Burrow is already top 10 in CPOE</li>
+<li>Garappolo above Lamar Jackson? I’m surprised Jimmy G is on this list at all.</li>
+<li>I had to look up <a href="https://twitter.com/CoachQGray">Quinton Gray</a> - never heard of him before this exercise. Gray threw a relatively small number of passes and had a great EPA rating. He’s now the quarterbacks coach at Alcorn State.</li>
+</ul>
 
               
             </div>
@@ -700,10 +796,6 @@ force_rebuild = FALSE)</p>
                     
   <a class="tag tag--primary tag--small" href="/tags/nfl/">NFL</a>
 
-  <a class="tag tag--primary tag--small" href="/tags/r/">R</a>
-
-  <a class="tag tag--primary tag--small" href="/tags/seahawks/">Seahawks</a>
-
                   </div>
                 
               
@@ -715,7 +807,7 @@ force_rebuild = FALSE)</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/best-qbs-by-cpoe-and-epa.en-us/" data-tooltip="Best QBs by CPOE and EPA">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -723,7 +815,7 @@ force_rebuild = FALSE)</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/rthorr-package.en-us/" data-tooltip="RTHORR package now available">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/" data-tooltip="nflfastR and how lucky is Seattle to have Russell Wilson?">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -741,19 +833,19 @@ force_rebuild = FALSE)</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -801,7 +893,7 @@ force_rebuild = FALSE)</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/best-qbs-by-cpoe-and-epa.en-us/" data-tooltip="Best QBs by CPOE and EPA">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -809,7 +901,7 @@ force_rebuild = FALSE)</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/rthorr-package.en-us/" data-tooltip="RTHORR package now available">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/" data-tooltip="nflfastR and how lucky is Seattle to have Russell Wilson?">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -827,19 +919,19 @@ force_rebuild = FALSE)</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/09/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2020/09/best-qbs-by-cpoe-and-epa.en-us/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -869,19 +961,19 @@ force_rebuild = FALSE)</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F09%2Fnflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F09%2Fbest-qbs-by-cpoe-and-epa.en-us%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F09%2Fnflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2020%2F09%2Fbest-qbs-by-cpoe-and-epa.en-us%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F09%2Fnflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2020%2F09%2Fbest-qbs-by-cpoe-and-epa.en-us%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -973,9 +1065,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/2020\/09\/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us\/';
+          this.page.url = '\/2020\/09\/best-qbs-by-cpoe-and-epa.en-us\/';
           
-            this.page.identifier = '\/2020\/09\/nflfastr-and-how-lucky-is-seattle-to-have-russell-wilson.en-us\/'
+            this.page.identifier = '\/2020\/09\/best-qbs-by-cpoe-and-epa.en-us\/'
           
         };
         (function() {

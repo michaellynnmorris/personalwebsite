@@ -5,10 +5,553 @@
     <description>Recent content on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Best QBs by CPOE and EPA</title>
+      <link>/2020/09/best-qbs-by-cpoe-and-epa.en-us/</link>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/best-qbs-by-cpoe-and-epa.en-us/</guid>
+      <description>
+
+
+&lt;p&gt;I’m really enjoying playing with &lt;a href=&#34;https://github.com/mrcaseb/nflfastR&#34;&gt;nflfastR&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are a couple of nice quarterback measures in there - completion percentage over expectation (CPOE) and expected points added (EPA). I looked at all quarterbacks that had at least 100 passes each for CPOE and EPA (EPA has more plays available), there were 175 of them. This covers from 2006 forward through this past weekend’s games.&lt;/p&gt;
+&lt;p&gt;There were 15 that were top 10 on either measure:&lt;/p&gt;
+&lt;style&gt;html {
+  font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
+}
+
+#vmbbwozojd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vmbbwozojd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vmbbwozojd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vmbbwozojd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vmbbwozojd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vmbbwozojd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vmbbwozojd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vmbbwozojd .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vmbbwozojd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vmbbwozojd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vmbbwozojd .gt_from_md &gt; :first-child {
+  margin-top: 0;
+}
+
+#vmbbwozojd .gt_from_md &gt; :last-child {
+  margin-bottom: 0;
+}
+
+#vmbbwozojd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vmbbwozojd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#vmbbwozojd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vmbbwozojd .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vmbbwozojd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#vmbbwozojd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vmbbwozojd .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#vmbbwozojd .gt_left {
+  text-align: left;
+}
+
+#vmbbwozojd .gt_center {
+  text-align: center;
+}
+
+#vmbbwozojd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vmbbwozojd .gt_font_normal {
+  font-weight: normal;
+}
+
+#vmbbwozojd .gt_font_bold {
+  font-weight: bold;
+}
+
+#vmbbwozojd .gt_font_italic {
+  font-style: italic;
+}
+
+#vmbbwozojd .gt_super {
+  font-size: 65%;
+}
+
+#vmbbwozojd .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+&lt;/style&gt;
+&lt;div id=&#34;vmbbwozojd&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+  
+  &lt;thead class=&#34;gt_col_headings&#34;&gt;
+    &lt;tr&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_left&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;QB&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Rank sum&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;CPOE plays&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;CPOE average&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;CPOE rank&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;EPA plays&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;EPA average&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;EPA total&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;EPA rank&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#34;gt_table_body&#34;&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;P.Manning&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;5&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;5615&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.23&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;10037&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.20&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2022.79&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;A.Rodgers&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;12&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;6561&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.25&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;7222&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.17&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1192.57&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;D.Brees&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;12&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;8796&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.07&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;5&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;11161&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.16&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1757.39&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;R.Wilson&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4065&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;5.63&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4611&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.12&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;557.67&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;13&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;P.Rivers&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;7656&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.54&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;8380&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1291.72&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;K.Warner&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;17&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;1849&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.18&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4663&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.12&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;560.33&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;13&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;P.Mahomes&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;18&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;1288&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.26&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;17&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;1391&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.28&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;382.74&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;T.Romo&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;18&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4382&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.19&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4717&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;640.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;C.Pennington&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;28&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;1326&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.37&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;2&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;2829&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.06&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;173.53&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;26&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;T.Brady&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;31&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;8577&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.67&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;26&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;12133&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.17&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2009.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;J.Garoppolo&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;36&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;910&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.40&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;29&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;999&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.16&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;162.64&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;L.Jackson&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;41&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;667&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.75&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;38&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;751&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.19&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;143.69&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;S.McNair&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;622&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.13&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;10&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;3853&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.04&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;142.21&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;36&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;J.Burrow&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;48&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;132&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;9&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;149&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.03&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.29&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;39&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Q.Gray&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;102&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;148&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;-2.33&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;99&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;197&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.19&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;36.76&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  
+  
+&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;To make a quick index I summed the ranks of the two measures and sorted. These overall results are not too surprising - Manning on top, Rodgers, Brees, and Wilson next. But Chad Pennington over Brady? Who knew Pennington’s CPOE was so good?&lt;/p&gt;
+&lt;p&gt;Returning to theme of my last post, Seattle is lucky to have Wilson. Is he the most accurate passer of the last 15 years? First in CPOE would seem to suggest he’s as good or better than anyone.&lt;/p&gt;
+&lt;p&gt;Other surprises:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Joe Burrow is already top 10 in CPOE&lt;/li&gt;
+&lt;li&gt;Garappolo above Lamar Jackson? I’m surprised Jimmy G is on this list at all.&lt;/li&gt;
+&lt;li&gt;I had to look up &lt;a href=&#34;https://twitter.com/CoachQGray&#34;&gt;Quinton Gray&lt;/a&gt; - never heard of him before this exercise. Gray threw a relatively small number of passes and had a great EPA rating. He’s now the quarterbacks coach at Alcorn State.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>nflfastR and how lucky is Seattle to have Russell Wilson?</title>
