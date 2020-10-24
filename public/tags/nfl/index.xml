@@ -6,10 +6,22 @@
     <description>Recent content in NFL on Michael Morris&#39; site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/nfl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NFL Big Data Bowl 2021 setup and play animation</title>
+      <link>/2020/10/nfl-big-data-bowl-2021-exploration.en-us/</link>
+      <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/nfl-big-data-bowl-2021-exploration.en-us/</guid>
+      <description>The 2021 edition of the NFL’s Big Data Bowl is here. The challenge is to evaluate defensive performance on passing plays using player tracking data, without offensive or defensive lines.
+Resources that I’ve found helpful :
+ Tom Bliss tutorial Definitions of events in the data How to animate a specific play R for NFL analytics  What’s covered here:
+ SQLite database of the tracking data examples of animations using the best and worst (by EPA) Seahawks plays in the dataset.</description>
+    </item>
     
     <item>
       <title>Best QBs by CPOE and EPA</title>

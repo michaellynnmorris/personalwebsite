@@ -3,37 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2020/09/best-qbs-by-cpoe-and-epa.en-us/</loc>
-    <lastmod>2020-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <lastmod>2020-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/nfl/</loc>
-    <lastmod>2020-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/nfl/</loc>
-    <lastmod>2020-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/10/nfl-big-data-bowl-2021-exploration.en-us/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-09-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/seahawks/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/09/best-qbs-by-cpoe-and-epa.en-us/</loc>
     <lastmod>2020-09-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -44,16 +59,6 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/seahawks/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,12 +103,12 @@
   </url>
   
   <url>
-    <loc>/categories/transportation/</loc>
+    <loc>/tags/transportation/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/transportation/</loc>
+    <loc>/categories/transportation/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
   </url>
   

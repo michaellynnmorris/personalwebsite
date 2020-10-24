@@ -1,0 +1,265 @@
+---
+title: NFL Big Data Bowl 2021 setup and play animation
+author: Mike Morris
+date: '2020-10-24'
+slug: nfl-big-data-bowl-2021-exploration.en-us
+categories:
+  - NFL
+tags:
+  - NFL
+  - R
+  - Seahawks
+keywords:
+  - tech
+
+---
+
+
+The [2021 edition of the NFL's Big Data Bowl](https://www.kaggle.com/c/nfl-big-data-bowl-2021/overview) is here. The challenge is to evaluate defensive performance on passing plays using player tracking data, without offensive or defensive lines.  
+
+Resources that I've found helpful :
+
+* [Tom Bliss tutorial](https://www.kaggle.com/tombliss/tutorial)
+* [Definitions of events](https://twitter.com/asmae_toumi/status/1317644112435216385) in the data
+* How to [animate a specific play](https://github.com/nfl-football-ops/Big-Data-Bowl/blob/master/README.md)
+* [R for NFL analytics](http://rstudio-pubs-static.s3.amazonaws.com/494188_154898728be3411ebab39050ca8a8dcd.html)
+
+
+
+What's covered here:
+
+* SQLite database of the tracking data
+* examples of animations using the best and worst (by EPA) Seahawks plays in the dataset. 
+
+
+The tracking data takes up a fair amount of space. Originally I started to import and merge the various csvs, but that crashed my R session repeatedly, so I decided to use a sqlite database where I can pull into memory only what I need. Here is the code that I used to create it, which is spread across 17 different csv files, along with files for players, games, and plays. 
+
+
+```{r create sqlite db, eval=FALSE}
+
+
+library(RSQLite)
+library(dplyr)
+library(dbplyr)
+library(DBI)
+library(tidyverse)
+
+
+###create a database
+trackingdata <- RSQLite::dbConnect(SQLite(), "trackingdata.sqlite")
+
+
+###add tables from csv
+
+#games file
+games <- read_csv("2021/nfl-big-data-bowl-2021/games.csv")
+dbWriteTable(trackingdata, "games", games)
+rm(games)
+
+#players file
+players <- read_csv("2021/nfl-big-data-bowl-2021/players.csv")
+dbWriteTable(trackingdata, "players", players)
+rm(players)
+
+#plays file 
+#includes targeted receiver data not included in original data release
+#targeted receiver data available here: https://www.kaggle.com/tombliss/nfl-big-data-bowl-2021-bonus
+plays <- read_csv("2021/nfl-big-data-bowl-2021/plays.csv")
+targeted_receivers <- read_csv("2021/nfl-big-data-bowl-2021/targetedReciever.csv")
+plays <- merge(plays, targeted_receivers, by = c("gameId", "playId"))
+
+dbWriteTable(trackingdata, "plays", plays)
+rm(plays)
+rm(targeted_receivers)
+
+
+#check that we are doing ok so far
+#list tables in a database
+dbListTables(trackingdata)
+# List columns in a table
+dbListFields(trackingdata, "plays")
+
+
+# tracking data, create table with week 1 data
+tracking <- read_csv("2021/nfl-big-data-bowl-2021/week1.csv")
+
+
+#Standardizing tracking data so its always in direction of offense vs raw on-field coordinates.
+tracking <- tracking %>%
+  mutate(x = ifelse(playDirection == "left", 120-x, x),
+         y = ifelse(playDirection == "left", 160/3 - y, y))
+dbWriteTable(trackingdata, "tracking", tracking)
+rm(tracking)
+
+
+#now do the same thing for weeks 2-17
+for (w in 2:17){
+  #temperory dataframe used for reading week for given iteration
+  tracking <- read_csv(paste0("/home/michael/Documents/NFL/NFL big data bowl/2021/nfl-big-data-bowl-2021/week",w,".csv"),
+                               col_types = cols())
+  
+  #Standardizing tracking data so its always in direction of offense vs raw on-field coordinates.
+  tracking <- tracking %>%
+    mutate(x = ifelse(playDirection == "left", 120-x, x),
+           y = ifelse(playDirection == "left", 160/3 - y, y))
+  
+  #append to the sqlite db
+  dbWriteTable(conn=trackingdata, name="tracking", tracking, append=T, row.names=F)
+  rm(tracking)
+}
+
+
+```
+
+
+
+
+I then made this function to animate any play in the database (see links above for the main code used to build this, I didn't create most of it):
+
+```{r play animation function, echo=TRUE, warning=FALSE, message=FALSE, cache=TRUE}
+
+library(tidyverse)
+library(gganimate)
+library(cowplot)
+
+  library(RSQLite)
+  library(dplyr)
+  library(dbplyr)
+  library(DBI)
+  library(tidyverse)
+
+
+animate_passing_play <- function(gameID, playID){
+  
+  #open the connection
+  trackingdata <- RSQLite::dbConnect(SQLite(), "/home/michael/Documents/NFL/NFL big data bowl/trackingdata.sqlite")
+  
+  query_tracking_result <- tbl(trackingdata, "tracking")
+  query_play_result <- tbl(trackingdata, "plays")
+  
+  
+  #get the data for only the play we are interested in
+  single_play <- query_tracking_result %>% 
+    dplyr::filter(playId == playID) %>% 
+    dplyr::filter(gameId == gameID)  %>%
+    collect()
+  
+  
+  #get information about the play
+  single_play_info <- query_play_result %>% 
+    dplyr::filter(playId == playID) %>% 
+    dplyr::filter(gameId == gameID)  %>%
+    collect()
+  
+  plot_title <- str_trim(gsub("\\s*\\([^\\)]+\\)","",as.character(single_play_info$playDescription[1])))
+  
+  
+  #disconnect the connection
+  RSQLite::dbDisconnect(trackingdata)
+  
+  
+  
+  
+  ## General field boundaries
+  xmin <- 0
+  xmax <- 160/3
+  hash.right <- 38.35
+  hash.left <- 12
+  hash.width <- 3.3
+  
+  
+  ## Specific boundaries for a given play
+  ymin <- max(round(min(single_play$x, na.rm = TRUE) - 10, -1), 0)
+  ymax <- min(round(max(single_play$x, na.rm = TRUE) + 10, -1), 120)
+  df_hash <- expand.grid(x = c(0, 23.36667, 29.96667, xmax), y = (10:110))
+  df_hash <- df_hash %>% filter(!(floor(y %% 5) == 0))
+  df_hash <- df_hash %>% filter(y < ymax, y > ymin)
+  
+  
+  
+  animate_play <- ggplot() +
+    scale_size_manual(values = c(6, 4, 6), guide = FALSE) + 
+    scale_shape_manual(values = c(21, 16, 21), guide = FALSE) +
+    scale_fill_manual(values = c("#e31837", "#654321", "#002244"), guide = FALSE) + 
+    scale_colour_manual(values = c("black", "#654321", "#c60c30"), guide = FALSE) + 
+    annotate("text", x = df_hash$x[df_hash$x < 55/2], 
+             y = df_hash$y[df_hash$x < 55/2], label = "_", hjust = 0, vjust = -0.2) + 
+    annotate("text", x = df_hash$x[df_hash$x > 55/2], 
+             y = df_hash$y[df_hash$x > 55/2], label = "_", hjust = 1, vjust = -0.2) + 
+    annotate("segment", x = xmin, 
+             y = seq(max(10, ymin), min(ymax, 110), by = 5), 
+             xend =  xmax, 
+             yend = seq(max(10, ymin), min(ymax, 110), by = 5)) + 
+    annotate("text", x = rep(hash.left, 11), y = seq(10, 110, by = 10), 
+             label = c("G   ", seq(10, 50, by = 10), rev(seq(10, 40, by = 10)), "   G"), 
+             angle = 270, size = 4) + 
+    annotate("text", x = rep((xmax - hash.left), 11), y = seq(10, 110, by = 10), 
+             label = c("   G", seq(10, 50, by = 10), rev(seq(10, 40, by = 10)), "G   "), 
+             angle = 90, size = 4) + 
+    annotate("segment", x = c(xmin, xmin, xmax, xmax), 
+             y = c(ymin, ymax, ymax, ymin), 
+             xend = c(xmin, xmax, xmax, xmin), 
+             yend = c(ymax, ymax, ymin, ymin), colour = "black") + 
+    geom_point(data = single_play, aes(x = (xmax-y), y = x, shape = team,
+                                       fill = team, group = nflId, size = team, colour = team), alpha = 0.7) + 
+    geom_text(data = single_play, aes(x = (xmax-y), y = x, label = jerseyNumber), colour = "white", 
+              vjust = 0.36, size = 3.5) + 
+    ylim(ymin, ymax) + 
+    coord_fixed() +  
+    theme_nothing() + 
+    theme(plot.title = element_text()) +
+    labs(title = plot_title) +
+    transition_time(frameId)  +
+    ease_aes('linear') + 
+    NULL
+  
+  
+  # animate_play
+  
+  
+  ## Ensure timing of play matches 10 frames-per-second
+  play.length.ex <- length(unique(single_play$frameId))
+  animate(animate_play, fps = 10, nframe = play.length.ex)
+  
+  
+}
+
+
+
+
+
+
+```
+
+
+
+Here are some examples. 
+
+First, the Seahawks (on offense) play in the database with the best expected points added, a 50+ yard touchdown to Tyler Lockett.
+
+```{r best Seahawks play by epa, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+
+
+#best SEA EPA pass play
+sea_best_epa <- animate_passing_play(2018092312, 1886)
+sea_best_epa
+
+```
+
+
+Second, the Seahawks offensive play with the worst expected points added, a pick six from midfield.
+
+
+```{r worst Seahawks play by epa, echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE}
+#worst SEA EPA pass play
+sea_worst_epa <-animate_passing_play(2018091700, 3637)
+
+sea_worst_epa
+
+```
+
+
+
+
+This is super cool stuff to play around with, I hope to do more in the coming weeks.
+
