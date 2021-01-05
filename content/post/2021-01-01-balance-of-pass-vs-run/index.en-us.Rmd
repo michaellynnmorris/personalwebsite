@@ -80,7 +80,7 @@ ggplot(proportion_pass_byyear, aes(x=season, y = proportion_pass)) +
 
 While passing proportion has levelled off over the past several years, and is down in 2020 compared to 2019, the longer term trend is clearly positive.
 
-Now, let's game an overall idea of how often passing is more effective than running.
+Now, let's get an overall idea of how often passing is more effective than running.
 
 ```{r pass_better overall}
 
