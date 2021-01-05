@@ -1,0 +1,347 @@
+---
+title: Balance of pass vs run effectiveness across games
+author: Mike Morris
+date: '2021-01-04'
+slug: index.en-us
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+draft: TRUE
+
+---
+
+```{r setup, echo=FALSE, message = FALSE,warning=FALSE, include = FALSE}
+library(RSQLite)
+library(tidyverse)
+library(DBI)
+
+
+knitr::opts_chunk$set(cache = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(include = TRUE)
+
+
+
+```
+
+
+```{r data}
+
+con <- DBI::dbConnect(SQLite(), "/Users/michaellmorris/Documents/personalwebsite/pbp_db")
+
+all_offense_plays <-  dplyr::tbl(con, "nflfastR_pbp") %>% 
+  dplyr::select(season, game_id, play_type, posteam, defteam, half_seconds_remaining, wp, wpa, epa) %>%
+  collect()
+
+DBI::dbDisconnect(con)
+
+
+
+```
+
+
+
+It's pretty clear that [passing is more effective than running](https://michael-morris.us/2020/01/seahawks-should-pass-more/) for an offense. Expected points added (EPA) and win probability added (WPA) are both higher for passing than running. It therefore seems reasonable that a team should want to dedicate resources to making their passing offense and passing defense more effective, and that offenses should pass more and [defenses should try to induce opposing offenses to run more](https://matchquarters.substack.com/p/the-argument-for-a-light-box).
+
+In this post I'll take a look at how well teams are doing in terms of balancing the effectiveness of passing and running. Here I'm looking at the game as the unit of analysis, and checking to see if passing is more effective than running by EPA. For example, if in a given game an offense had an EPA of .15, and a running EPA of .13, the passing was more effective in that game. There are "pass_better" values for each game, one for each team. With that information for each game since 1999 we can build averages for pass being more effective for offense and defense, for teams, and across seasons. All 2020 regular season games are included.
+
+Over a season, I would expect that passing and running would be approximately equally effective - if offenses and defenses are behaving rationally. If a defense is playing a great passing offense, for example, they would try to shut that down and the offense would respond by having more success running. The same is true in reverse. 
+
+First, let's take a look at how frequent passing is relative to running and changes over the seasons that are included in the nflfastR database:
+
+
+```{r pass proportion overall by year}
+#proportion of pass plays by year
+
+proportion_pass_byyear <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, play_type) %>% 
+  summarise(n = n(), .groups = "drop_last")  %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                                         values_from = n) %>% 
+  mutate(proportion_pass = pass/(pass+run))
+
+
+
+ggplot(proportion_pass_byyear, aes(x=season, y = proportion_pass)) + 
+  geom_line(linetype = "solid")+
+  geom_point() +
+  geom_smooth(method=lm, se = FALSE) +
+  ggtitle("Pass proportion by season")
+
+
+```
+
+While passing proportion has levelled off over the past several years, and is down in 2020 compared to 2019, the longer term trend is clearly positive.
+
+Now, let's game an overall idea of how often passing is more effective than running.
+
+```{r pass_better overall}
+
+dplyr.summarise.inform = FALSE
+
+run_pass_offense_bygame <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(game_id, posteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "keep") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) 
+
+mean(run_pass_offense_bygame$pass_better, na.rm = TRUE)
+
+
+
+
+```
+
+
+I expected this number to be bigger. Passing is more effective than running, but less than 60% of the time. This suggests to me that defenses are leaning too heavily on stopping the run overall, but the idea that teams should radically change their approach does not seem all that supported. 
+
+
+Next let's take a look at the pass_better rate by season, to see if the league has changed how it's approaching defensive balance in light of the generally increasing passing rates.
+
+```{r pass_better by season}
+
+
+run_pass_byseason <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, posteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(season) %>% 
+  summarise(pass_better_rate = round(mean(pass_better, na.rm = TRUE), digits = 2),
+            n = n(), .groups = "drop_last")
+
+
+ggplot(run_pass_byseason, aes(x=season, y = pass_better_rate)) + 
+  geom_line(linetype = "solid")+
+  geom_point() +
+  geom_smooth(method=lm, se = FALSE) +
+  ggtitle("Pass better proportion by season")
+
+```
+
+
+Considering these together it looks like passing has gotten slightly more effective, relative to rushing, even as teams have been passing more over the past few years. Defenses have adjusted to increased passing volumes by running more nickel, but they still seem to be under emphasizing stopping the pass. 
+
+Exploring further, here is the distribution for offense:
+
+```{r distribution of pass_better by season offense}
+
+
+offense_run_pass_all <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, posteam, play_type) %>% 
+  summarise(epa_mean = mean(epa),
+            .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(posteam, season) %>% 
+  summarise(pass_better_rate = mean(pass_better, na.rm = TRUE),
+            n = n(),
+            .groups = "drop_last")
+
+
+#distributions of pass better epa by season by team
+run_pass_better_distribution <- ggplot(offense_run_pass_all, aes(x=pass_better_rate, y = ..density..)) + 
+  geom_density() +
+  geom_vline(xintercept=mean(offense_run_pass_all$pass_better_rate),
+             color='#619CFF')   +
+  scale_x_continuous(breaks=sort(round(c(0, 1, .5, mean(offense_run_pass_all$pass_better_rate)), digits = 2)), 
+                     limits = c(0, 1)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle(paste0("Offense pass better distribution by season by team (N = ", nrow(offense_run_pass_all),")"))
+
+run_pass_better_distribution
+
+```
+
+And defense:
+```{r distribution of pass_better by season defense}
+
+
+defense_run_pass_all <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, defteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(defteam, season) %>% 
+  summarise(pass_better_rate = mean(pass_better, na.rm = TRUE),
+            n = n(), .groups = "drop_last")
+
+
+
+#distributions of pass better epa by season by team (defense)
+run_pass_better_distribution_defense <- ggplot(defense_run_pass_all, aes(x=pass_better_rate, y = ..density..)) + 
+  geom_density() +
+  geom_vline(xintercept=mean(defense_run_pass_all$pass_better_rate),
+             color='#619CFF')   +
+  scale_x_continuous(breaks=sort(round(c(0, 1, .5, mean(defense_run_pass_all$pass_better_rate)), digits = 2)), 
+                     limits = c(0, 1)) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  ggtitle(paste0("Defense pass better distribution by season by team (N = ", nrow(defense_run_pass_all),")"))
+
+run_pass_better_distribution_defense
+
+```
+
+Notice that the distribution on offense is more variable than the distribution for defense. 
+
+Next, I thought it would be interesting to explore whether teams that tend to do better against the pass (relative to the run) would be regarding as generally better defenses overall. This looks at teams across entire seasons.
+
+Here are the 10 defenses that had the highest rates of pass_better (perhaps geared to stopping the run):
+
+```{r defense highest pass_better by season}
+
+pass_better_season_team <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, defteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(defteam, season) %>% 
+  summarise(pass_better_rate = round(mean(pass_better, na.rm = TRUE), digits = 2),
+            n = n(), .groups = "drop_last") %>% 
+  arrange(-pass_better_rate) 
+
+pass_better_season_team[1:10, ]
+
+
+
+```
+
+
+
+Here are the 10 defenses that had the lowest rates of pass_better (geared toward stopping the pass):
+
+```{r defense lowest pass_better by season}
+
+pass_better_season_team[(nrow(pass_better_season_team)-9):nrow(pass_better_season_team), ] %>% 
+  arrange(pass_better_rate)
+
+```
+Comparing the two tables above I notice that most of these teams are not making the playoffs (look for n>16; except for 2020), with only two of the 10 teams (including 2020 TEN) where pass_better is high making the playoffs, while three of the 10 teams with the lowest pass_better rates make the playoffs. 
+
+Here are the top 10 offenses that had the highest rates of doing better with the pass than the run:
+
+```{r offense highest pass_better by season}
+
+
+pass_better_season_team_off <- all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, posteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(posteam, season) %>% 
+  summarise(pass_better_rate = round(mean(pass_better, na.rm = TRUE), digits = 2),
+            n = n(), .groups = "drop_last") %>% 
+  arrange(-pass_better_rate) 
+
+pass_better_season_team_off[1:10, ]
+
+
+
+```
+
+
+Here are the 10 offenses that had the lowest rates of doing better with the pass than the run:
+
+```{r offense lowest pass_better by season}
+
+pass_better_season_team_off[(nrow(pass_better_season_team)-9):nrow(pass_better_season_team), ] %>% 
+  arrange(pass_better_rate)
+
+```
+Comparing these tables most of the teams with offenses that are more effective with the pass made the playoffs (8 out of 10), while most of the teams that were most effective with the run did not (1 out of 10).
+
+```{r teams that make playoffs offense}
+
+all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, posteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(posteam, season) %>% 
+  summarise(pass_better_rate = round(mean(pass_better, na.rm = TRUE), digits = 2),
+            n = n(), .groups = "drop_last") %>% 
+  group_by(n) %>% 
+  filter(n>15) %>% 
+  summarise(pass_better = mean(pass_better_rate))
+  
+
+
+```
+
+Teams that have higher pass_better rates on offense play more games (go further in the playoffs).
+
+
+```{r teams that make playoffs defense}
+
+all_offense_plays %>% 
+  filter(play_type == "pass" | play_type == "run") %>% 
+  filter(half_seconds_remaining > 120) %>%
+  filter(wp > .1 & wp <.9) %>% 
+  group_by(season, game_id, defteam, play_type) %>% 
+  summarise(epa_mean = mean(epa), .groups = "drop_last") %>% 
+  tidyr::pivot_wider(names_from = play_type,
+                     values_from = epa_mean) %>% 
+  mutate(pass_better = case_when(pass>run ~ 1,
+                                 run>pass ~0)) %>% 
+  group_by(defteam, season) %>% 
+  summarise(pass_better_rate = round(mean(pass_better, na.rm = TRUE), digits = 2),
+            n = n(), .groups = "drop_last") %>% 
+  group_by(n) %>% 
+  filter(n>15) %>% 
+  summarise(pass_better = mean(pass_better_rate))
+  
+
+
+```
+
+Teams that have higher pass_better rates on offense play more games (go further in the playoffs). Teams that don't make the playoffs tend to have higher pass_better rates on defense.
+
+While hardly definitive, this set of numbers tells me that:
+
+* Teams that pass the ball and defend the pass well (relative to the run) do better than teams that don't.
+* Teams are broadly underemphasizing passing defense, and stopping the pass should be the top priority of the defense.

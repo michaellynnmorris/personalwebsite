@@ -1,0 +1,120 @@
+---
+title: Balance of pass vs run effectiveness across games
+author: Mike Morris
+date: '2021-01-04'
+slug: index.en-us
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+draft: TRUE
+
+---
+
+
+
+<p>It’s pretty clear that <a href="https://michael-morris.us/2020/01/seahawks-should-pass-more/">passing is more effective than running</a> for an offense. Expected points added (EPA) and win probability added (WPA) are both higher for passing than running. It therefore seems reasonable that a team should want to dedicate resources to making their passing offense and passing defense more effective, and that offenses should pass more and <a href="https://matchquarters.substack.com/p/the-argument-for-a-light-box">defenses should try to induce opposing offenses to run more</a>.</p>
+<p>In this post I’ll take a look at how well teams are doing in terms of balancing the effectiveness of passing and running. Here I’m looking at the game as the unit of analysis, and checking to see if passing is more effective than running by EPA. For example, if in a given game an offense had an EPA of .15, and a running EPA of .13, the passing was more effective in that game. There are “pass_better” values for each game, one for each team. With that information for each game since 1999 we can build averages for pass being more effective for offense and defense, for teams, and across seasons. All 2020 regular season games are included.</p>
+<p>Over a season, I would expect that passing and running would be approximately equally effective - if offenses and defenses are behaving rationally. If a defense is playing a great passing offense, for example, they would try to shut that down and the offense would respond by having more success running. The same is true in reverse.</p>
+<p>First, let’s take a look at how frequent passing is relative to running and changes over the seasons that are included in the nflfastR database:</p>
+<p><img src="/post/2021-01-01-balance-of-pass-vs-run/index.en-us_files/figure-html/pass%20proportion%20overall%20by%20year-1.png" width="672" /></p>
+<p>While passing proportion has levelled off over the past several years, and is down in 2020 compared to 2019, the longer term trend is clearly positive.</p>
+<p>Now, let’s game an overall idea of how often passing is more effective than running.</p>
+<pre><code>## [1] 0.575104</code></pre>
+<p>I expected this number to be bigger. Passing is more effective than running, but less than 60% of the time. This suggests to me that defenses are leaning too heavily on stopping the run overall, but the idea that teams should radically change their approach does not seem all that supported.</p>
+<p>Next let’s take a look at the pass_better rate by season, to see if the league has changed how it’s approaching defensive balance in light of the generally increasing passing rates.</p>
+<p><img src="/post/2021-01-01-balance-of-pass-vs-run/index.en-us_files/figure-html/pass_better%20by%20season-1.png" width="672" /></p>
+<p>Considering these together it looks like passing has gotten slightly more effective, relative to rushing, even as teams have been passing more over the past few years. Defenses have adjusted to increased passing volumes by running more nickel, but they still seem to be under emphasizing stopping the pass.</p>
+<p>Exploring further, here is the distribution for offense:</p>
+<p><img src="/post/2021-01-01-balance-of-pass-vs-run/index.en-us_files/figure-html/distribution%20of%20pass_better%20by%20season%20offense-1.png" width="672" /></p>
+<p>And defense:
+<img src="/post/2021-01-01-balance-of-pass-vs-run/index.en-us_files/figure-html/distribution%20of%20pass_better%20by%20season%20defense-1.png" width="672" /></p>
+<p>Notice that the distribution on offense is more variable than the distribution for defense.</p>
+<p>Next, I thought it would be interesting to explore whether teams that tend to do better against the pass (relative to the run) would be regarding as generally better defenses overall. This looks at teams across entire seasons.</p>
+<p>Here are the 10 defenses that had the highest rates of pass_better (perhaps geared to stopping the run):</p>
+<pre><code>## # A tibble: 10 x 4
+## # Groups:   defteam [10]
+##    defteam season pass_better_rate     n
+##    &lt;chr&gt;    &lt;int&gt;            &lt;dbl&gt; &lt;int&gt;
+##  1 GB        2017             0.93    16
+##  2 SEA       2016             0.89    18
+##  3 JAX       2011             0.88    16
+##  4 LAC       1999             0.88    16
+##  5 MIA       2015             0.88    16
+##  6 NYG       2019             0.88    16
+##  7 SF        2005             0.88    16
+##  8 TEN       2020             0.88    16
+##  9 WAS       2006             0.88    16
+## 10 KC        2000             0.87    15</code></pre>
+<p>Here are the 10 defenses that had the lowest rates of pass_better (geared toward stopping the pass):</p>
+<pre><code>## # A tibble: 10 x 4
+## # Groups:   defteam [7]
+##    defteam season pass_better_rate     n
+##    &lt;chr&gt;    &lt;int&gt;            &lt;dbl&gt; &lt;int&gt;
+##  1 TB        2002             0.16    19
+##  2 DEN       2016             0.19    16
+##  3 BUF       2009             0.22    16
+##  4 TB        2000             0.24    17
+##  5 GB        2008             0.25    16
+##  6 WAS       2017             0.25    16
+##  7 SEA       2013             0.26    19
+##  8 BUF       2005             0.27    16
+##  9 BUF       2014             0.27    16
+## 10 MIA       2002             0.27    16</code></pre>
+<p>Comparing the two tables above I notice that most of these teams are not making the playoffs (look for n&gt;16; except for 2020), with only two of the 10 teams (including 2020 TEN) where pass_better is high making the playoffs, while three of the 10 teams with the lowest pass_better rates make the playoffs.</p>
+<p>Here are the top 10 offenses that had the highest rates of doing better with the pass than the run:</p>
+<pre><code>## # A tibble: 10 x 4
+## # Groups:   posteam [9]
+##    posteam season pass_better_rate     n
+##    &lt;chr&gt;    &lt;int&gt;            &lt;dbl&gt; &lt;int&gt;
+##  1 LAC       2009             1       17
+##  2 MIA       2008             0.94    17
+##  3 NE        2012             0.94    18
+##  4 NO        2011             0.94    18
+##  5 ARI       2015             0.89    18
+##  6 IND       2009             0.89    19
+##  7 NE        2016             0.89    19
+##  8 ATL       2010             0.88    17
+##  9 CAR       2004             0.88    16
+## 10 DAL       2005             0.88    16</code></pre>
+<p>Here are the 10 offenses that had the lowest rates of doing better with the pass than the run:</p>
+<pre><code>## # A tibble: 10 x 4
+## # Groups:   posteam [9]
+##    posteam season pass_better_rate     n
+##    &lt;chr&gt;    &lt;int&gt;            &lt;dbl&gt; &lt;int&gt;
+##  1 CHI       2004             0.19    16
+##  2 CLE       2017             0.19    16
+##  3 JAX       2009             0.19    16
+##  4 PHI       1999             0.19    16
+##  5 ATL       2004             0.22    18
+##  6 JAX       2014             0.25    16
+##  7 KC        2012             0.25    16
+##  8 LA        2011             0.25    16
+##  9 LAC       2003             0.25    16
+## 10 NYJ       2005             0.25    16</code></pre>
+<p>Comparing these tables most of the teams with offenses that are more effective with the pass made the playoffs (8 out of 10), while most of the teams that were most effective with the run did not (1 out of 10).</p>
+<pre><code>## # A tibble: 5 x 2
+##       n pass_better
+##   &lt;int&gt;       &lt;dbl&gt;
+## 1    16       0.541
+## 2    17       0.62 
+## 3    18       0.635
+## 4    19       0.618
+## 5    20       0.708</code></pre>
+<p>Teams that have higher pass_better rates on offense play more games (go further in the playoffs).</p>
+<pre><code>## # A tibble: 5 x 2
+##       n pass_better
+##   &lt;int&gt;       &lt;dbl&gt;
+## 1    16       0.590
+## 2    17       0.558
+## 3    18       0.553
+## 4    19       0.520
+## 5    20       0.553</code></pre>
+<p>Teams that have higher pass_better rates on offense play more games (go further in the playoffs). Teams that don’t make the playoffs tend to have higher pass_better rates on defense.</p>
+<p>While hardly definitive, this set of numbers tells me that:</p>
+<ul>
+<li>Teams that pass the ball and defend the pass well (relative to the run) do better than teams that don’t.</li>
+<li>Teams are broadly underemphasizing passing defense, and stopping the pass should be the top priority of the defense.</li>
+</ul>
