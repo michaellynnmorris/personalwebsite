@@ -1,0 +1,58 @@
+---
+title: Book reviews over the past few months
+author: Mike Morris
+date: '2021-02-01'
+slug: index.en-us
+categories:
+  - Books
+tags:
+  - Books
+keywords:
+  - tech
+
+---
+
+With lots of time at home over the last few months, I've gotten through a good number of books (for me). Here are some that I enjoyed and recommend, in no particular order:
+
+
+[The Warmth of Other Suns: the Epic Story of America's Great Migration](https://www.amazon.com/Warmth-Other-Suns-Americas-Migration/dp/0679444327/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1612241292&sr=1-1)
+
+I expected more of a numbers based look at the great migration, but this was focused on narratives about a few blacks who made the leap to different parts of the country from the south. It wasn't always like escaping prison, but frequently seemed like it. Full of stirring and inspirational stories. 
+
+[Enemy of All Mankind: A True Story of Piracy, Power, and History's First Global Manhunt](https://www.amazon.com/Enemy-All-Mankind-Historys-Manhunt/dp/0735211604/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1612240854&sr=1-1)
+
+Most interesting bits to me were about the democratic order on pirate ships, how rule based it was, and how piracy was such a tempting (albeit very risky) career path to follow for young seafaring men. And how it may be possible to pull off the biggest piracy act in history and get away with it.
+
+[Tiny Habits: The Small Changes That Change Everything](https://www.amazon.com/Tiny-Habits-BJ-Fogg-PhD-audiobook/dp/B082VKLDM9/ref=sr_1_1?dchild=1&keywords=tiny+habits&qid=1612240770&sr=8-1)
+
+After X, I will do Y. Y is something you are already doing, X is something easy and small. Then reward yourself.
+
+I really like how practical and accessible this book is, with formal models of the concepts, and an emphasis on trying to find easy wins. This is something to come back to in a year to see if any of the newly attempted habits stick. One good outcome so far: I'm flossing more.
+
+[Thing Explainer: Complicated Stuff in Simple Words](https://www.amazon.com/Thing-Explainer-Complicated-Stuff-Simple/dp/0544668251/ref=sr_1_1?dchild=1&keywords=Thing+explainer%3A+Complicated+stuff+in+simple+words&qid=1612241228&s=books&sr=1-1)
+
+Take the most common 1000 words in English, explain things like the international space station, with diagrams in the style of xkcd. It’s pretty fun, and my kids liked it for a few minutes, but it’s bit of a puzzle to figure out what he’s talking about sometimes. Good candidate for a library check out. 
+
+[Mauve: How One Man Invented a Color that Changed the World](https://www.amazon.com/Mauve-Invented-Color-Changed-World/dp/0393020053/ref=sr_1_2?dchild=1&keywords=Mauve%3A+How+one+man+invented&qid=1612241112&s=books&sr=1-2)
+
+A chemist invents a color (several actually), inspired many other chemists, and reorients world markets. I like these stories that detail how much work and invention had to go into something that is so taken for granted today. We can get any color we want now at trivial prices, but that was not always the case. 
+
+[Address Book: What Street Addresses Reveal about Identity, Race, Wealth, and Power](https://www.amazon.com/Address-Book-Street-Addresses-Identity/dp/1250134765/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1612241062&sr=1-1)
+
+Who knew that odd numbers on one side of the street and even numbers on the other started in Philadelphia? The advantages, both to individuals and to governments who wanted things from their subjects (like soldiers), of street addresses reminds me of Hernando de Soto's emphasis on having informational infrastructure like property records. 
+
+[Thurgood Marshall: American Revolutionary](https://www.amazon.com/Thurgood-Marshall-Revolutionary-Juan-Williams/dp/0812932994/ref=sr_1_1?dchild=1&keywords=hurgood+Marshall%3A+American+revolutionary.&qid=1612241000&s=books&sr=1-1-spell) 
+
+Beyond the important cases and the bravery of one of American history’s most interesting men, what was interesting to me is all the horse trading and political maneuvering, from maintaining the NAACP tax except status, dealing with J. Edgar Hoover, to getting on the Supreme Court. Some of the behind the scenes reporting on the court was also interesting; old justices can coast and hang on long after they are really productive, while the culture of the institution works to keep reputations intact.
+
+[Agent Sonya: Moscow’s Most Daring Wartime Spy](https://www.amazon.com/Agent-Sonya-Moscows-Daring-Wartime/dp/0593136306/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1612240965&sr=1-1) 
+
+A real life spy story that reads like a novel. Great closers to chapters like this: “Ollo felt a fierce loyalty to Rudi, who had no idea that his wife had obtained a divorce, a new husband, a new name, and a new nationality.  But then, Rudolph Hamburger was hardly in a position to do anything about the situation, since he was being tortured in a Chinese jail.” 
+
+[Very Important People: Status and Beauty in the Global Party Circuit](https://www.amazon.com/Very-Important-People-Status-Circuit/dp/0691168652/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1612240909&sr=1-1)
+
+Reminded me of [Sudhir Venkatesh's](https://en.wikipedia.org/wiki/Sudhir_Venkatesh) books.  Ethnography that focuses on transactions and how people in these various interesting worlds create and trade value are really interesting, it’s a great genre. Being a club promoter sounds pretty miserable - constantly hustling and grey lines everywhere, but I guess the upsides are pretty obvious.
+
+
+
+
