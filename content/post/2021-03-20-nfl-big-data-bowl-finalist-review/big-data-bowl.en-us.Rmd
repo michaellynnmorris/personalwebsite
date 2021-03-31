@@ -1,0 +1,129 @@
+---
+title: NFL Big Data Bowl finalist review
+author: Mike Morris
+date: '2021-03-31'
+slug: big-data-bowl.en-us
+categories:
+  - NFL
+tags:
+  - NFL
+keywords:
+  - tech
+
+---
+
+[Some months ago](https://michael-morris.us/2020/10/nfl-big-data-bowl-2021-exploration.en-us/) I discussed the NFLs Big Data Bowl. It's fascinating to see all the talented people go after these problems and see what the come up with. Here I thought I'd review the videos that the finalists made and offer some comments. The challenge this year was to make a contribution to understanding passing defense using a subset of tracking data which has the skill position players on offense and passing defenders. 
+
+Here's an [intro from NFL](https://twitter.com/NFLFootballOps/status/1377357707800420353), and here's a [nice writeup](https://theathletic.com/2444020/2021/03/23/id-have-to-kill-you-if-i-told-you-big-data-bowl-offers-peek-inside-nfl-teams-use-of-analytics/) by Ben Baldwin covering some general information about the competition and some of the cool things that people have done before.
+
+Here is a [playlist of the finalists presentations](https://youtube.com/playlist?list=PLRdw3IjKY2gkWZfdIUOUcCKXJP35KFBeI). It's sort of unbelievable to me that each of these videos has less than 10k views, many only around 2k. This is where some of the most interesting stuff in sports is happening. 
+
+Ok, on to the presentations...
+
+
+### Wei Peng, Marc Richards, Sam Walczak, Jack Werner (winner)
+
+They do a variety of things here, but one main contribution is trying to track which defense is in man and zone coverage and which receivers each defender is responsible for (which can be multiple in zone coverage). This is a nice contribution because many pass defense metrics look only at the closest defenders to the ball when it arrives, which doesn't help in situations where the assigned defense falls down, for instance. They are then able to develop a variety of metrics such as separation from the receiver, and other metrics for the offensive players such as the probability of being targeted, expected completion percentage, and expected points added. This is all done for each frame of the play. A winner according to their metrics (both before and after the pass arrives: Marlon Humphrey of the Ravens.
+
+### Asmae Toumi, Marschall Furman, Sydney Robinson, Tony ElHabr
+
+I'm not sure how they got Wade Phillips to meet with them, but how nice they named their measure Weighted Assessment of Defender Effectiveness (WADE). Defender effectiveness is measured by coverage skill before the ball arrives and contest skill after the ball arrives. Important to these measures is a model of target probability, which is a function of:
+
+ - Target share (history of getting targets relative to teammates)
+ - Where the receiver is on the field
+ - Where the quarterback is looking
+ - Separation between receiver and the closest defender
+ 
+I was happy to see that Jamal Adams (then with the Jets) was in the top three safeties by this metric, and he was much better at contest than in coverage, which squares with what observers were saying about the 2020 season with Seattle.
+
+
+### Zach Bradlow, Zach Drapkin, Ryan Gross, & Sarah Hu
+
+Their measure: TAPE - Target Agnostic Player Elo.
+
+Goals were:
+
+- Quantify performance for CB and WR on all routes
+- Find undervalued players at these positions
+- Optimize CB-WR matchups
+
+The overall method was the classify coverages, model route success, and develop player ratings.
+
+They were able to classify coverage (man/zone) accurately on 77% of all plays, with the most important factors being distance between the CB and WR, defender speed, and whether the CB was looking at the receiver or QB.
+
+Route success (was the WR able to beat the defender) was 70% accurate, and the main factors were the variance and mean of the distance between the WR and CB, depth of the route, and the difference in orientation between the WR and CB. 
+
+They focused on man coverage defense. Their ratings are correlated with salary, and can be used to look for undervalued players and to model potential matchups for each game. I like the use of elo ratings to predict wins between two players of different strength and adjusting them over time as more information is gathered. 
+
+Did John Schnieder watch this presentation? I notice new Seahawks corner Ahkello Witherspoon rates highly by this metric. 
+
+
+### Meyappan Subbaiah, Dani Chu, Matthew Reyers, Lucas Wu
+
+They used different models for different kinds of skills (and looked at how their models did out of sample), and it looks like they evaluated the following:
+
+ - Pre-release coverage
+ - Contest and intercept
+ - Deterrence
+ - Pursuit
+ 
+It was hard to hear, but it sounded like they said that events that occur as the pass arrives are particularly valuable.
+ 
+I like how they break down coverage into different components, and their overall results tend to be well aligned with general wisdom on who the best coverage players were at the time.
+ 
+ 
+### Joe Andruzzi
+
+Focused on one cut routes and double moves. He identified cuts by looking at acceleration percent change (minimums indicating cuts). Interestingly, there was no relationship between being good at covering one cut moves vs two cut moves, some players (e.g., Slay, Gilmore, Humphrey) being good on both. 
+
+This makes me wonder about the kinds of players you might target depending on the strength of your defense's pass rush. If your pass rush is great, get great one cut defenders. If your pass rush isn't great, probably best to get great two cut defenders so as to not give us bigger plays. 
+
+
+### Jill Reiner
+
+She split the plays into three phases:
+
+- Ball snap to ball release
+- Ball release to ball arrival
+- Ball arrival to pass outcome
+
+and modeled target probability and completion probability. She then looked at the extent to which certain defenders could lower target probability (targets averted) and completion probability (closeout, passes defended), and clustered players (being good in all three areas is good).
+
+Super impressive for an undergraduate who appears to have been working alone. 
+
+
+### James Venzor, Matthew Gartenhaus
+
+Looked at pass coverage attributes and evaluated how many points a defender save or cost their teams in each of these areas:
+
+ - Tracking
+ - Closing
+ - Ball skills
+ - Tackling
+ - Interception returns
+ - Ball hawk
+ 
+They then calculated an estimate of expected points added continuously throughout the play for each of the targets. Ball skills and tracking accounted for over 60% of the shifts in expected EPA. 
+ 
+ 
+### Ella Summer
+ 
+Built models for target and completion probability, then looked at the aggregate ability of players to get above and below expected probabilities over the course of the season. Who were the players that deterred quarterbacks from throwing at them, and prevented receptions if targeted? Interestlingly, there is no correlation between target and completion probability. 
+
+The question this one raises for me is to what extent target probability is based on reputation? I could see teams targeting certain corners less based on history of great play rather than recent great play, but I could also see these models being useful for figuring out when these corners have started slipping.
+
+
+### Concluding thoughts
+
+I'm sure that teams are paying attention to this, as there is a history of teams hiring finalists and winners from this competition, and analytics seems to be on the acsendency. I also hope that a number of these measures will make it into broadcasts and that we'll see leaderboards for some of this next season, much like we can get rushing yards over expectation now (from last year's competition). 
+
+Some of the highlights from this year, in my view:
+
+- Man vs zone classification is really helpful, especially when combined with some of the other measures that being developed here. 
+- A number of the presentations discussed target probability and completion probability for each receiver on each frame of a play. I can see this being really helpful for offensive and defensive players to coach specific points. For example, a quarterback might look like he missed a receiver to target another, but the measures let you evaluate specifically how big the miss was and which receivers should be targeted where. It would also be great for coaches to evaluate where completion opportunities open up by the number vs their expectations based on their designs.
+- Continuous EPA, evaluated for each frame, is what got me most excited watching these presentations, and it was featured in at least two of them. What a way to evaluate coaches and team performance! You could look at the aggregate EPA of the team in the first few seconds and see what kinds of offensive schemes and defenses tend to maximize/minimize expected EPA (e.g., I'd love to compare different offensive coordinators at two seconds - does Sean McVay have a value near the top? Where is Schottenheimer?). As useful as target and completion probability are, EPA is much more useful because offenses and defenses want to make or prevent big plays, not completions in general. How well does offensive line play change continuous EPA? Do zone vs man make a difference? Do certain lineups (e.g., 11, 22) make a difference? There are many questions that this would be helpful for evaluating.
+
+One final comment: I believe these kinds of views will lead to better player evaluation, better in game decision making, and overall better play - a win for fans more than anything. 
+
+
+
