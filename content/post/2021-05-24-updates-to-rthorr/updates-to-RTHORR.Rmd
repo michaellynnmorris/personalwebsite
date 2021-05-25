@@ -1,0 +1,15 @@
+---
+title: Updates to RTHORR
+author: Mike Morris
+date: '2021-05-24'
+slug: updates-to-RTHORR
+categories: 
+  - R
+tags: 
+  - R
+keywords:
+  - tech
+---
+
+I made some updates to the [RTHORR](https://michael-morris.us/2020/09/rthorr-package.en-us/) package to let users pass in raw data frames rather than have to generate text files of correlation matrices. Check it out of you like the randomization test of hypothesized order relations.
+
